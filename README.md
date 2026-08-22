@@ -1,7 +1,9 @@
 # team-project
-our team project for csc 481
+Our team project for CSC 481
 
 
-Bryan Goodman - Senior at Fayetteville State University who is a member of team 2. 
+Bryan Goodman - Senior at Fayetteville State University who is a member of Team 2. 
 #
 Kendra Pelzer - Senior at Fayetteville State University assigned to Team 2.
+#
+Jamaal Spratley- Senior at Fayetteville State University assigned to Team 2 as the leader.
