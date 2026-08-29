@@ -1,7 +1,7 @@
 # Comprehensive Web-Based Steganography Sandbox
 
 **Status:** Team Project Plan for CSC 481 Capstone Project Comprehensive Web-Based Steganography Sandbox
-**Planned delivery window:** August 31 - Novober 25, 2026  
+**Planned delivery window:** August 31 - November 25, 2026  
 **Final presentation and demonstration:** 29 November 2026
 
 ## 1. Project charter
@@ -39,10 +39,10 @@ heuristics and limitations, not proof that content is or is not steganographic.
 | Application foundation | Jamaal Spratley | Repository structure, configuration, REST API contract, CI, deployment runbook |
 | Core steganography | Bryan Goodman| Image/audio/text embed-extract modules, carrier validation, test vectors |
 | Cryptography and services | Bryan Goodman| AES utility, key/passphrase handling policy, experiment orchestration APIs |
-| Web experience | Member B | Bootstrap pages, accessible forms, progress/status display, download flows |
-| Detection and visuals | Member B with Bryan Goodman review | Statistical heuristics, Matplotlib charts, plain-language results |
-| Reporting | Member B with Jamaal Spratley review | PDF template, experiment report generator, report validation |
-| Quality and documentation | Member B | Pytest suite, test plan, README, user guide, final demo script |
+| Web experience | Kendra Pelzer | Bootstrap pages, accessible forms, progress/status display, download flows |
+| Detection and visuals | Kendra Pelzer with Bryan Goodman review | Statistical heuristics, Matplotlib charts, plain-language results |
+| Reporting | Kendra Pelzer with Jamaal Spratley review | PDF template, experiment report generator, report validation |
+| Quality and documentation | Kendra Pelzer | Pytest suite, test plan, README, user guide, final demo script |
 | Integration and release | Jamaal Spratley | Pull-request enforcement, end-to-end tests, staging/deployment, release tag |
 
 ## 3. Milestones, dependencies, and acceptance gates
@@ -58,7 +58,7 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 ## 4. Weekly task breakdown and ownership
 
-| Week / dates | Jamaal Spratley | Bryan Goodman - Backend | Member B - Frontend/QA | Shared milestone |
+| Week / dates | Jamaal Spratley | Bryan Goodman - Backend | Kendra Pelzer - Frontend/QA | Shared milestone |
 |---|---|---|---|---|
 | 1: Aug 31-Oct 6 | Create repo, branches/PR rules, issue board, API draft | Research libraries; define carrier interfaces and test vectors | Wireframes, Bootstrap design tokens, test-plan outline | M1 design review and scope lock |
 | 2: Oct 7-13 | Scaffold Flask/Django app, config, CI, upload policy | Implement AES utility and image-LSB round trip | Build layout, upload form, validation/error UI | Image workflow usable locally |
@@ -73,7 +73,7 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 | Cadence | Participants |
 |---|---|
-| Every Saturday | Team members will meet every Saturday to discuss next week's plans, combine work, and submit a weekly update/assingments.
+| Every Saturday | Team members will meet every Saturday to discuss next week's plans, combine work, and submit a weekly update/assignments.
 
 ### Team norms and availability assumptions
 
@@ -106,8 +106,8 @@ responsive layout, downloaded-file naming, and PDF legibility.
 |---|---|---|---|
 | Audio formats and LSB capacity are inconsistent | Medium / High | Support a small, documented format set first; validate capacity before processing; use fixture files. | Bryan Goodman |
 | Upload or download security flaw | Medium / High | Allowlist formats, size limits, server-side filenames, isolated storage, and negative tests. | Jamaal Spratley + Bryan Goodman |
-| UI blocks during file processing | Medium / Medium | Return an experiment ID/status promptly; use background worker if measured processing exceeds responsiveness target. | Jamaal Spratley |
-| PDF/report data does not match experiment | Low / High | Generate reports from immutable experiment metadata and test a representative report per carrier. | Member B |
+| UI blocks during file processing | Medium / Medium | Return an experiment ID/status promptly; use background worker if measured processing exceeds the responsiveness target. | Jamaal Spratley |
+| PDF/report data does not match experiment | Low / High | Generate reports from immutable experiment metadata and test a representative report per carrier. | Kendra Pelzer |
 | Late integration failures | Medium / High | Demo cross-team integration every Wednesday; keep API contract versioned and tested. | Jamaal Spratley |
 | Scope pressure | High / Medium | Preserve the three carrier round trips and report workflow; defer advanced detection and optional Celery/Redis only by recorded team decision. | Entire team |
 
