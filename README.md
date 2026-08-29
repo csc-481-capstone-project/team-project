@@ -9,7 +9,7 @@ Our team project for CSC 481
 Senior at Fayetteville State University currently pursuing cybersecurity as a newfound passion. I enjoy working out, occasional gaming, and traveling. I am an Air Force veteran. My best assignment occurred during my time stationed at Aviano Air Base Italy. I plan on using my knowledge to help my team use the information and technology gathered during our time in the cybersecurity program to achieve our goals.  
 #
 ### Kendra Pelzer
-I am a senior pursuing dual degrees in Computer Science and Cybersecurity. I enjoy reading, listening to music, and studying different languages.
+I am a senior pursuing dual degrees in Computer Science and Cybersecurity. I enjoy reading, listening to music, and studying different languages. I hope to use the information and knowledge I've learned over the past few years to help create a project worthy of demonstration.
 #
 ### Jamaal Spratley
 Senior at Fayetteville State University assigned to Team 2 as the leader. Senior at Fayetteville State University assigned to Team 2 as the leader. I am pursuing my bachelor's in cybersecurity.
