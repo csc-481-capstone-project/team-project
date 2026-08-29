@@ -6,7 +6,7 @@ Our team project for CSC 481
 ## Team Members
 
 ### Bryan Goodman
-Senior at Fayetteville State University who is a member of Team 2. 
+Senior at Fayetteville State University who is a member of Team 2. I enjoy working out, occasional gaming, and traveling. I am an Air Force veteran. My best assignment occurred during my time stationed at Aviano Italy. I plan on using my knowledge to help my team use the information and technology gathered during our time in the cybersecurity program. 
 #
 ### Kendra Pelzer
 I am a senior pursuing dual degrees in Computer Science and Cybersecurity. I enjoy reading, listening to music, and studying different languages.
