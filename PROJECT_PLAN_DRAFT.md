@@ -40,9 +40,9 @@ heuristics and limitations, not proof that content is or is not steganographic.
 | Core steganography | Bryan Goodman| Image/audio/text embed-extract modules, carrier validation, test vectors |
 | Cryptography and services | Bryan Goodman| AES utility, key/passphrase handling policy, experiment orchestration APIs |
 | Web experience | Kendra Pelzer | Bootstrap pages, accessible forms, progress/status display, download flows |
-| Detection and visuals | Kendra Pelzer with Bryan Goodman review | Statistical heuristics, Matplotlib charts, plain-language results |
-| Reporting | Kendra Pelzer with Jamaal Spratley review | PDF template, experiment report generator, report validation |
-| Quality and documentation | Kendra Pelzer | Pytest suite, test plan, README, user guide, final demo script |
+| Detection and visuals | Bryan Goodman (detection logic/API); Kendra Pelzer (visualization/UI) | Statistical detection calculations and API results; Matplotlib charts, accessible UI display, and plain-language explanations |
+| Reporting | Jamaal Spratley (report service/data); Kendra Pelzer (template/QA) | Experiment metadata and report generation; PDF template/layout, readability checks, and report validation |
+| Quality and documentation | All team members; Kendra Pelzer coordinates QA | Each member tests and documents their component; QA test plan, frontend/API-flow tests, accessibility checks, user guide, and UI documentation |
 | Integration and release | Jamaal Spratley | Pull-request enforcement, end-to-end tests, staging/deployment, release tag |
 
 ## 3. Milestones, dependencies, and acceptance gates
@@ -60,29 +60,29 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 | Week / dates | Jamaal Spratley | Bryan Goodman - Backend | Kendra Pelzer - Frontend/QA | Shared milestone |
 |---|---|---|---|---|
-| 1: Aug 31-Oct 6 | Create repo, branches/PR rules, issue board, API draft | Research libraries; define carrier interfaces and test vectors | Wireframes, Bootstrap design tokens, test-plan outline | M1 design review and scope lock |
-| 2: Oct 7-13 | Scaffold Flask/Django app, config, CI, upload policy | Implement AES utility and image-LSB round trip | Build layout, upload form, validation/error UI | Image workflow usable locally |
-| 3: Oct 14-20 | Integrate APIs, review security controls | Implement audio LSB and zero-width text modules; unit tests | Create experiment/history UI and API test fixtures | M2 carrier-core gate |
-| 4: Oct 21-27 | Define job/status API and staging environment | Add extraction endpoints and robust file validation | Add progress/status components and accessibility pass | End-to-end embed/extract beta |
-| 5: Oct 28-Nov 4 | Integrate all workflows; resolve API/UI defects | Add experiment metadata persistence and error handling | Connect UI to APIs; add download flows and smoke tests | M3 integrated beta |
-| 6: Nov 5-11 | Review report schema and performance risks | Implement/verify detection service inputs and API results | Build charts, detection explanations, PDF report template/generation | M4 report-and-detection gate |
-| 7: Nov 12-18 | Deployment rehearsal, release checklist, PR audit | Security/edge-case fixes and performance profiling | Regression suite, docs, accessibility, user guide | M5 release candidate |
-| 8: Nov 19-25 | Release tag, demo coordination, presentation integration | Technical demo segment; final core fixes only | QA sign-off, final report samples, demo flow | M6 final demo and retrospective |
+| 3-7: Aug 31-Oct 4 | Create repo, branches/PR rules, issue board, API draft | Research libraries; define carrier interfaces and test vectors | Wireframes, Bootstrap design tokens, test-plan outline | M1 design review and scope lock |
+| 8: Oct 5-11 | Scaffold Flask/Django app, config, CI, upload policy | Implement AES utility and image-LSB round trip | Build layout, upload form, validation/error UI | Image workflow usable locally |
+| 9: Oct 12-18 | Integrate APIs, review security controls | Implement audio LSB and zero-width text modules; unit tests | Create experiment/history UI and API test fixtures | M2 carrier-core gate |
+| 10: Oct 19-25 | Define job/status API and staging environment | Add extraction endpoints and robust file validation | Add progress/status components and accessibility pass | End-to-end embed/extract beta |
+| 11: Oct 26-Nov 1 | Integrate all workflows; resolve API/UI defects | Add experiment metadata persistence and error handling | Connect UI to APIs; add download flows and smoke tests | M3 integrated beta |
+| 12: Nov 2-8 | Review report schema and performance risks | Implement/verify detection service inputs and API results | Build charts, detection explanations, PDF report template/generation | M4 report-and-detection gate |
+| 13: Nov 9-15 | Deployment rehearsal, release checklist, PR audit | Security/edge-case fixes and performance profiling | Regression suite, docs, accessibility, user guide | M5 release candidate |
+| 14-15: Nov 16-29 | Release tag, demo coordination, presentation integration | Technical demo segment; final core fixes only | QA sign-off, final report samples, demo flow | M6 final demo and retrospective |
 
 ## 5. Operating schedule
 
-| Cadence | Participants |
-|---|---|
-| Every Saturday | Team members will meet every Saturday to discuss next week's plans, combine work, and submit a weekly update/assignments.
+| Cadence | Participants | Purpose
+|---|---|---|
+| Every Saturday | All Team Members | Review progress, discuss next tasks, combine work, and record weekly updates/assignments.
 
 ### Team norms and availability assumptions
 
-- Each member reserves two focused implementation blocks weekly plus the three
-  team touchpoints above.
+- Each member reserves two focused implementation blocks weekly plus the team touchpoints above.
 - Work is visible on the issue board before implementation begins.
 - A blocker is escalated in the team channel within one business day.
 - No new feature begins during Week 8 without unanimous agreement; only
   demonstration-critical fixes are admitted.
+- The project must maintain at least 70% automated test coverage, measured with Pytest coverage reporting.
 
 ## 6. Git and quality workflow
 
