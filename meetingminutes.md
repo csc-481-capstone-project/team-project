@@ -4,3 +4,8 @@
 - Tasks assigned: create repository 
 - Decisions/results: complete
 - Next meeting: 8/29/26 2:00 PM
+- Meeting 2
+- Attendees: bryan, Kendra, Jamaal
+- Tasks assigned: project plan timeline
+- Result: complete
+- Next meeting: 9/5/26
