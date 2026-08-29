@@ -4,7 +4,7 @@
 
 - **Title:** CSC 481 Capstone Project Comprehensive Web-Based Steganography Sandbox
 - **Domain:** Full-stack development and system integration
-- **Our Purpose:** Our goal as a team is to Build an educational web application that lets authorized users
+- **Our Plan:** Our goal as a team is to Build an educational web application that lets authorized users
   encrypt, embed, extract, inspect, and document steganography experiments.
 - **Stack:** Flask or Django, Bootstrap, Python, Matplotlib, ReportLab or
   WeasyPrint, Pytest, and GitHub.
