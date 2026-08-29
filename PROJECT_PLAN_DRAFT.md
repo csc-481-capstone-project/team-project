@@ -71,7 +71,7 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 ## 5. Operating schedule
 
-| Cadence | Participants | Purpose | Output |
+| Cadence | Participants |
 |---|---|---|---|
 | Every Saturday | Team members will meet every Saturday to discuss next week's plans, combine work, and submit a weekly update/assingments.
 
