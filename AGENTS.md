@@ -2,9 +2,9 @@
 
 ## Project
 
-- **Title:** Comprehensive Web-Based Steganography Sandbox
+- **Title:** CSC 481 Capstone Project Comprehensive Web-Based Steganography Sandbox
 - **Domain:** Full-stack development and system integration
-- **Purpose:** Build an educational web application that lets authorized users
+- **Our Purpose:** Our goal as a team is to Build an educational web application that lets authorized users
   encrypt, embed, extract, inspect, and document steganography experiments.
 - **Stack:** Flask or Django, Bootstrap, Python, Matplotlib, ReportLab or
   WeasyPrint, Pytest, and GitHub.
@@ -23,11 +23,11 @@
 
 ## Team ownership
 
-- **Team Leader:** full-stack integration, REST API design, Git workflow,
+- **Team Leader:** Jamaal Spratley - full-stack integration, REST API design, Git workflow,
   deployment, and release coordination.
-- **Member A (Backend):** steganography algorithms, encryption, service layer,
+- **Member A (Backend):** Bryan Goodman - steganography algorithms, encryption, service layer,
   and REST APIs.
-- **Member B (Frontend/QA):** Bootstrap UI/UX, visualizations, Pytest suite,
+- **Member B (Frontend/QA):** Kendra Pelzer - Bootstrap UI/UX, visualizations, Pytest suite,
   documentation, and accessibility checks.
 
 ## Working agreements
