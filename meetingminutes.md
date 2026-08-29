@@ -1,11 +1,11 @@
 ## Meeting template
 - Date and time: 8/22/26 2:00 PM
-- Attendees: Bryan, Kendra, jamaal 
+- Attendees: Bryan, Kendra, Jamaal 
 - Tasks assigned: create repository 
 - Decisions/results: complete
 - Next meeting: 8/29/26 2:00 PM
-- Meeting 2
-- Attendees: bryan, Kendra, Jamaal
+- Meeting 2 8/29/26 2 PM
+- Attendees: Bryan, Kendra, Jamaal
 - Tasks assigned: project plan timeline
 - Result: complete
-- Next meeting: 9/5/26
+- Next meeting: 9/5/26 2 PM 
