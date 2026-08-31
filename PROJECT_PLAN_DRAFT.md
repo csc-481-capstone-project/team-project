@@ -58,17 +58,27 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 ## 4. Weekly task breakdown and ownership
 
-| Week / dates | Jamaal Spratley | Bryan Goodman - Backend | Kendra Pelzer - Frontend/QA | Shared milestone |
-|---|---|---|---|---|
-| 1: Aug 31-Oct 6 | Create repo, branches/PR rules, issue board, API draft | Research libraries; define carrier interfaces and test vectors | Wireframes, Bootstrap design tokens, test-plan outline | M1 design review and scope lock |
-| 2: Oct 7-13 | Scaffold Flask/Django app, config, CI, upload policy | Implement AES utility and image-LSB round trip | Build layout, upload form, validation/error UI | Image workflow usable locally |
-| 3: Oct 14-20 | Integrate APIs, review security controls | Implement audio LSB and zero-width text modules; unit tests | Create experiment/history UI and API test fixtures | M2 carrier-core gate |
-| 4: Oct 21-27 | Define job/status API and staging environment | Add extraction endpoints and robust file validation | Add progress/status components and accessibility pass | End-to-end embed/extract beta |
-| 5: Oct 28-Nov 4 | Integrate all workflows; resolve API/UI defects | Add experiment metadata persistence and error handling | Connect UI to APIs; add download flows and smoke tests | M3 integrated beta |
-| 6: Nov 5-11 | Review report schema and performance risks | Implement/verify detection service inputs and API results | Build charts, detection explanations, PDF report template/generation | M4 report-and-detection gate |
-| 7: Nov 12-18 | Deployment rehearsal, release checklist, PR audit | Security/edge-case fixes and performance profiling | Regression suite, docs, accessibility, user guide | M5 release candidate |
-| 8: Nov 19-25 | Release tag, demo coordination, presentation integration | Technical demo segment; final core fixes only | QA sign-off, final report samples, demo flow | M6 final demo and retrospective |
+| Week | Tasks | Responsible | Expected outcome | Testing requirements | GitHub deliverables |
+|---|---|---|---|---|---|
 
+| Week | Tasks | Responsible | Expected outcome | Testing requirements | GitHub deliverables |
+|---|---|---|---|---|---|
+| 1 | Define scope, responsible-use policy, security goals, and Git workflow requiring feature branches and pull requests | Jamaal Spratley | Approved project plan and contribution process | Review security risks and branch/PR rules | `README.md`,  `meetingminutes.md` |
+| 2 | Design system architecture: frontend, backend, async jobs, Redis/Celery option, file storage, visualization, and reporting flow | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Shared architecture and data-flow design | Team architecture review | `PROJECT_PLAN_DRAFT.md`, `AGENTS.md` |
+| 3 | Set up repository, CI, branch protections, formatting, linting, tests, and pull-request checks | Jamaal Spratley | Enforced, repeatable engineering workflow | Verify CI blocks failed lint/build/test checks | GitHub Actions, branch policy documentation, issue templates |
+| 4 | Build responsive frontend shell, navigation, loading states, error states, and accessible component system | Bryan Goodman | UI foundation that clearly supports long-running jobs | Responsive and accessibility testing | Frontend application shell, component tests |
+| 5 | Build backend foundation: authentication, authorization, API conventions, job-status model, and audit logging | Kendra Pelzer | Secure API platform supporting user-scoped work | Unit tests for access controls and invalid requests | Backend API, OpenAPI specification, auth tests |
+| 6 | Implement secure file upload handling: MIME/type checks, filename sanitization, size limits, image/PDF validation, isolated storage | Kendra Pelzer | Safe upload pipeline for permitted files | Invalid extension, oversized, malformed, and path-traversal tests | Upload service, security tests, upload policy documentation |
+| 7 | Implement secure download handling: generated filenames, authorization checks, expiring links or controlled endpoints, safe response headers | Kendra Pelzer | Users can safely retrieve only their own generated files | Unauthorized download, header, and filename-sanitization tests | Download endpoint, integration tests, security notes |
+| 8 | Build asynchronous job processing for encode/decode operations using Celery/Redis or an equivalent queue | Kendra Pelzer | Long-running work does not block the web request/UI | Queue retry, failure, timeout, and concurrent-job tests | Worker service, queue configuration, job API documentation |
+| 9 | Connect frontend to asynchronous jobs: progress polling/status updates, cancellation handling, loading indicators, and result retrieval | Bryan Goodman + Kendra Pelzer | Smooth UI that remains usable while jobs run | End-to-end success, failure, retry, and cancellation tests | Job-status UI, E2E test suite |
+| 10 | Implement LSB image encoding/decoding with capacity validation and secure temporary-file lifecycle | Kendra Pelzer | Reliable baseline steganography workflow | Round-trip, capacity-boundary, corrupted-image, and cleanup tests | fixtures, algorithm documentation |
+| 11 | Build dynamic analysis visualizations: histograms, channel views, bit-plane views, and capacity charts generated with Matplotlib and embedded as base64 HTML images | Bryan Goodman + Kendra Pelzer | Interactive, self-contained visual analysis results | Validate chart generation, base64 rendering, and large-image performance | Visualization service, analysis pages, visual tests |
+| 12 | Generate downloadable PDF reports using ReportLab or WeasyPrint, including job metadata, visualizations, findings, and responsible-use notice | Kendra Pelzer + Bryan Goodman | Polished report per completed job | PDF content, layout, download authorization, and malformed-input tests | Report generator, report templates, sample report fixtures |
+| 13 | Add optional encryption, rate limits, quotas, and abuse-reporting controls | Kendra Pelzer + Jamaal Spratley | Safer public-facing sandbox with operational controls | Encryption vectors, wrong-password, quota, and rate-limit tests | Encryption module, rate-limit middleware, operations guide |
+| 14 | Run security, performance, accessibility, and reliability hardening across uploads, jobs, visualizations, downloads, and reports | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Release candidate meets agreed quality bar | OWASP review, dependency scan, load tests, WCAG audit, queue stress test | Test reports, remediation PRs, release checklist |
+| 15 | Beta release through pull requests only; gather feedback, triage issues, fix defects, and finalize user/admin documentation | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Stable, documented beta | Full regression, user acceptance, and PR review verification | Beta tag, changelog, user guide, deployment guide |
+| 16 |demonstrate end-to-end workflow, perform rollback drill, and document retrospective/roadmap | Jamaal Spratley | Production-ready steganography sandbox | Production smoke test, download/report verification, rollback test | final deployment docs, final presentation (Q&A) |
 ## 5. Operating schedule
 
 | Cadence | Participants |
