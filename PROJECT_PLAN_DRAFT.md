@@ -63,7 +63,7 @@ heuristics and limitations, not proof that content is or is not steganographic.
 
 | Week | Tasks | Responsible | Expected outcome | Testing requirements | GitHub deliverables |
 |---|---|---|---|---|---|
-| 1 | Define scope, responsible-use policy, security goals, and Git workflow requiring feature branches and pull requests | Jamaal Spratley | Approved project plan and contribution process | Review security risks and branch/PR rules | `README.md`,  `meetingminutes.md` |
+| 1 | Define scope, responsible-use policy, security goals, and Git workflow requiring feature branches and pull requests | Jamaal Spratley + Kendra Pelzer + Bryan Goodman | Approved project plan and contribution process | Review security risks and branch/PR rules | `README.md`,  `meetingminutes.md` |
 | 2 | Design system architecture: frontend, backend, async jobs, Redis/Celery option, file storage, visualization, and reporting flow | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Shared architecture and data-flow design | Team architecture review | `PROJECT_PLAN_DRAFT.md`, `AGENTS.md` |
 | 3 | Set up repository, CI, branch protections, formatting, linting, tests, and pull-request checks | Jamaal Spratley | Enforced, repeatable engineering workflow | Verify CI blocks failed lint/build/test checks | GitHub Actions, branch policy documentation, issue templates |
 | 4 | Build responsive frontend shell, navigation, loading states, error states, and accessible component system | Bryan Goodman | UI foundation that clearly supports long-running jobs | Responsive and accessibility testing | Frontend application shell, component tests |
