@@ -78,7 +78,7 @@ heuristics and limitations, not proof that content is or is not steganographic.
 | 13 | Add optional encryption, rate limits, quotas, and abuse-reporting controls | Kendra Pelzer + Jamaal Spratley | Safer public-facing sandbox with operational controls | Encryption vectors, wrong-password, quota, and rate-limit tests | Encryption module, rate-limit middleware, operations guide |
 | 14 | Run security, performance, accessibility, and reliability hardening across uploads, jobs, visualizations, downloads, and reports | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Release candidate meets agreed quality bar | OWASP review, dependency scan, load tests, WCAG audit, queue stress test | Test reports, remediation PRs, release checklist |
 | 15 | Beta release through pull requests only; gather feedback, triage issues, fix defects, and finalize user/admin documentation | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Stable, documented beta | Full regression, user acceptance, and PR review verification | Beta tag, changelog, user guide, deployment guide |
-| 16 |demonstrate end-to-end workflow, perform rollback drill, and document retrospective/roadmap | Jamaal Spratley | Production-ready steganography sandbox | Production smoke test, download/report verification, rollback test | final deployment docs, final presentation (Q&A) |
+| 16 |demonstrate end-to-end workflow, perform rollback drill, and document retrospective/roadmap | Jamaal Spratley + Bryan Goodman + Kendra Pelzer | Production-ready steganography sandbox | Production smoke test, download/report verification, rollback test | final deployment docs, final presentation (Q&A) |
 ## 5. Operating schedule
 
 | Cadence | Participants |
