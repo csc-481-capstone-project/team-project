@@ -1,0 +1,16 @@
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Private uploads and generated results
+private_uploads/
+outputs/
+
+# Secrets and local settings
+.env
+
+# VS Code workspace settings
+.vscode/
