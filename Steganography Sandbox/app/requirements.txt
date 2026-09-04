@@ -1,3 +1,11 @@
 the uploading of media files(images and audio) to the server.
 the entry of harmless text messages to be hidden within the media files.
 the downloading of the media files with the hidden messages from the server.
+Python
+Flask
+Pillow
+wave
+Bootstrap
+for your venv 
+the create the venv use the command: python -m venv venv
+then activate the venv by clickling on the venv folder the clicking scripts finaly clicking activate.ps1 for the terminal to activate.
