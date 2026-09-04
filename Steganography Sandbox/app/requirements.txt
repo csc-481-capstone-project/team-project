@@ -1,0 +1,3 @@
+the uploading of media files(images and audio) to the server.
+the entry of harmless text messages to be hidden within the media files.
+the downloading of the media files with the hidden messages from the server.
