@@ -7,7 +7,7 @@ Organized the backend portion of the capstone project with folders created and s
 After creating backend files, the files were moved and shared within the team project folder. Collectively creating a branch/pull request for merger. 
 
 ## Lessons Learned
-
+Realizing that GitHub and Git branches are not the same. Creating a branch and adding files locally does not automatically place them on GitHub. Each file must be committed, pushed and reviewed by each member beforehand. 
 
 ## Team Member Contributions
 
