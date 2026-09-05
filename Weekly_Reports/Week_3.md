@@ -4,6 +4,7 @@
 Organized the backend portion of the capstone project with folders created and starter files present for encryption, image, audio, and text steganography fatures. 
 
 ## Subtasks Completed
+After creating backend files, the files were moved and shared within the team project folder. Collectively creating a branch/pull request for merger. 
 
 ## Lessons Learned
 
