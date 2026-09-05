@@ -1,17 +1,17 @@
 #   Week 3 Capstone Report
 
 ## Milestones Achieved
-Organized the backend portion of the capstone project with folders created and starter files present for encryption, image, audio, and text steganography fatures.
+Organized the backend portion of the capstone project with folders created and starter files present for encryption, image, audio, and text steganography features.
 
-we have the requirements of the venv.
+We have the requirements for the venv.
 
 ## Subtasks Completed
 After creating backend files, the files were moved and shared within the team project folder. Collectively creating a branch/pull request for merger. 
-all of the files are together and ready for update.
+All of the files are together and ready for update.
 
 ## Lessons Learned
 Realizing that GitHub and Git branches are not the same. Creating a branch and adding files locally does not automatically place them on GitHub. Each file must be committed, pushed and reviewed by each member beforehand. 
-futhered my allready weak knowlogde with git hub.
+How to better use GitHub.
 
 
 ## Team Member Contributions
@@ -26,4 +26,4 @@ This week, I developed the initial frontend design and integration plan for the 
 
 
 ## Jamaal Spratley
-this week i created the steganography sanbox files created the requiremnets folder for user to use the venv and created the Git workflow. i am progessing as planned 
+This week, I created the steganography sandbox files, created the requirements folder for users to use the venv, and created the Git workflow. I am progressing as planned 
