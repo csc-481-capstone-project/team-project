@@ -10,3 +10,9 @@
 - Tasks assigned: project plan timeline
 - Result: complete
 - Next meeting: 9/5/26 2 PM 
+#
+- Meeting 2 9/5/26 2 PM
+- Attendees: Bryan, Kendra, Jamaal
+- Tasks assigned: Week 3 update
+- Result: complete
+- Next meeting: 9/12/26 2 PM 
