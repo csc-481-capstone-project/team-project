@@ -1,10 +1,12 @@
 #   Week 3 Capstone Report
 
 ## Milestones Achieved
+Organized the backend portion of the capstone project with folders created and starter files present for encryption, image, audio, and text steganography fatures. 
 
 ## Subtasks Completed
 
 ## Lessons Learned
+
 
 ## Team Member Contributions
 
