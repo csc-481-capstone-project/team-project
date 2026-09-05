@@ -6,17 +6,19 @@ Organized the backend portion of the capstone project with folders created and s
 we have the requirements of the venv.
 
 ## Subtasks Completed
+After creating backend files, the files were moved and shared within the team project folder. Collectively creating a branch/pull request for merger. 
 all of the files are together and ready for update.
 
 ## Lessons Learned
-learned how to use git hub. 
+Realizing that GitHub and Git branches are not the same. Creating a branch and adding files locally does not automatically place them on GitHub. Each file must be committed, pushed and reviewed by each member beforehand. 
+futhered my allready weak knowlogde with git hub.
 
 
 ## Team Member Contributions
 
 ### Bryan Goodman
 This week, I organized and prepared the backend portion of our Capstone Project. I created the folders and starter files needed for the encryption, image, audio, and text steganography features. I also added test files, a list of required Python packages, and a document explaining how the backend will work.
-I created a personal feature branch in the team repository called feature/backend-starter and moved the backend work into the shared project folder.
+I created a personal feature branch in the team repository called feature/backend-starter and moved the backend work into the shared project folder. I do believe I am progressing as planned with minimal complications. 
 
 
 ### Kendra Pelzer
