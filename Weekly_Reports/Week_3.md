@@ -8,11 +8,12 @@ We have the requirements for the venv.
 ## Subtasks Completed
 After creating backend files, the files were moved and shared within the team project folder. Collectively creating a branch/pull request for merger. 
 All of the files are together and ready for update.
+Defined the user workflow and accessibility requirements, created low-fidelity wireframes for the core application screens, developed an initial QA checklist, and documented anticipated frontend API and job-status requirements for future backend integration.
 
 ## Lessons Learned
 Realizing that GitHub and Git branches are not the same. Creating a branch and adding files locally does not automatically place them on GitHub. Each file must be committed, pushed and reviewed by each member beforehand. 
 How to better use GitHub.
-
+Learned that defining the frontend requirements before beginning implementation helps identify what information will be needed from the backend. Planning the user workflow, API interactions, and application states early should make frontend and backend integration easier later in development.
 
 ## Team Member Contributions
 
