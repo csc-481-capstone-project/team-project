@@ -2,7 +2,7 @@
 
 ## Milestones Achieved
 Organized the backend portion of the capstone project with folders created and starter files present for encryption, image, audio, and text steganography features.
-
+Initial frontend planning and design completed.
 We have the requirements for the venv.
 
 ## Subtasks Completed
