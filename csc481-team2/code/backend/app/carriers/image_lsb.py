@@ -40,7 +40,7 @@ def embed(image_path: str | Path, payload: bytes, output_path: str | Path) -> No
     stream = _bits(len(payload).to_bytes(LENGTH_BYTES, "big") + payload)
     pixels = []
     finished = False
-    for pixel in image.getdata():
+    for pixel in image.get_flattened_data():
         values = list(pixel)
         for index in range(3):
             try:
@@ -50,7 +50,7 @@ def embed(image_path: str | Path, payload: bytes, output_path: str | Path) -> No
                 break
         pixels.append(tuple(values))
         if finished:
-            pixels.extend(list(image.getdata())[len(pixels) :])
+            pixels.extend(list(image.get_flattened_data())[len(pixels) :])
             break
 
     image.putdata(pixels)
@@ -62,7 +62,7 @@ def extract(image_path: str | Path) -> bytes:
     with Image.open(image_path) as image:
         if image.mode not in ("RGB", "RGBA"):
             raise ValueError("Only RGB or RGBA PNG images are supported.")
-        bits = [channel & 1 for pixel in image.getdata() for channel in pixel[:3]]
+        bits = [channel & 1 for pixel in image.get_flattened_data() for channel in pixel[:3]]
 
     def read_bytes(start_bit: int, count: int) -> bytes:
         return bytes(
