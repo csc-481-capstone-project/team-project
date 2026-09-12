@@ -27,6 +27,7 @@
 
 **Result:** PASS.
 
+**Completed Pytest**
 ![Completed Pytest](PytestPassed-noWarnings-Errors.png)
 
 *Image 1: Completed pytest and ensured no errors/warnings*
