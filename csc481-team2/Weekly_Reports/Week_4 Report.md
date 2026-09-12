@@ -34,7 +34,7 @@
 *Image 1: Completed pytest and ensured no errors/warnings*
 
 #
-### 3.2 Image Steganography Frontend Interface
+### 3.2 Image Steganography Frontend Interface - Kendra
 
 **Frontend Tests:** Four automated test cases were created to verify that submission with a missing image is rejected, submission with a missing secret message is rejected, submission with a missing passphrase is rejected, and valid image, message, and passphrase inputs successfully pass frontend validation.
 
