@@ -21,7 +21,7 @@ Working with this team, I aim to complete the project and obtain my diploma.
 - `code/` — application source code
 - `Weekly_Reports/` — project documentation
 
-##Team Collaboration Workflow
+## Team Collaboration Workflow
 1. In VS Code, open Source Control and `pull/sync` the main branch.
 2. When creating a branch sure title is descriptive.
 3. Edit only your own member section in this file.
