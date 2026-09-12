@@ -6,7 +6,7 @@
 **Reporting period:** Week 4
 
 ## 1. Milestones achieved
--
+- Successfully complete pytest and ensured no errors and all files passed. 
 -
 -
 -
@@ -22,15 +22,15 @@
 
 ### 3.1 Image upload with Encryption
 
-**Purpose:** Create/Test our first image upload with cryptophy and encryption.
+**Purpose:** Complete a pytest to ensure each script works without any syntax errors. Make sure each test pass without any warnings. 
 
-**Expected result:** To have an image uploaded and also test our encryption processing within the website. 
+**Expected result:** Pytest completed with any errors or warnings fixed. 
 
 **Result:** PASS.
 
+![Completed Pytest](Weekly_Reports/PytestPassed-noWarnings-Errors.png)
 
-
-*Image 1: Complete pytest and ensure no errors*
+*Image 1: Completed pytest and ensured no errors/warnings*
 #
 ### 3.2 Kendra information
 
