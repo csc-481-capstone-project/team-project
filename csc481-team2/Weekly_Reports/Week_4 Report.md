@@ -3,11 +3,12 @@
 ## Comprehensive Web-Based Steganography Sandbox 
 
 **Team:** Bryan Goodman, Kendra Pelzer, Jamaal Spratley
+#
 **Reporting period:** Week 4
 
 ## 1. Milestones achieved
 - Successfully complete pytest and ensured no errors and all files passed and had no errors/warning messages. 
--
+- Developed the initial frontend interface for the Image LSB steganography workflow.
 - Successfully completed the first upload link between the frontend and backend.
 
 ## 2. Subtasks completed
@@ -33,17 +34,15 @@
 *Image 1: Completed pytest and ensured no errors/warnings*
 
 #
-### 3.2 Kendra information
+### 3.2 Image Steganography Frontend Interface
 
-**Purpose:** 
+**Frontend Tests:** Four automated test cases were created to verify that submission with a missing image is rejected, submission with a missing secret message is rejected, submission with a missing passphrase is rejected, and valid image, message, and passphrase inputs successfully pass frontend validation.
 
-**Expected result:** 
+**Expected result:** All required fields are validated.
 
-**Result:** PASS.
-
-
-
-*Image 2: *
+**Result:** All four automated tests passed. Manual testing was also performed in the browser to verify the interface layout, required-field behavior, and successful validation status message.
+![Validation PyTest](Automated_Validation_Week4.png)
+*Image 2: Automated validation tests passed to include frontend interface*
 
 #
 ### 3.3 Jamaal Part
@@ -62,7 +61,7 @@
 
 - Using codespace became really convenient this week. Using codespace inside of the repository instead of using the VScode app was the best lesson learned. Definitely easier to merge and create pull requests.
 - Ensuring naming is correct and matches within coding to ensure all files communicate properly. 
-- 
+-  I learned how to translate frontend planning into a functional HTML interface using client-side form validation. I also gained hands-on experience using Pytest and Playwright for automated browser testing.
 - png have multiple forms like RGB and RGBA.
 
 ## 5. Progress against the plan
