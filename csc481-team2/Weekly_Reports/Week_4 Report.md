@@ -66,6 +66,6 @@
 
 ## 5. Progress against the plan
 
-The Week 4 plan required the team to complete pytests, (KENDRA PART), (JAMAAL PART) and ensure uploading commenced smoothly while testing the encryption process. 
+The Week 4 plan required the team to complete pytests, develop the frontend UI, (JAMAAL PART) and ensure uploading commenced smoothly while testing the encryption process. 
 
 The Week 5 focus will be to experiment metadata, error handling, integration fixes, and download flow.
