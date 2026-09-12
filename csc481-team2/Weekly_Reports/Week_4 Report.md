@@ -56,7 +56,7 @@
 
 
 
-*Image 3: * csc481-team2\Weekly_Reports\encodedmessage.png
+*Image 3: * encodedmessage.png
 
 ## 4. Lessons learned
 
