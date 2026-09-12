@@ -54,19 +54,22 @@
 
 **Result:** PASS.
 
+![completed upload](encodedmessage.png)
 
 
-*Image 3: * encodedmessage.png
+
+*Image 3: * a image of the message being sucessfully encoded 
 
 ## 4. Lessons learned
 
 - Using codespace became really convenient this week. Using codespace inside of the repository instead of using the VScode app was the best lesson learned. Definitely easier to merge and create pull requests.
 - Ensuring naming is correct and matches within coding to ensure all files communicate properly. 
 - 
-- png have multiple forms like RGB and RGBA.
+- png has multiple forms like RGB and RGBA.
 
 ## 5. Progress against the plan
 
-The Week 4 plan required the team to complete pytests, (KENDRA PART), (JAMAAL PART) and ensure uploading commenced smoothly while testing the encryption process. 
+The Week 4 plan required the team to complete pytests, (KENDRA PART), connect frontend and backend. and ensure uploading commenced smoothly while testing the encryption process.
+
 
 The Week 5 focus will be to experiment metadata, error handling, integration fixes, and download flow.
