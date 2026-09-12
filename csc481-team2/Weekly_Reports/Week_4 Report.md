@@ -6,8 +6,7 @@
 **Reporting period:** Week 4
 
 ## 1. Milestones achieved
-- Successfully complete pytest and ensured no errors and all files passed. 
--
+- Successfully complete pytest and ensured no errors and all files passed and had no errors/warning messages. 
 -
 -
 
@@ -31,6 +30,7 @@
 ![Completed Pytest](PytestPassed-noWarnings-Errors.png)
 
 *Image 1: Completed pytest and ensured no errors/warnings*
+
 #
 ### 3.2 Kendra information
 
@@ -43,6 +43,7 @@
 
 
 *Image 2: *
+
 #
 ### 3.3 Jamaal Part
 
@@ -58,13 +59,13 @@
 
 ## 4. Lessons learned
 
-- 
-- 
+- Using codespace became really convenient this week. Using codespace inside of the repository instead of using the VScode app was the best lesson learned. Definitely easier to merge and create pull requests.
+- Ensuring naming is correct and matches within coding to ensure all files communicate properly. 
 - 
 - 
 
 ## 5. Progress against the plan
 
-The Week 3 plan required the team to.....
+The Week 4 plan required the team to complete pytests, (KENDRA PART), (JAMAAL PART) and ensure uploading commenced smoothly while testing the encryption process. 
 
-The Week 4 focus was to impliment the uploading process with encryption. 
+The Week 5 focus will be to experiment metadata, error handling, integration fixes, and download flow.
