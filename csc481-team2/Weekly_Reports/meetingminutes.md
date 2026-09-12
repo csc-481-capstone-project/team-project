@@ -5,13 +5,13 @@
 - Decisions/results: complete
 - Next meeting: 8/29/26 2:00 PM
 #
-- Meeting 2 8/29/26 2 PM
+- Meeting date 8/29/26 2 PM
 - Attendees: Bryan, Kendra, Jamaal
 - Tasks assigned: project plan timeline
 - Result: complete
 - Next meeting: 9/5/26 2 PM 
 #
-- Meeting 2 9/5/26 2 PM
+- Meeting date 9/5/26 2 PM
 - Attendees: Bryan, Kendra, Jamaal
 - Tasks assigned: Week 3 update
 - Result: complete
