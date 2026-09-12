@@ -28,7 +28,7 @@
 
 **Result:** PASS.
 
-![Completed Pytest](csc481-team2/Weekly_Reports/PytestPassed-noWarnings-Errors.png)
+![Completed Pytest](PytestPassed-noWarnings-Errors.png)
 
 *Image 1: Completed pytest and ensured no errors/warnings*
 #
