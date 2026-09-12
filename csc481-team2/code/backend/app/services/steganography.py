@@ -3,13 +3,14 @@ from pathlib import Path
 from PIL import Image
 
 
-def encode_message(input_path: Path, output_path: Path, message: str) -> None:
-    """Hide a UTF-8 text message inside a PNG using RGB least-significant bits."""
+def encode_payload(input_path: Path, output_path: Path, payload: bytes) -> None:
+    """Hide binary payload bytes inside a PNG using RGB least-significant bits."""
 
-    message_bytes = message.encode("utf-8")
+    if not isinstance(payload, bytes):
+        raise TypeError("Payload must be bytes.")
 
-    # Header: 4 bytes that identify our payload + 4 bytes for message length.
-    payload = b"STEG" + len(message_bytes).to_bytes(4, "big") + message_bytes
+    # This header lets the future decoder find the payload length.
+    payload = b"STEG" + len(payload).to_bytes(4, "big") + payload
 
     # Convert every payload byte into eight 0/1 bits.
     payload_bits = []

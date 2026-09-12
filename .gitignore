@@ -7,7 +7,7 @@ __pycache__/
 
 # Private uploads and generated results
 private_uploads/
-outputs/
+private_outputs/
 
 # Secrets and local settings
 .env

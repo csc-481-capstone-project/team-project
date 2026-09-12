@@ -6,7 +6,8 @@ import re
 from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
 
-from services.steganography import encode_message
+from services.crypto import encrypt
+from services.image_lsb import embed
 
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 5 MB.
@@ -24,7 +25,7 @@ MAX_DIMENSION = 4000
 
 @app.route("/")
 def home():
-    return render_template("upload.html")
+    return render_template("image_stego.html")
 
 
 @app.post("/api/v1/uploads")
@@ -67,17 +68,17 @@ def encode_png():
     data = request.get_json(silent=True) or {}
 
     upload_id = data.get("upload_id", "")
-    message = data.get("message", "")
+    secret_message = data.get("message", "")
 
     # A valid upload ID is the 32-character hexadecimal value created by uuid4().
     if not re.fullmatch(r"[a-f0-9]{32}", upload_id):
         return jsonify({"error": "Invalid upload ID."}), 400
 
-    if not isinstance(message, str) or not message.strip():
-        return jsonify({"error": "Please enter a message to encode."}), 400
+    if not isinstance(secret_message, str) or len(secret_message) < 1:
+        return jsonify({"error": "secret_message must be at least 1 character."}), 400
 
-    if len(message) > 500:
-        return jsonify({"error": "Message must be 500 characters or fewer."}), 400
+    if len(secret_message) > 100:
+        return jsonify({"error": "secret_message must be 100 characters or fewer."}), 400
 
     input_path = UPLOAD_FOLDER / f"{upload_id}.png"
 
@@ -88,7 +89,8 @@ def encode_png():
     output_path = OUTPUT_FOLDER / f"{output_id}.png"
 
     try:
-        encode_message(input_path, output_path, message)
+        encrypted_payload = encrypt(secret_message.encode("utf-8"), secret_message)
+        embed(input_path, encrypted_payload, output_path)
     except ValueError as error:
         return jsonify({"error": str(error)}), 400
 
