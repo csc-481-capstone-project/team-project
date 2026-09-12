@@ -8,7 +8,7 @@
 ## 1. Milestones achieved
 - Successfully complete pytest and ensured no errors and all files passed and had no errors/warning messages. 
 -
--
+- Successfully completed the first upload link between the frontend and backend.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
@@ -48,22 +48,22 @@
 #
 ### 3.3 Jamaal Part
 
-**Purpose:** 
+**Purpose:** take the code from kendra and bryan and make them work tegther to upload an image and embed a message into the image with a key to later decrypt 
 
-**Expected result:** 
+**Expected result:** the upload worked and the message is embedded.
 
 **Result:** PASS.
 
 
 
-*Image 3: *
+*Image 3: * csc481-team2\Weekly_Reports\encodedmessage.png
 
 ## 4. Lessons learned
 
 - Using codespace became really convenient this week. Using codespace inside of the repository instead of using the VScode app was the best lesson learned. Definitely easier to merge and create pull requests.
 - Ensuring naming is correct and matches within coding to ensure all files communicate properly. 
 - 
-- 
+- png have multiple forms like RGB and RGBA.
 
 ## 5. Progress against the plan
 
