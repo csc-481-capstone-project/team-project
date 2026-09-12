@@ -28,7 +28,7 @@
 
 **Result:** PASS.
 
-![Completed Pytest](Weekly_Reports/PytestPassed-noWarnings-Errors.png)
+![Completed Pytest](/PytestPassed-noWarnings-Errors.png)
 
 *Image 1: Completed pytest and ensured no errors/warnings*
 #
