@@ -30,7 +30,7 @@
 **Result:** Pytest completed on the script steganography.py. All tests passed and had no errors. 
 
 **Completed Pytest**
-*![Completed Pytest](steganography_pytest_week5)
+*![Completed Pytest](steganography_pytest_week5.png)
 *Image 1: Steganography.py pytest completion with all test passed*
 
 #
