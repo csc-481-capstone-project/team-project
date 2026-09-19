@@ -8,7 +8,7 @@
 
 ## 1. Milestones achieved
 - Ensured the PNG steganography was implemented and verified with the payload encoder.
-- Completed pytest of steganography.py. All tests passed with no errors occurring. 
+- Completed pytest of steganography.py. All tests passed with no warnings occurring. 
 - Developed the initial frontend interface for the Audio LSB steganography workflow, including WAV file selection, client-side validation, and status feedback.
 - audio files are uploading and downloading.
 
@@ -25,9 +25,9 @@
 
 **Purpose:** Test the script steganography.py and ensure the steganography payload encoder is implemented and verified. 
 
-**Expected Result:** Testing of the steganography.py script with no errors and all tests passed during pytest. 
+**Expected Result:** Testing of the steganography.py script with no warnings and all tests passed during pytest. 
 
-**Result:** Pytest completed on the script steganography.py. All tests passed and had no errors. 
+**Result:** Pytest completed on the script steganography.py. All tests passed and had no warnings. 
 
 **Completed Pytest**
 *![Completed Pytest](steganography_pytest_week5.png)
@@ -65,7 +65,7 @@
 
 ## 5. Progress against the plan
 
-The Week 5 plan required the team to validate the steganography service by creating and completing a pytest which ensured the payload was embedded into a image and recovered. Overall, the team wanted to verify that the encoder was working without errors before integrating it with other applications. 
+The Week 5 plan required the team to validate the steganography service by creating and completing a pytest which ensured the payload was embedded into a image and recovered. Overall, the team wanted to verify that the encoder was working without warnings before integrating it with other applications. 
 
 
 The Week 6 focus will be to take the next steps to complete the stegography sanbox
