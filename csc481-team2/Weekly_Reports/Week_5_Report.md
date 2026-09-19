@@ -23,7 +23,7 @@
 
 ### 3.1 PNG Steganography Implementation and Verification with Payload Encoder - Bryan
 
-**Purpose:** Test the script steganography.py and ensure the PNG steganography payload encoder is implemented and verified. 
+**Purpose:** Test the script steganography.py and ensure the steganography payload encoder is implemented and verified. 
 
 **Expected Result:** Testing of the steganography.py script with no errors and all tests passed during pytest. 
 
