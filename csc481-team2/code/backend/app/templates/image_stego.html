@@ -15,8 +15,23 @@
     <div class="container py-5">
         <div class="card shadow-sm">
             <div class="card-body">
+                <header class="mb-4">
+                    <h1 class="mb-2">Steganography Sandbox</h1>
+                    <p class="text-muted mb-0">
+                    Hide encrypted messages in images or audio files.
+                        </p>
+                </header>
+                <nav class="mb-4" aria-label="Sandbox navigation">
+                <a class="btn btn-primary" href="/">
+                    Image Sandbox
+                </a>
 
-                <h1 class="mb-3">Image Steganography</h1>
+                <a class="btn btn-outline-primary" href="/audio">
+                    Audio Sandbox
+                </a>
+                </nav>
+
+                <h2 class="mb-3">Image Steganography</h2>
                 <p class="text-muted mb-4"> Upload an image and enter a secret message to begin a steganography experiment</p>
                 <form id="imageStegoForm">
 
@@ -141,7 +156,6 @@
                         }
                     });
                     </script>
-
             </div>
         </div>
     </div>

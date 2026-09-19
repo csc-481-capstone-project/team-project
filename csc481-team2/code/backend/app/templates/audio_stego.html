@@ -12,7 +12,15 @@
 </head>
 
 <body class="bg-light">
-    <div class="container py-5">
+    <div class="container py-5"><nav class="mb-4" aria-label="Sandbox navigation">
+        <a class="btn btn-outline-primary" href="/">
+            Image Sandbox
+        </a>
+
+        <a class="btn btn-primary" href="/audio">
+            Audio Sandbox
+        </a>
+        </nav>
         <div class="card shadow-sm">
             <div class="card-body">
 
@@ -67,13 +75,74 @@
                 </div>
 
                 <script>
-                    const form = document.getElementById('audioStegoForm');
-                    const statusMessage = document.getElementById('statusMessage');
+                    const audioForm = document.getElementById("audioStegoForm");
+                    const audioInput = document.getElementById("audioUpload");
+                    const messageInput = document.getElementById("secretMessage");
+                    const passphraseInput = document.getElementById("passphrase");
+                    const audioStatus = document.getElementById("statusMessage");
+                    const audioButton = audioForm.querySelector('button[type="submit"]');
 
-                    form.addEventListener("submit", function(event) {
+                    audioForm.addEventListener("submit", async (event) => {
                         event.preventDefault();
 
-                        statusMessage.textContent = "Audio file and message validated. Ready for steganography processing.";
+                        const audio = audioInput.files[0];
+                        const message = messageInput.value;
+                        const passphrase = passphraseInput.value;
+
+                    if (!audio) {
+                        audioStatus.textContent = "Please select a WAV file.";
+                        return;
+                    }
+
+                    audioButton.disabled = true;
+                    audioStatus.textContent = "Uploading and validating WAV file...";
+
+                    try {
+                        const formData = new FormData();
+                        formData.append("audio", audio);
+
+                        const uploadResponse = await fetch("/api/v1/audio/uploads", {
+                            method: "POST",
+                            body: formData
+                    });
+
+                        const uploadResult = await uploadResponse.json();
+
+                        if (!uploadResponse.ok) {
+                            throw new Error(uploadResult.error || "Audio upload failed.");
+                    }
+                        audioStatus.textContent = "Encrypting and embedding message in audio...";
+
+                        const encodeResponse = await fetch("/api/v1/audio/encode", {
+                            method: "POST",
+                            headers: {
+                            "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                audio_id: uploadResult.audio_id,
+                                message: message,
+                                passphrase: passphrase
+                                })
+                            });
+
+                    const encodeResult = await encodeResponse.json();
+
+                    if (!encodeResponse.ok) {
+                        throw new Error(encodeResult.error || "Audio encoding failed.");
+                        }
+                        audioStatus.innerHTML = `
+                            <strong>Message embedded successfully in audio.</strong><br>
+                            <a class="btn btn-success btn-sm mt-2" href="${encodeResult.download_url}">
+                            Download Encoded Audio
+                            </a>
+                            `;
+
+                        } catch (error) {
+                            audioStatus.textContent = error.message;
+
+                        } finally {
+                            audioButton.disabled = false;
+                        }
                     });
                 </script>
 
