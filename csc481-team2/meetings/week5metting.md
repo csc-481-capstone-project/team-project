@@ -27,19 +27,12 @@
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman  | |
-|Kendra pelzer | |
-|Jamaal spatley|
-
-### Decisions and next steps
-
-- 
-- 
-- 
-
+|Brayn Goodman  | audio files are uploaded and downloaded sucessfully |
+|Kendra pelzer | frontend for audio upload complete|
+|Jamaal spatley| intergated all created files in app.py|
 ## Next scheduled meeting
 
-**Date:** Monday, September 14, 2026
-**Time:** 6:00 PM
+**Date:** thursday , September 24, 2026
+**Time:** 2:00 PM
 **Planned topics:** Week 6 planning, task allocation, 
 review.
