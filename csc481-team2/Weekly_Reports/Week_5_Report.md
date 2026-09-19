@@ -61,7 +61,7 @@
 
 - Unit testing is very important. Testing one feature at a time makes it easier to find any issues that may occur, which is important to find before combining everything with the rest of the application. 
 - I learned how to adapt an existing frontend component for a new steganography carrier while maintaining consistent validation and testing behavior. I also gained additional experience configuring and troubleshooting Pytest/Playwright tests within a new development environment.
-- I learned that html files can only have one <!doctype> per file.
+- I learned that html files can only have one <!doctype> per file so with the use of two htmls i had to make a link so they would have there own space and not conflict 
 
 ## 5. Progress against the plan
 
