@@ -21,7 +21,7 @@
 
 ## 3. Test evidence
 
-### 3.1 PNG Steganography Implementation and Verification with Payload Encoder--Bryan
+### 3.1 PNG Steganography Implementation and Verification with Payload Encoder - Bryan
 
 **Purpose:** Test the script steganography.py and ensure the PNG steganography payload encoder is implemented and verified. 
 
@@ -34,7 +34,7 @@
 *Image 1: Steganography.py pytest completion with all test passed*
 
 #
-### 3.2 Audio Steganography Frontend Interface--Kendra
+### 3.2 Audio Steganography Frontend Interface - Kendra
 
 **Frontend Tests:** Four automated test cases were created to verify that submission with a missing audio file is rejected, submission with a missing secret message is rejected, submission with a missing passphrase is rejected, and valid audio file, message, and passphrase inputs successfully pass frontend validation.
 
