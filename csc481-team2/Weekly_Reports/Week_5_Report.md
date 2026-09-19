@@ -53,7 +53,7 @@
 
 **Result:**  app.py/audio created and and running wave files are able to be uploaed and downladed from the sanbox.
 
-*Image here* ![audio upload sucess](audio.png)
+![audio upload sucess](audio.png)
 
 *Image 3: audio files upload and download complete.
 
