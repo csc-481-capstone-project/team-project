@@ -65,7 +65,7 @@
 
 ## 5. Progress against the plan
 
-The Week 5 plan required validation with the steganography service by creating and completing a pytest which ensured the payload was embedded into a image and recovered. Ensured verification that the encoder was working without warnings before integrating it with other applications. Developed the frontend audio steganography file to accept WAV files and show status messages where applicable.
+The Week 5 plan required validation with the steganography service by creating and completing a pytest which ensured the payload was embedded into a image and recovered. Ensured verification that the encoder was working without warnings before integrating it with other applications. Developed the frontend audio steganography file to accept WAV files and show status messages where applicable. finnaly add a second webpage for audio upload and download and add all pieces to app.py for use. all progress for this week is within schedule and all members working well to keep it that way.
 
 
 The Week 6 focus will be to take the next steps to complete the stegography sanbox
