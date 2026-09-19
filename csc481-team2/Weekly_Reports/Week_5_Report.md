@@ -40,7 +40,7 @@
 **Expected result:** Audio Steganography interface correctly validates all required inputs and provides status feedback.
 
 **Result:** PASS. All four automated Pytest/Playwright tests passed. Manual browser testing also confirmed the interface layout, WAV file selection, required-field behavior, and successful validation status message.
-
+![Validation PyTest](Automated_Validation_Week5.png)
 *Image 2: Audio Steganography frontend interface with four automated validation tests passing*
 
 #
