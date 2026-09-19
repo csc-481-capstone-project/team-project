@@ -10,12 +10,12 @@
 - Ensured the PNG steganography was implemented and verified with the payload encoder.
 - Completed pytest of steganography.py. All tests passed with no errors occurring. 
 - Developed the initial frontend interface for the Audio LSB steganography workflow, including WAV file selection, client-side validation, and status feedback.
-- 
+- audio files are uploading and downloading.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | ull-stack integration, REST API design, Git workflow, deployment, and release coordination. |
+| Team Leader | Jamaal Spratley | all-stack integration, REST API design, Git workflow, deployment, and release coordination. |
 | Member A (Backend) | Bryan Goodman | steganography algorithms, encryption, service layer, and REST APIs. |
 | Member B (Frontend/QA) | Kendra Pelzer | Audio LSB frontend interface development, WAV file selection, required input validation. |
 
@@ -47,25 +47,25 @@
 #
 ### 3.3 Jamaal Part
 
-**Purpose:**  
+**Purpose:**  intergrate frontend and backend into app.py for audio upload 
 
-**Expected result:**
+**Expected result:** files are uploaded and downloaded sucsessfully 
 
-**Result:** 
+**Result:**  app.py/audio created and and running wave files are able to be uploaed and downladed from the sanbox.
 
-*Image here*
+*Image here* ![audio upload sucess](audio.png)
 
-*Image 3: Enter Description here*
+*Image 3: audio files upload and download complete.
 
 ## 4. Lessons learned
 
 - Unit testing is very important. Testing one feature at a time makes it easier to find any issues that may occur, which is important to find before combining everything with the rest of the application. 
 - I learned how to adapt an existing frontend component for a new steganography carrier while maintaining consistent validation and testing behavior. I also gained additional experience configuring and troubleshooting Pytest/Playwright tests within a new development environment.
-- 
+- I learned that html files can only have one <!doctype> per file.
 
 ## 5. Progress against the plan
 
-The Week 5 plan required the team to validate the PNG steganography service by creating and completing a  pytest which ensured the payload was embedded into a PNG image and recovered. Overall, the team wanted to verify that the encoder was working without errors before integrating it with other applications. 
+The Week 5 plan required the team to validate the PNG steganography service by creating and completing a pytest which ensured the payload was embedded into a PNG image and recovered. Overall, the team wanted to verify that the encoder was working without errors before integrating it with other applications.
 
 
-The Week 6 focus will be to....
+The Week 6 focus will be to take the next steps to complete the stegography sanbox
