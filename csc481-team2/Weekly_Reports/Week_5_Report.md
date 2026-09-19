@@ -65,7 +65,7 @@
 
 ## 5. Progress against the plan
 
-The Week 5 plan required the team to validate the PNG steganography service by creating and completing a  pytest which ensured the payload was embedded into a PNG image and recovered. Overall, the team wanted to verify that the encoder was working without errors before integrating it with other applications. 
+The Week 5 plan required the team to validate the steganography service by creating and completing a pytest which ensured the payload was embedded into a image and recovered. Overall, the team wanted to verify that the encoder was working without errors before integrating it with other applications. 
 
 
 The Week 6 focus will be to....
