@@ -7,7 +7,8 @@
 
 ## Planning meeting
 
-**Date:** Tuesday, September 24, 2026
+**Date:** Thursday, September 24, 2026
+**time:** 6:30 PM - 7:00 PM
 **Purpose:** Planning and task allocation. 
 
 | Task | Owner | Planned work |
