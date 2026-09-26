@@ -9,12 +9,12 @@
 ## 1. Milestones achieved
 - Completed and ensured pytest for the zero-width steganography. Testing contained no errors/warnings and passed 100%. 
 - Updated and verified automated frontend test suites for the integrated image and audio steganography interfaces and developed the initial frontend interface for zero-width text steganography.
-- Jamaal
+- zero width text is now able to be encoded into the app and working alongside all previous tools.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley |  |
+| Team Leader | Jamaal Spratley | implemented zero width text into the app and ran the first test for encoding |
 | Member A (Backend) | Bryan Goodman | Ensured the zero-width steganography communicates with the main branch. Completed Pytest for zero-width steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Updated image and audio frontend automated tests, verified all eight tests passed, and developed the initial zero-width text steganography HTML interface. |
 
@@ -64,24 +64,24 @@ PASS. All four audio frontend tests and all four image frontend tests passed aft
 #
 ### 3.3 Jamaal
 
-**Purpose:**
+**Purpose:** implement zero_width_text to app.py and testing to ensure readiness
 
-**Expected result:**
+**Expected result:** for the app to run and all three pages to be able to navigate to each other.  
 
-**Result:**
+**Result:** the app and all its pages are working and running accordingly. 
 
-*insert image here*
+[zero_width](zero_widthworking.png)
 
-*Image 5:*
+*Image 5:* working ecodeing of secret messages into text.
 
 ## 4. Lessons learned
 
 - I learned that passings pytests do not always require a pull request. Only the actual code changes, or test file changes need to be committed or pushed. Also, I gained more information on the zero-width steganography. Zero-width steganography can hide information in normal-looking text, which is why testing and ensuring data can be recovered is important. 
 - I learned how frontend tests may need to be updated when application integration changes file locations and expected behavior. I also gained experience using mocked API responses to test frontend functionality independently of backend availability and reinforced the importance of using reliable file paths in automated tests.
-- Jamaal
+- I learned that HTML files need to be properly structured for the information to show at the right point, for instance if you have a button you want at the bottom of the web site the code must be positioned last under everything else.
 
 ## 5. Progress against the plan
 
-The Week 5 plan required...
+The Week 6 plan required...
 
-The Week 7 will focus on...
+The Week 7 will focus on working towards decripton of file.

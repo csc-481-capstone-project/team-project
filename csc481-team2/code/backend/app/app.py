@@ -10,6 +10,7 @@ from PIL import Image, UnidentifiedImageError
 from services.crypto import encrypt
 from services.image_lsb import embed as embed_image
 from services.audio_lsb import embed as embed_audio
+from services.zero_width_text import embed as embed_zero_width
 
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 500 MB.
@@ -20,11 +21,15 @@ IMAGE_UPLOAD_FOLDER = Path(app.root_path) / "private_uploads"
 IMAGE_UPLOAD_FOLDER.mkdir(exist_ok=True)
 AUDIO_UPLOAD_FOLDER = Path(app.root_path) / "private_audio_uploads"
 AUDIO_UPLOAD_FOLDER.mkdir(exist_ok=True)
+ZERO_WIDTH_UPLOAD_FOLDER = Path(app.root_path) / "private_zero_width_uploads"
+ZERO_WIDTH_UPLOAD_FOLDER.mkdir(exist_ok=True)
 
 IMAGE_OUTPUT_FOLDER = Path(app.root_path) / "private_outputs"
 IMAGE_OUTPUT_FOLDER.mkdir(exist_ok=True)
 AUDIO_OUTPUT_FOLDER = Path(app.root_path) / "private_audio_outputs"
 AUDIO_OUTPUT_FOLDER.mkdir(exist_ok=True)    
+ZERO_WIDTH_OUTPUT_FOLDER = Path(app.root_path) / "private_zero_width_outputs"
+ZERO_WIDTH_OUTPUT_FOLDER.mkdir(exist_ok=True)
 
 MAX_DIMENSION = 4000
 
@@ -35,6 +40,10 @@ def home():
 @app.get("/audio")
 def audio_stego():
     return render_template("audio_stego.html")
+
+@app.get("/zero-width")
+def zero_width_stego():
+    return render_template("zero_width_stego.html")
 
 
 @app.post("/api/v1/uploads")
@@ -220,7 +229,57 @@ def download_encoded_audio(output_id):
         as_attachment=True,
         download_name="encoded_audio.wav"
     )
+@app.post("/api/v1/zero-width/encode")
+def encode_zero_width():
+    data = request.get_json(silent=True) or {}
 
+    cover_text = data.get("cover_text", "")
+    secret_message = data.get("message", "")
+    passphrase = data.get("passphrase", "")
+
+    if not isinstance(cover_text, str) or not cover_text.strip():
+        return jsonify({"error": "Enter cover text."}), 400
+
+    if not isinstance(secret_message, str) or not secret_message.strip():
+        return jsonify({"error": "Enter a secret message."}), 400
+
+    if len(secret_message) > 500:
+        return jsonify({
+            "error": "Message must be 500 characters or fewer."
+        }), 400
+
+    if not isinstance(passphrase, str) or len(passphrase) < 1:
+        return jsonify({
+            "error": "Use a passphrase with at least 1 character."
+        }), 400
+
+    output_id = uuid4().hex
+    output_path = ZERO_WIDTH_OUTPUT_FOLDER / f"{output_id}.txt"
+
+    try:
+        encrypted_payload = encrypt(
+            secret_message.encode("utf-8"),
+            passphrase
+        )
+
+        # Matches zero_width_text.py:
+        # embed(cover_text, payload, output_path)
+        embed_zero_width(
+            cover_text,
+            encrypted_payload,
+            output_path
+        )
+
+        encoded_text = output_path.read_text(encoding="utf-8")
+
+    except ValueError as error:
+        return jsonify({"error": str(error)}), 400
+
+    return jsonify({
+        "message": "Message embedded successfully.",
+        "encoded_text": encoded_text,
+        "download_url": f"/api/v1/zero-width/downloads/{output_id}"
+    }), 201
 
 @app.errorhandler(413)
 def file_too_large(error):

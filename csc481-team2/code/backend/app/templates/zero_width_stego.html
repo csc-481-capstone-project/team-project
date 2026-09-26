@@ -51,6 +51,28 @@
                             required
                         ></textarea>
                     </div>
+                    <div class="mt-4">
+                        <label for="encodedText" class="form-label">
+                            Encoded Cover Text
+                        </label>
+
+                        <textarea
+                            id="encodedText"
+                            rows="6"
+                            class="form-control"
+                            readonly
+                            placeholder="Your encoded text will appear here..."
+                        ></textarea>
+
+                        <button
+                            id="copyButton"
+                            type="button"
+                            class="btn btn-success btn-sm mt-2"
+                            disabled
+                        >
+                            Copy Encoded Text
+                        </button>
+                    </div>
 
                     <div class="mb-3">
                         <label for="secretMessage">Secret Message:</label>
@@ -62,6 +84,19 @@
                             class="form-control"
                             required
                         ></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passphrase" class="form-label">Passphrase</label>
+
+                        <input
+                            type="password"
+                            id="passphrase"
+                            name="passphrase"
+                            minlength="1"
+                            placeholder="Use at least 1 character"
+                            class="form-control"
+                            required
+                        >
                     </div>
 
                     <button type="submit" class="btn btn-primary">
@@ -80,6 +115,54 @@
             </div>
         </div>
     </div>
+            <script>
+        const zeroWidthForm = document.getElementById("zeroWidthForm");
+        const coverTextInput = document.getElementById("coverText");
+        const secretMessageInput = document.getElementById("secretMessage");
+        const passphraseInput = document.getElementById("passphrase");
+        const statusMessage = document.getElementById("statusMessage");
+        const encodedText = document.getElementById("encodedText");
+        const copyButton = document.getElementById("copyButton");
+
+        zeroWidthForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            try {
+            const response = await fetch("/api/v1/zero-width/encode", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                cover_text: coverTextInput.value,
+                message: secretMessageInput.value,
+                passphrase: passphraseInput.value
+                })
+            });
+
+            const result = await response.json();
+
+            if (!response.ok) {
+                throw new Error(result.error || "Text encoding failed.");
+            }
+
+            encodedText.value = result.encoded_text;
+            copyButton.disabled = false;
+            statusMessage.textContent =
+                "Message embedded successfully. Copy the encoded text.";
+            statusMessage.className = "alert alert-success mt-3";
+
+            } catch (error) {
+            statusMessage.textContent = error.message;
+            statusMessage.className = "alert alert-danger mt-3";
+            }
+        });
+
+        copyButton.addEventListener("click", async () => {
+            await navigator.clipboard.writeText(encodedText.value);
+            statusMessage.textContent = "Encoded text copied.";
+        });
+        </script>
 </body>
 
 </html>
