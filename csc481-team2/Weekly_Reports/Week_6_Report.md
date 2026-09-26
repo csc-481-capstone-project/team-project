@@ -7,7 +7,7 @@
 **Reporting period:** Week 6
 
 ## 1. Milestones achieved
-- Completed and ensured pytest for the zero-width steganography which contained no errors/warnings and passed 100%. 
+- Completed and ensured pytest for the zero-width steganography. Testing contained no errors/warnings and passed 100%. 
 - Updated and verified automated frontend test suites for the integrated image and audio steganography interfaces and developed the initial frontend interface for zero-width text steganography.
 - Jamaal
 
