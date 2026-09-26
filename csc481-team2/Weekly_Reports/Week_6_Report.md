@@ -15,7 +15,7 @@
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
 | Team Leader | Jamaal Spratley |  |
-| Member A (Backend) | Bryan Goodman | Ensured the zero-width steganography communicates with the main branch. Complete Pytest for zero-width steganography and make sure there are no warnings. |
+| Member A (Backend) | Bryan Goodman | Ensured the zero-width steganography communicates with the main branch. Completed Pytest for zero-width steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Updated image and audio frontend automated tests, verified all eight tests passed, and developed the initial zero-width text steganography HTML interface. |
 
 ## 3. Test evidence
