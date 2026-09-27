@@ -21,7 +21,7 @@
 ## Saturday summary and merge meeting
 
 **Date:** Saturday, September 19, 2026
-**Time:** 2:00 PM - 4:00 PM
+**Time:** 8:00 PM - 9:00 PM
 **Location/platform:** Microsoft Teams
 
 ### Completed work and contributions
@@ -33,7 +33,7 @@
 |Jamaal spatley| intergated all created files in app.py|
 ## Next scheduled meeting
 
-**Date:** thursday , September 24, 2026
-**Time:** 8:00 PM - 9:00 PM
+**Date:** tuesday , September 29, 2026
+**Time:** tbd
 **Planned topics:** Week 7 planning, task allocation, 
 review.
