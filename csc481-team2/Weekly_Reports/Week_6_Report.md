@@ -70,7 +70,7 @@ PASS. All four audio frontend tests and all four image frontend tests passed aft
 
 **Result:** The app and all its pages are working and running accordingly. 
 
-[zero_width](zero_widthworking.png)
+![zero_width](zero_widthworking.png)
 
 *Image 5:* Working ecodeing of secret messages into text.
 
