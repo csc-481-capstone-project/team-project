@@ -82,6 +82,6 @@ PASS. All four audio frontend tests and all four image frontend tests passed aft
 
 ## 5. Progress against the plan
 
-The Week 6 the plan required the zero-width pytest. Pytest was used to make sure the zero-width steganography runs with no warning and to make certain the test passed 100%. Upon completion, pytest was completed with no warnings and 100% passed. 
+The Week 6 the plan required the zero-width pytest. Pytest was used to make sure the zero-width steganography runs with no warning and to make certain the test passed 100%. Upon completion, pytest was completed with no warnings and 100% passed. after fronend and backend completion we wroked to add them to the app.py for use.
 
 The Week 7 will focus on working towards decripton of file.
