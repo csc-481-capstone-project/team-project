@@ -28,12 +28,12 @@
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman  | audio files are uploaded and downloaded sucessfully |
-|Kendra pelzer | frontend for audio upload complete|
+|Brayn Goodman  | zero_width scritps for backend made and working |
+|Kendra pelzer | frontend for zero_width upload complete|
 |Jamaal spatley| intergated all created files in app.py|
 ## Next scheduled meeting
 
 **Date:** thursday , September 24, 2026
-**Time:** 2:00 PM
-**Planned topics:** Week 6 planning, task allocation, 
+**Time:** 8:00 PM - 9:00 PM
+**Planned topics:** Week 7 planning, task allocation, 
 review.
