@@ -105,6 +105,55 @@
 
                 </form>
 
+                <hr class="my-4">
+
+                <h2 class="mb-3">Extract Hidden Message</h2>
+
+                <p class="text-muted">
+                    Paste encoded text below to recover the hidden message.
+                </p>
+
+                <form id="zeroWidthDecodeForm">
+                    <div class="mb-3">
+                        <label for="stegoText">Encoded Text:</label>
+                        <textarea
+                            id="stegoText"
+                            name="stegoText"
+                            rows="6"
+                            placeholder="Paste the encoded text here..."
+                            class="form-control"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="decodePassphrase" class="form-label">Passphrase</label>
+
+                        <input
+                            type="password"
+                            id="decodePassphrase"
+                            name="decodePassphrase"
+                            minlength="1"
+                            placeholder="Enter the passphrase used during encoding"
+                            class="form-control"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        Extract Message
+                    </button>
+                </form>
+
+                <div class="mt-4">
+                    <label for="decodedMessage" class="form-label">Decoded Message:</label>
+                    <textarea
+                        id="decodedMessage"
+                        rows="5"
+                        class="form-control"
+                        readonly
+                        placeholder="The extracted message will appear here..."
+                    ></textarea>
+                </div>
+
                 <div
                     id="statusMessage"
                     class="mt-3"
