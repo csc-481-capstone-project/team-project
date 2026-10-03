@@ -1,6 +1,6 @@
 from PIL import Image
 
-from app.carriers import image_lsb
+from app.services import image_lsb
 
 
 def test_png_round_trip(tmp_path):
