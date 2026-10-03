@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 7
 ## 1. Milestones achieved
-- 
+- Edited scripts to ensure decryption process went smoothly. Completed pytest for zero-width to make sre processes are going smoothly with no errors or warnings. 
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
@@ -19,20 +19,22 @@
 
 ### 3.1 Bryan
 
-**Purpose:**
+**Purpose:** Edit scripting to make sure import statements worked accordingly and communicated with each other and the main branch. After editing, completed a pytest for the zero-width and any warnings or errors were corrected. 
 
+**Expected Result:** To have pytest completion of test_zero_width_text.py and zero_width_text.py
 
-**Expected Result:**
-. 
-
-**Result:** 
+**Result:** Both pytest were completed and all warnings/errors were corrected to ensure import statements communicated. 
 
 
 **Completed Pytest**
 
-![Zero Width Pytest](Zero_Width_Pytest.png)
+![test_zero_width_text.py Pytest](Pytestafterscriptchange.png)
 
-*Image 1: 
+*Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
+
+![zero_width_text.py Pytest](Pytestafterscriptchange.png)
+
+*Image 2: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
 
 #
 ### 3.2 Frontend Integration Testing and Zero-Width Text Interface - Kendra
@@ -72,10 +74,12 @@
 
 ## 4. Lessons learned
 
-- 
+- I learned that sometimes a simple change of an import statement can ensure communication with other processes within the main branch. After editing the import statements everything worked smoothly which was something I did not expect.
+- Kendra
+- Jamaal
 
 ## 5. Progress against the plan
 
-The Week 7 the plan required 
+The Week 7 the plan required pytest completion of test_zero_width_text.py and zero_width_text.py to ensure it communicates with the main branch. Both pytest passed 100% with no errors or warnings. KENDRA, JAMAAL PART
 
-The Week 8 will focus on working towards
+The Week 8 will focus on working towards the decryption of audio
