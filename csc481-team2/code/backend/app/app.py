@@ -280,6 +280,36 @@ def encode_zero_width():
         "encoded_text": encoded_text,
         "download_url": f"/api/v1/zero-width/downloads/{output_id}"
     }), 201
+@app.post("/api/v1/zero-width/decode")
+def decode_zero_width():
+    data = request.get_json(silent=True) or {}
+
+    encoded_text = data.get("encoded_text", "")
+    passphrase = data.get("passphrase", "")
+
+    if not isinstance(encoded_text, str) or not encoded_text:
+        return jsonify({"error": "Paste encoded text to decode."}), 400
+
+    if not isinstance(passphrase, str) or len(passphrase) < 4:
+        return jsonify({
+            "error": "Enter the same passphrase used for encoding."
+        }), 400
+
+    try:
+        encrypted_payload = extract_zero_width(encoded_text)
+
+        original_message = decrypt(
+            encrypted_payload,
+            passphrase
+        ).decode("utf-8")
+
+    except (ValueError, UnicodeDecodeError) as error:
+        return jsonify({"error": str(error)}), 400
+
+    return jsonify({
+        "message": "Text decoded successfully.",
+        "decoded_message": original_message
+    }), 200
 
 @app.errorhandler(413)
 def file_too_large(error):
