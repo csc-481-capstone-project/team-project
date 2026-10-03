@@ -1,4 +1,4 @@
-# Team 2 Week 6 Progress Report
+# Team 2 Week 7 Progress Report
 
 ## Comprehensive Web-Based Steganography Sandbox 
 
