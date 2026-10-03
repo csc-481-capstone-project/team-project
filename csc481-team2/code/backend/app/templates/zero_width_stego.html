@@ -212,6 +212,44 @@
             statusMessage.textContent = "Encoded text copied.";
         });
         </script>
+        <script>
+            const decodeForm = document.getElementById("zeroWidthDecodeForm");
+            const stegoText = document.getElementById("stegoText");
+            const decodePassphrase = document.getElementById("decodePassphrase");
+            const decodedMessage = document.getElementById("decodedMessage");
+
+            decodeForm.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+                try {
+                const response = await fetch("/api/v1/zero-width/decode", {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                    encoded_text: stegoText.value,
+                    passphrase: decodePassphrase.value
+                    })
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                throw new Error(result.error || "Extraction failed.");
+            }
+
+            decodedMessage.value = result.decoded_message;
+
+            statusMessage.textContent = "Message extracted successfully.";
+            statusMessage.className = "alert alert-success mt-3";
+
+            } catch (error) {
+            statusMessage.textContent = error.message;
+            statusMessage.className = "alert alert-danger mt-3";
+            }
+        });
+        </script>
 </body>
 
 </html>

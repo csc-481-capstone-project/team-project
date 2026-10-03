@@ -6,11 +6,13 @@ import wave
 
 from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
-
-from services.crypto import encrypt
 from services.image_lsb import embed as embed_image
 from services.audio_lsb import embed as embed_audio
-from services.zero_width_text import embed as embed_zero_width
+from services.crypto import encrypt, decrypt
+from services.zero_width_text import (
+    embed as embed_zero_width,
+    extract as extract_zero_width,
+)
 
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 500 MB.
