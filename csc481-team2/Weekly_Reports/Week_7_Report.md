@@ -6,9 +6,9 @@
 #
 **Reporting period:** Week 7
 ## 1. Milestones achieved
-- Edited scripts to ensure decryption process went smoothly. Completed pytest for zero-width to make sure processes are going smoothly with no errors or warnings.
+- Edited scripts to ensure the decryption process went smoothly. Completed pytest for zero-width to make sure processes are going smoothly with no errors or warnings.
 - Developed the frontend interface for zero-width text decryption, including encoded-text input, passphrase input, message extraction controls, and a read-only decoded-message output field.
-- zero-width implimentation is fully complete and working within the sandbox.
+- Zero-width implementation is fully complete and working within the sandbox.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
@@ -58,11 +58,11 @@ PASS. All three automated frontend tests passed. The tests confirmed validation 
 #
 ### 3.3 Jamaal
 
-**Purpose:** add decryption path to app.py so the zero-width text can be extracted.
+**Purpose:** Add a decryption path to app.py so the zero-width text can be extracted.
 
-**Expected result:**  sectret message should be importes and extrated 
+**Expected result:** The  secret message should be imported and extracted 
 
-**Result:**  secret message was extrated corretly 
+**Result:** The  secret message was extracted correctly 
 
 ![zero_width encryption](encryption.png)
 ![zero_width decryption](decryption.png)
@@ -70,12 +70,12 @@ PASS. All three automated frontend tests passed. The tests confirmed validation 
 
 ## 4. Lessons learned
 
-- I learned that sometimes a simple change of an import statement can ensure communication with other processes within the main branch. After editing the import statements everything worked smoothly, which was something I did not expect.
+- I learned that sometimes a simple change of an import statement can ensure communication with other processes within the main branch. After editing the import statements, everything worked smoothly, which was something I did not expect.
 - I learned how to extend an existing integrated frontend without interfering with previously implemented functionality. I also learned the importance of using unique element IDs when multiple forms contain similar inputs and of targeting a specific form during automated testing when multiple submit buttons are present on the same page.
-- zero-wdith text needs a certions text size for the payload so the longer the hiddin text the longer your nonhidded text has to be to avoid corruption.
+- zero-width text needs a certain text size for the payload so the longer the hidden text, the longer your non-hidden text has to be to avoid corruption.
 
 ## 5. Progress against the plan
 
-The Week 7 the plan required pytest completion of test_zero_width_text.py and zero_width_text.py to ensure it communicates with the main branch. Both pytest passed 100% with no errors or warnings. The frontend decryption interface was developed with fields for encoded text and the required passphrase, an Extract Message button, and a read-only field for displaying the decoded message. all part of zero-width text are added and working with the frontend and backend and encryption and decryption are working and running. All progress for this week is within schedule and all members are working hard to stay on schedule.
+The Week 7 the plan required pytest completion of test_zero_width_text.py and zero_width_text.py to ensure it communicates with the main branch. Both pytest passed 100% with no errors or warnings. The frontend decryption interface was developed with fields for encoded text and the required passphrase, an Extract Message button, and a read-only field for displaying the decoded message. All parts of zero-width text have been added and are working with the frontend and backend and encryption and decryption are working and running. All progress for this week is on schedule and all members are working hard to stay on schedule.
 
-The Week 8 will focus on working towards the decryption of audio
+The Week 8 will focus on working towards the decryption of audio.
