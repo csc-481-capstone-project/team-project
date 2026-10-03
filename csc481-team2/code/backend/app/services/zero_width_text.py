@@ -3,10 +3,11 @@
 This carrier is intentionally limited: some programs strip these characters.
 It should be used only for the documented educational experiment workflow.
 """
-
 from __future__ import annotations
 
 from pathlib import Path
+
+from app.services import crypto
 
 ZERO = "\u200b"  # zero-width space
 ONE = "\u200c"   # zero-width non-joiner
@@ -59,3 +60,9 @@ def extract(stego_text: str) -> bytes:
     if payload_length > max(0, len(bits) // 8 - LENGTH_BYTES):
         raise ValueError("Embedded payload length is invalid.")
     return read_bytes(LENGTH_BYTES * 8, payload_length)
+
+def decrypt_message(stego_text: str, passphrase: str) -> str:
+    """Extract and decrypt a message hidden in zero-width text."""
+    encrypted_payload = extract(stego_text)
+    plaintext = crypto.decrypt(encrypted_payload, passphrase)
+    return plaintext.decode("utf-8")

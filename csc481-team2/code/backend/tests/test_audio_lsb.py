@@ -1,6 +1,6 @@
 import wave
 
-from app.carriers import audio_lsb
+from app.services import audio_lsb
 
 
 def test_wav_round_trip(tmp_path):

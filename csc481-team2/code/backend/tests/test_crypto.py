@@ -1,6 +1,6 @@
 import pytest
 
-from app.crypto import decrypt, encrypt
+from app.services.crypto import decrypt, encrypt
 
 
 def test_encrypt_then_decrypt_returns_original_message():
