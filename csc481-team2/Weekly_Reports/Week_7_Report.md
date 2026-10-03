@@ -28,11 +28,11 @@
 
 **Completed Pytest**
 
-![test_zero_width_text.py Pytest](Pytestafterscriptchange.png)
+![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
 
 *Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
 
-![zero_width_text.py Pytest](Pytestafterscriptchange.png)
+![zero_width_text.py Pytest](Pytesttestzerowidth.png)
 
 *Image 2: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
 
