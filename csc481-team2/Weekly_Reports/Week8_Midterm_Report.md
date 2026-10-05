@@ -1,14 +1,12 @@
-# Team 2 Week 7 Progress Report
+# Team 2 Week 8 Progress Report
 
 ## Comprehensive Web-Based Steganography Sandbox 
 
 **Team:** Bryan Goodman, Kendra Pelzer, Jamaal Spratley
 #
-**Reporting period:** Week 7
+**Reporting period:** Week 8
 ## 1. Milestones achieved
-- Edited scripts to ensure the decryption process went smoothly. Completed pytest for zero-width to make sure processes are going smoothly with no errors or warnings.
-- Developed the frontend interface for zero-width text decryption, including encoded-text input, passphrase input, message extraction controls, and a read-only decoded-message output field.
-- Zero-width implementation is fully complete and working within the sandbox.
+- Completion of editing scripting for audio to ensure communication with the frontend for decryption. 100% passed with no errors achieved. 
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
@@ -21,22 +19,22 @@
 
 ### 3.1 Bryan
 
-**Purpose:** Edit scripting to make sure import statements worked accordingly and communicated with each other and the main branch. After editing, completed a pytest for the zero-width and any warnings or errors were corrected. 
+**Purpose:** To ensure the backend decryption communicates with the frontend. 
 
-**Expected Result:** To have pytest completion of test_zero_width_text.py and zero_width_text.py
+**Expected Result:** Completion of both pytests for test_audio_lsb.py and audio_lsb.py. If there are any errors, they are to be corrected to ensure communication. 
 
-**Result:** Both pytest were completed and all warnings/errors were corrected to ensure import statements communicated. 
+**Result:** Both pytest passed with 100% completion and no errors to report. 
 
 
 **Completed Pytest**
 
-![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
+![Test_audio_lsb.py Pytest](Pytest_test_audio.png)
 
-*Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 1: Completion of test_aduio.lsb.py with no errors or warnings. 100% passed. 
 
-![zero_width_text.py Pytest](Pytesttestzerowidth.png)
+![Audio_lsb.py Pytest](Pytest_audio_passed.png)
 
-*Image 2: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 2: Completion of audio_lsb.py with no errors or warnings. 100% passed. 
 
 #
 ### 3.2 Frontend Zero-Width Decryption - Kendra
@@ -70,12 +68,10 @@ PASS. All three automated frontend tests passed. The tests confirmed validation 
 
 ## 4. Lessons learned
 
-- I learned that sometimes a simple change of an import statement can ensure communication with other processes within the main branch. After editing the import statements, everything worked smoothly, which was something I did not expect.
-- I learned how to extend an existing integrated frontend without interfering with previously implemented functionality. I also learned the importance of using unique element IDs when multiple forms contain similar inputs and of targeting a specific form during automated testing when multiple submit buttons are present on the same page.
-- zero-width text needs a certain text size for the payload so the longer the hidden text, the longer your non-hidden text has to be to avoid corruption.
+- 
 
 ## 5. Progress against the plan
 
-The Week 7 the plan required pytest completion of test_zero_width_text.py and zero_width_text.py to ensure it communicates with the main branch. Both pytest passed 100% with no errors or warnings. The frontend decryption interface was developed with fields for encoded text and the required passphrase, an Extract Message button, and a read-only field for displaying the decoded message. All parts of zero-width text have been added and are working with the frontend and backend and encryption and decryption are working and running. All progress for this week is on schedule and all members are working hard to stay on schedule.
+The Week 8 the plan required 
 
-The Week 8 will focus on working towards the decryption of audio.
+The Week 8 will focus on working towards the decryption of Image.
