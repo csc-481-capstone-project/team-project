@@ -1,7 +1,7 @@
 """16-bit PCM WAV least-significant-bit carrier."""
 
 from __future__ import annotations
-
+from app.services import crypto
 from pathlib import Path
 import wave
 
@@ -55,3 +55,9 @@ def extract(audio_path: str | Path) -> bytes:
     if payload_length > capacity(audio_path):
         raise ValueError("Embedded payload length is invalid.")
     return read_bytes(LENGTH_BYTES * 8, payload_length)
+    
+def decrypt_message(audio_path: str | Path, passphrase: str) -> str:
+    """Extract and decrypt a message hidden in a WAV file."""
+    encrypted_payload = extract(audio_path)
+    plaintext = crypto.decrypt(encrypted_payload, passphrase)
+    return plaintext.decode("utf-8")
