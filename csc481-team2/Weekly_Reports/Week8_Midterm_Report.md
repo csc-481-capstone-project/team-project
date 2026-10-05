@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 8
 ## 1. Milestones achieved
-- Completion of editing scripting for audio to ensure communication with the frontend for decryption. 100% passed with no errors achieved. 
+- Completion of script editing for audio to ensure communication with the frontend for decryption. 100% passed with no errors achieved. 
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
