@@ -68,10 +68,10 @@ PASS. All three automated frontend tests passed. The tests confirmed validation 
 
 ## 4. Lessons learned
 
-- 
+- Learning the importance of import paths became the biggest lesson learned. Without the proper pathing python cannot locate the correct service module which is very important for this process. 
 
 ## 5. Progress against the plan
 
-The Week 8 the plan required 
+The Week 8 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. 
 
 The Week 8 will focus on working towards the decryption of Image.
