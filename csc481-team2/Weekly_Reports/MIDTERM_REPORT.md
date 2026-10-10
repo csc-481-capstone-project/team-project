@@ -25,5 +25,5 @@
 ### -Kendra:
 ### -Jamaal:
 
-## Have you progressed as what are planned? If not, how do you adjust your plan?
+## 6. Have you progressed as what are planned? If not, how do you adjust your plan?
 ### As a team we feel as if we.....
