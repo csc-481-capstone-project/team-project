@@ -61,9 +61,48 @@ Updated service imports in the backend tests to match the application structure.
 ### Image Steganography Backend
 Purpose: Verify that the PNG steganography service can encode a payload into a supported image file.
 
-### Test cases: 
+Test cases: 
 - Run the image payload encoder test.
 - Confirm the service hides the payload in the PNG without test failures.
+
+Result: The PNG payload encoder test passed.
+
+Evidence: Pytest screenshot: steganography_pytest_week5.png.
+
+### Zero Width Text Decryption
+Purpose: Verify that the zero-width text service can recover the original encrypted message and handle an invalid passphrase safely.
+
+Test cases: 
+- Embed an encrypted payload into ordinary cover text.
+- Extract and decrypt the hidden text using the correct passphrase.
+- Confirm an incorrect passphrase raises the expected error rather than returning a message.
+
+Result: Three zero-width tests passed: base text round trip, correct-passphrase decryption, and wrong-passphrase rejection.
+
+Evidence: Pytest screenshots: Pytestaftersriptchange.png and Pytesttestzerowidth.png.
+
+### Audio Steganography Decryption
+Purpose: Verify that the WAV audio workflow recovers the original message and rejects an incorrect passphrase safely.
+
+Test cases: 
+- Confirm the audio carrier completes a basic WAV round trip.
+- Confirm the audio decrypt workflow returns the original message with the correct passphrase.
+- Confirm the audio decrypt workflow rejects an incorrect passphrase.
+
+Result: All three audio tests passed as part of the complete backend suite.
+
+Evidence: Verified in the full backend Pytest run.
+
+### Full Backend Regression Suite
+Purpose: Verify that all backend services and tests work together after import and integration changes.
+
+Test cases: 
+- Run the complete Pytest suite from the backend directory.
+- Confirm encryption, image, audio, steganography, and zero-width tests are collected and pass.
+
+Result: All ten automated backend tests passed.
+
+Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
 
 
 ### 4. Lessons Learned
