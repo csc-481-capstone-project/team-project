@@ -1,10 +1,10 @@
-# Team 2 Week 8 Progress Report
+# Team 2 Week 9 Progress Report
 
 ## Comprehensive Web-Based Steganography Sandbox 
 
 **Team:** Bryan Goodman, Kendra Pelzer, Jamaal Spratley
 #
-**Reporting period:** Week 8
+**Reporting period:** Week 9
 ## 1. Milestones achieved
 - Completion of script editing for audio to ensure communication with the frontend for decryption. 100% passed with no errors achieved. 
 
@@ -72,6 +72,6 @@ PASS. All three automated frontend tests passed. The tests confirmed validation 
 
 ## 5. Progress against the plan
 
-The Week 8 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. 
+The Week 9 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. 
 
-The Week 8 will focus on working towards the decryption of Image.
+The Week 10 will focus on working towards the decryption of Image.
