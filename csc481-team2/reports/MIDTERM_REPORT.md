@@ -5,21 +5,21 @@
 #### Team Member: Jamaal Spratley
 
 ### 1. Milestones Achieved
-The app development and implimentation of the project has progressed from initial planning and design to functional interfaces for image, audio, and zero-width text steganography.
+The app development and implementation of the project has progressed from initial planning and design to functional interfaces for image, audio, and zero-width text steganography.
 
 The following milestones have been achieved:
--	The initial creation of the GitHub repository with weekly plan developed.
-- The development of the app.py using frontend and backend scripts for the upload of images into the browser for images
-- The development of the app.py using frontend and backend scripts for the upload of images into the browser for audio
-- The development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser 
+-	The initial creation of the GitHub repository with a weekly plan developed.
+- The development of the app.py using frontend and backend scripts for the upload of images into the browser for images.
+- The development of the app.py using frontend and backend scripts for the upload of images to the browser for audio.
+- The development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser.
 - The implementation of decryption of zero-width text so secret messages are able to be taken out of the text.
 
 
 
 ### 2. Completed Subtasks
 ### The creation of the venv, requirements and the git-ignore files for later use.
-Created the venv for the sandbox and the ignore files so git hub would not ignore non important files.
-### The first image uploaded test for the sandbox 
+Created the venv for the sandbox and the ignore files so git hub would not ignore non-important files.
+### The first image upload test for the sandbox 
 Combined the scripts made for the frontend and backend image uploading to allow the sandbox to upload and download images for later decryption.
 ### The first audio file upload test for the sandbox 
 Combined the scripts made for the frontend and backend audio uploading to allow the sandbox to upload and download audio for later decryption.
@@ -35,46 +35,46 @@ Combined the scripts made for the frontend and backend zero-width text decryptio
 
 Purpose: Verify that the image upload for the sandbox was working and running so images could be downloaded for the sandbox and uploaded to the sandbox.
 
-Result: all images can be uploaded with a secret hidden message and downloaded with a secret message.
+Result: All images can be uploaded with a secret hidden message and downloaded with a secret message.
 
 Evidence: 
 ![Completed upload](screenshots/encodedmessage.png)
-*Image 1: app.py first image upload.
+*Image 1: app.py first image upload.*
 
 #### Audio Steganography Frontend
 Purpose: Verify that the audio upload for the sandbox was working and running so audio files could be downloaded for the sandbox and uploaded to the sandbox.
 
-Result: all audio files. can be uploaded with a secret hidden message and downloaded with a secret message.
+Result: All audio files can be uploaded with a secret hidden message and downloaded with a secret message.
 
 Evidence: 
 ![Completed upload](screenshots/audio.png)
-*Image 2: app.py first audio upload.
+*Image 2: app.py first audio upload.*
 
 ### The first zero-width text tests for the sandbox
 Purpose: Verify that the zero-width text page for the sandbox was working and running so text-files could be put into the website for encryption.
 
-Result: all zero-width text files. can be encrypted 
+Result: All zero-width text files can be encrypted 
 
 Evidence: 
 ![zero_width](screenshots/zero_widthworking.png)
-*Image 3: app.py first zero-width text encryption.
+*Image 3: app.py first zero-width text encryption.*
 
 #####  Zero-Width Text Decryption Frontend
 Purpose: Verify that the zero-width text page for the sandbox was working and running so zero-width text-files could be put into the website for decryption.
 
-Result: all zero-width text files. can be decrypted.
+Result: All zero-width text files can be decrypted.
 
 Evidence: 
 ![zero_width](screenshots/decryption.png)
-*Image 4: app.py first zero-width text decryption.
+*Image 4: app.py first zero-width text decryption.*
 
 
 
 
 ### 4. Lessons Learned
-Throughout the creation of this sandbox I have learned many things like, a png has multiple forms like RGB and RGBA. Another being HTML files can only have one <!doctype> per file so with the use of two HTMLs I had to make a link so they would have their own space and not conflict Aswell as HTML files need to be properly structured for the information to show at the right point, for instance if you have a button you want at the bottom of the web site, the code must be positioned last under everything else and lastly zero-width text needs a certain text size for the payload so the longer the hidden text, the longer your non-hidden text must be to avoid corruption.
+Throughout the creation of this sandbox, I have learned many things, like a PNG has multiple forms, such as RGB and RGBA. Another is that HTML files can only have one <!doctype> per file, so with the use of two HTMLs I had to make a link so they would have their own space and not conflict. As well as, HTML files need to be properly structured for the information to show at the right point; for instance, if you have a button you want at the bottom of the website, the code must be positioned last under everything else, and lastly, zero-width text needs a certain text size for the payload, so the longer the hidden text, the longer your non-hidden text must be to avoid corruption.
 ### 5. Individual Contribution Summary
-As team leader, I developed and tested the app.py. I organized the app.py, implemented encryption and decryption, image, audio, and zero-width text steganography features into the app.py I also created the git hub repository Aswell as created the requirements for the venv to run.
+As team leader, I developed and tested the app.py. I organized the app.py, implemented encryption and decryption, image, audio, and zero-width text steganography features into the app.py. I also created the git hub repository, as well as created the requirements for the venv to run.
 
 
 ##
@@ -130,7 +130,8 @@ Test cases:
 
 Result: The PNG payload encoder test passed.
 
-Evidence: ![Completed Pytest](screenshots/steganography_pytest_week5.png)
+Evidence:
+![Completed Pytest](screenshots/steganography_pytest_week5.png)
 *Image 5: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
