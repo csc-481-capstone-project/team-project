@@ -13,11 +13,16 @@ The following milestones have been achieved:
 - The development of the app.py using frontend and backend scripts for the upload of images into the browser for audio
 - The development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser 
 - The implementation of decryption of zero-width text so secret messages are able to be taken out of the text.
+-	The initial creation of the GitHub repository with weekly plan developed.
+- The development of the app.py using frontend and backend scripts for the upload of images into the browser for images
+- The development of the app.py using frontend and backend scripts for the upload of images into the browser for audio
+- The development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser 
+- The implementation of decryption of zero-width text so secret messages are able to be taken out of the text.
 
 
 
 ### 2. Completed Subtasks
-### The creation of the venv, requirements and the git-ignore files for later use.
+### the creation of the venv, requirements and the git-ignore files for later use.
 Created the venv for the sandbox and the ignore files so git hub would not ignore non important files.
 ### The first image uploaded test for the sandbox 
 Combined the scripts made for the frontend and backend image uploading to allow the sandbox to upload and download images for later decryption.
