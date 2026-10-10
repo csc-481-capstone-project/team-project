@@ -1,29 +1,29 @@
 # TEAM 2 MIDTERM REPORT
 
-## All milestones achieved (provide a brief description)
-### Bryan:
-### Kendra:
-### Jamaal:
+## 1. All milestones achieved (provide a brief description)
+### -Bryan:
+### -Kendra:
+### -Jamaal:
 
-## All subtasks completed (provide a brief description)
-### Bryan:
-### Kendra:
-### Jamaal:
+## 2. All subtasks completed (provide a brief description)
+### -Bryan:
+### -Kendra:
+### -Jamaal:
 
-## Detailed Description of Tests (with screenshots)
-### Bryan:
-### Kendra:
-### Jamaal:
+## 3. Detailed Description of Tests (with screenshots)
+### -Bryan:
+### -Kendra:
+### -Jamaal:
 
-## All lessons learned
-### Bryan:
-### Kendra:
-### Jamaal:
+## 4. All lessons learned
+### -Bryan:
+### -Kendra:
+### -Jamaal:
 
-## All the contribution of each team member
-### Bryan:
-### Kendra:
-### Jamaal:
+## 5. All the contribution of each team member
+### -Bryan:
+### -Kendra:
+### -Jamaal:
 
 ## Have you progressed as what are planned? If not, how do you adjust your plan?
-# As a team we feel as if we.....
+### As a team we feel as if we.....
