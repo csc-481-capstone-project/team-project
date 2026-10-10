@@ -37,39 +37,41 @@ Purpose: Verify that the image upload for the sandbox was working and running so
 
 Result: all images can be uploaded with a secret hidden message and downloaded with a secret message.
 
-Evidence: *insert screenshots here*
+Evidence: ![Completed upload](encodedmessage.png)
+*Image 1: app.py first image upload.
 
 #### Audio Steganography Frontend
 Purpose: Verify that the audio upload for the sandbox was working and running so audio files could be downloaded for the sandbox and uploaded to the sandbox.
 
 Result: all audio files. can be uploaded with a secret hidden message and downloaded with a secret message.
 
-Evidence: *insert screenshots here*
+Evidence: ![Completed upload](audio.png)
+*Image 2: app.py first audio upload.
 
 ### The first zero-width text tests for the sandbox
 Purpose: Verify that the zero-width text page for the sandbox was working and running so text-files could be put into the website for encryption.
 
 Result: all zero-width text files. can be encrypted 
 
-Evidence: *insert screenshots here*
+Evidence: ![zero_width](zero_widthworking.png)
+*Image 3: app.py first zero-width text encryption.
 
 #####  Zero-Width Text Decryption Frontend
 Purpose: Verify that the zero-width text page for the sandbox was working and running so zero-width text-files could be put into the website for decryption.
 
 Result: all zero-width text files. can be decrypted.
 
-Evidence: *insert screenshots here*
+Evidence: ![zero_width](decryption.png)
+*Image 4: app.py first zero-width text decryption.
 
 
 
 
 ### 4. Lessons Learned
--png has multiple forms like RGB and RGBA.  
-- learned that html files can only have one <!doctype> per file so with the use of two HTMLs I had to make a link so they would have their own space and not conflict.
-- learned that HTML files need to be properly structured for the information to show at the right point, for instance if you have a button you want at the bottom of the web site, the code must be positioned last under everything else.
-- zero-width text needs a certain text size for the payload so the longer the hidden text, the longer your non-hidden text has to be to avoid corruption.
-
+Throughout the creation of this sandbox I have learned many things like, a png has multiple forms like RGB and RGBA. Another being HTML files can only have one <!doctype> per file so with the use of two HTMLs I had to make a link so they would have their own space and not conflict Aswell as HTML files need to be properly structured for the information to show at the right point, for instance if you have a button you want at the bottom of the web site, the code must be positioned last under everything else and lastly zero-width text needs a certain text size for the payload so the longer the hidden text, the longer your non-hidden text must be to avoid corruption.
 ### 5. Individual Contribution Summary
+As team leader, I developed and tested the app.py. I organized the app.py, implemented encryption and decryption, image, audio, and zero-width text steganography features into the app.py I also created the git hub repository Aswell as created the requirements for the venv to run.
+
 
 ##
 ### Member A:
@@ -282,3 +284,4 @@ As Member B, I have contributed to frontend planning, interface development, inp
 ##
 ### Progress Against the Project Plan
 The backend plan called for a reusable service layer for encryption and multiple steganography carriers, supported by automated tests. The completed work meets that direction: the project has working image, audio, and zero-width text workflows; encryption and decryption coverage; and a full backend regression suite that passed after integration fixes. The next backend focus should be to keep the service interfaces stable as the frontend connects to them and to add end-to-end tests for the complete user workflow.
+
