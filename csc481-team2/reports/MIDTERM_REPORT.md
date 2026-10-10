@@ -2,7 +2,7 @@
 ## Project: Comprehensive Web-Based Steganography Sandbox
 
 ### Team Lead:
-#### Team Member: Jamall Spratley
+#### Team Member: Jamaal Spratley
 
 ### 1. Milestones Achieved
 
@@ -206,7 +206,11 @@ Evidence: *insert screenshots here*
 
 ### 4. Lessons Learned
 
+Throughout frontend development and testing, I gained additional experience translating design requirements into functional HTML interfaces and implementing client-side validation. I also improved my understanding of Git Hub workflows, including branches, commits, pushes, and pull requests. Automated testing reinforced the importance of validating individual components before and after integration. Changes to application structure can require updates to test paths, selectors, and expected behavior. Additionally, extending the zero-width interface demonstrated the importance of using HTML element IDs and accurately targeting forms when multiple inputs and submit buttons exist on the same page.
+
 ### 5. Individual Contribution Summary
+
+As Member B, I have contributed to frontend planning, interface development, input validation, automated testing, integration-related test maintenance, and project documentation. My completed work includes frontend interfaces for all three supported steganography carriers, zero-width text decryption controls, and automated tests validating the expected behavior of these interfaces. These contributions are documented through the weekly progress reports, test screenshots, and associated GitHub submissions.
 
 ##
 ### Progress Against the Project Plan
