@@ -126,7 +126,7 @@ Test cases:
 
 Result: The PNG payload encoder test passed.
 
-Evidence: ![Completed Pytest](screenshot/steganography_pytest_week5.png)
+Evidence: ![Completed Pytest](screenshots/steganography_pytest_week5.png)
 *Image 5: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
