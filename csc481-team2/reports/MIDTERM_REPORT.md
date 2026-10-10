@@ -126,7 +126,7 @@ Test cases:
 
 Result: The PNG payload encoder test passed.
 
-Evidence: ![Completed Pytest](steganography_pytest_week5.png)
+Evidence: ![Completed Pytest](screenshot/steganography_pytest_week5.png)
 *Image 5: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
@@ -140,11 +140,11 @@ Test cases:
 Result: Three zero-width tests passed: base text round trip, correct-passphrase decryption, and wrong-passphrase rejection.
 
 Evidence: Pytest screenshots: 
-![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
+![test_zero_width_text.py Pytest](screenshot/Pytestaftersriptchange.png)
 
 *Image 6: Completion of test_zero_width_text.py with no errors or warnings. 100% passed.* 
 
-![zero_width_text.py Pytest](Pytesttestzerowidth.png)
+![zero_width_text.py Pytest](screenshot/Pytesttestzerowidth.png)
 
 *Image 7: Completion of zero_width_text.py with no errors or warnings. 100% passed.*
 
@@ -159,7 +159,7 @@ Test cases:
 Result: All three audio tests passed as part of the complete backend suite.
 
 Evidence: Verified in the full backend Pytest run.
-![Completed Pytest](Pytest_test_audio.png)
+![Completed Pytest](screenshot/Pytest_test_audio.png)
 *Image 8: Completion of pytest showing all 3 audio tests 100% passing with no errors or warnings.*
 
 #### Full Backend Regression Suite
@@ -172,7 +172,7 @@ Test cases:
 Result: All ten automated backend tests passed.
 
 Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
-![Completed Pytest](Pytest_audio_passed.png)
+![Completed Pytest](screenshot/Pytest_audio_passed.png)
 *Image 9: Completion of pytest showing all 10 tests passing 100% in 0.84 seconds no warnings/errors*
 
 ### 4. Lessons Learned
