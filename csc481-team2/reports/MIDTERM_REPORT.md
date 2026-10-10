@@ -67,7 +67,7 @@ Test cases:
 
 Result: The PNG payload encoder test passed.
 
-Evidence: *![Completed Pytest](steganography_pytest_week5.png)
+Evidence: ![Completed Pytest](steganography_pytest_week5.png)
 *Image 1: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
@@ -100,7 +100,7 @@ Test cases:
 Result: All three audio tests passed as part of the complete backend suite.
 
 Evidence: Verified in the full backend Pytest run.
-*![Completed Pytest](Pytest_test_audio.png)
+![Completed Pytest](Pytest_test_audio.png)
 
 #### Full Backend Regression Suite
 Purpose: Verify that all backend services and tests work together after import and integration changes.
@@ -112,7 +112,7 @@ Test cases:
 Result: All ten automated backend tests passed.
 
 Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
-*![Completed Pytest](Pytest_audio_passed.png)
+![Completed Pytest](Pytest_audio_passed.png)
 
 ### 4. Lessons Learned
 
