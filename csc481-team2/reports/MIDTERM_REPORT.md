@@ -9,24 +9,24 @@ The app development and implimentation of the project has progressed from initia
 
 The following milestones have been achieved:
 -	The initial creation of the GitHub repository with weekly plan developed.
-- the development of the app.py using frontend and backend scripts for the upload of images into the browser for images
-- the development of the app.py using frontend and backend scripts for the upload of images into the browser for audio
-- the development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser 
-- the implementation of decryption of zero-width text so secret messages are able to be taken out of the text.
+- The development of the app.py using frontend and backend scripts for the upload of images into the browser for images
+- The development of the app.py using frontend and backend scripts for the upload of images into the browser for audio
+- The development of the app.py using frontend and backend scripts for the implementation of zero-width text into the browser 
+- The implementation of decryption of zero-width text so secret messages are able to be taken out of the text.
 
 
 
 ### 2. Completed Subtasks
 ### the creation of the venv, requirements and the git-ignore files for later use.
-created the venv for the sandbox and the ignore files so git hub would not ignore non important files.
+Created the venv for the sandbox and the ignore files so git hub would not ignore non important files.
 ### The first image uploaded test for the sandbox 
-combined the scripts made for the frontend and backend image uploading to allow the sandbox to upload and download images for later decryption.
+Combined the scripts made for the frontend and backend image uploading to allow the sandbox to upload and download images for later decryption.
 ### The first audio file upload test for the sandbox 
-combined the scripts made for the frontend and backend audio uploading to allow the sandbox to upload and download audio for later decryption.
+Combined the scripts made for the frontend and backend audio uploading to allow the sandbox to upload and download audio for later decryption.
 ### The first zero-width text tests for the sandbox
-combined the scripts made for the frontend and backend zero-width text implementation to allow the sandbox to read and hide text for later decryption.
+Combined the scripts made for the frontend and backend zero-width text implementation to allow the sandbox to read and hide text for later decryption.
 ### The first zero-width text decryption test for the sandbox 
-combined the scripts made for the frontend and backend zero-width text decryption to allow the sandbox to read and decrypt hidden text.
+Combined the scripts made for the frontend and backend zero-width text decryption to allow the sandbox to read and decrypt hidden text.
 
 
 ### 3. Testing and Validation
