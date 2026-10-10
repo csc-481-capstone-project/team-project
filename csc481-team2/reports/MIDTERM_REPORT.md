@@ -19,10 +19,52 @@
 #### Team Member: Bryan Goodman
 
 ### 1. Milestones Achieved
+The backend work progressed from project setup to tested encryption, image, audio, and zero-width-text steganography workflows. Each feature was validated with focused Pytest coverage before being integrated into the shared team repository.
+
+- Backend structure and starter files: Created and organized the backend folders, service files, test files, dependency list, and backend design documentation needed for the project.
+- Shared repository workflow: Created the feature/backend-starter branch and moved the backend foundation into the team repository so the team could review, merge, and use the work.
+- Core encryption support: Established encryption and decryption functionality with passphrase validation so protected payloads can be recovered only with the correct passphrase.
+- Image steganography: Implemented and verified PNG payload encoding through the steganography service and its automated test coverage.
+- Audio steganography: Verified the WAV carrier workflow, including successful message recovery and safe handling of an incorrect passphrase.
+- Zero-width text steganography: Completed embedding and decryption support for hidden text messages, including recovery of the original message and rejection of an incorrect passphrase.
+- Backend regression testing: Resolved service import issues and confirmed the full backend test suite passed with ten automated tests.
 
 ### 2. Completed Subtasks
 
+### Backend Planning and Repository Setup
+
+Prepared the backend foundation for the capstone project. This work included creating the application and service folders, creating starter modules for encryption and steganography features, adding test files, defining required Python packages, and documenting the proposed backend design. The work was placed on a feature branch and moved into the shared repository for team collaboration. 
+
+### Encryption Service Development
+
+Implemented the encryption workflow used by the steganography services. The tests verify that a message encrypted with a passphrase can be decrypted back to its original value and that an incorrect passphrase fails safely.
+
+### Image Steganography Development
+
+Implemented and tested the PNG payload encoder. The service hides a binary payload in the least significant bits of a PNG image, allowing the application to store encrypted information while preserving a usable image file.
+
+### Audio Steganography Development
+
+Maintained and tested the WAV audio carrier workflow. The tests cover the basic audio round trip as well as decryption of the original message and safe rejection of an incorrect passphrase.
+
+### Zero Width Text Steganography Development
+
+Completed testing for the zero-width text carrier and added decryption support. The workflow embeds encrypted payload data in ordinary-looking cover text, extracts the encrypted payload, decrypts it with the provided passphrase, and returns the original message.
+
+### Test Suite Maintenance and Integration
+
+Updated service imports in the backend tests to match the application structure. This resolved module-loading issues and allowed the complete backend suite to run successfully after the zero-width and audio decryption work was added.
+
+
 ### 3. Testing and Validation
+
+### Image Steganography Backend
+Purpose: Verify that the PNG steganography service can encode a payload into a supported image file.
+
+### Test cases: 
+- Run the image payload encoder test.
+- Confirm the service hides the payload in the PNG without test failures.
+
 
 ### 4. Lessons Learned
 
