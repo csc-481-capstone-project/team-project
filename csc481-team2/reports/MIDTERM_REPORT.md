@@ -58,7 +58,7 @@ Updated service imports in the backend tests to match the application structure.
 
 ### 3. Testing and Validation
 
-### Image Steganography Backend
+#### Image Steganography Backend
 Purpose: Verify that the PNG steganography service can encode a payload into a supported image file.
 
 Test cases: 
@@ -69,7 +69,7 @@ Result: The PNG payload encoder test passed.
 
 Evidence: Pytest screenshot: steganography_pytest_week5.png.
 
-### Zero Width Text Decryption
+#### Zero Width Text Decryption
 Purpose: Verify that the zero-width text service can recover the original encrypted message and handle an invalid passphrase safely.
 
 Test cases: 
@@ -81,7 +81,7 @@ Result: Three zero-width tests passed: base text round trip, correct-passphrase 
 
 Evidence: Pytest screenshots: Pytestaftersriptchange.png and Pytesttestzerowidth.png.
 
-### Audio Steganography Decryption
+#### Audio Steganography Decryption
 Purpose: Verify that the WAV audio workflow recovers the original message and rejects an incorrect passphrase safely.
 
 Test cases: 
@@ -93,7 +93,7 @@ Result: All three audio tests passed as part of the complete backend suite.
 
 Evidence: Verified in the full backend Pytest run.
 
-### Full Backend Regression Suite
+#### Full Backend Regression Suite
 Purpose: Verify that all backend services and tests work together after import and integration changes.
 
 Test cases: 
