@@ -28,9 +28,9 @@
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman | updated scripts for audio to add decryption. it is working and running |
-|Kendra Pelzer | updated frontend HTMLs for audio decryption. working and running |
-|Jamaal spratley| added decryptions path to app.py so the frontend and backend communicate. working and running. |
+|Brayn Goodman |created  midterm report|
+|Kendra Pelzer |created midterm report |
+|Jamaal spratley| created midterm report |
 ## Next scheduled meeting
 
 **Date:** Tuesday , October 13, 2026
