@@ -13,9 +13,9 @@
 
 | Task | Owner | Planned work |
 |---|---|---|
-| audio description testing  | Bryan Goodman | py testing the backend scripts for audio decryption |
-| audio description script | Kendra Pelzer | building the scripts for audio description for the frontend |
-|app.py audio description implementation |Jamaal Spratley | compiling the scripts together to make frontend and backend scripts work together|
+| audio description testing  | Bryan Goodman | Py testing the backend scripts for audio decryption |
+| audio description script | Kendra Pelzer | Building the scripts for audio description for the frontend |
+|app.py audio description implementation |Jamaal Spratley | Compiling the scripts together to make frontend and backend scripts work together|
 | weekly journal update | Team | Capture test evidence, complete this week's journal |
 
 ## Saturday summary and merge meeting
