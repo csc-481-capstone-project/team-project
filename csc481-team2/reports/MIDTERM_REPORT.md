@@ -17,7 +17,7 @@ The following milestones have been achieved:
 
 
 ### 2. Completed Subtasks
-### the creation of the venv, requirements and the git-ignore files for later use.
+### The creation of the venv, requirements and the git-ignore files for later use.
 Created the venv for the sandbox and the ignore files so git hub would not ignore non important files.
 ### The first image uploaded test for the sandbox 
 Combined the scripts made for the frontend and backend image uploading to allow the sandbox to upload and download images for later decryption.
