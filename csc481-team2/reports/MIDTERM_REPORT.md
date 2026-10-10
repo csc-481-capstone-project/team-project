@@ -67,7 +67,8 @@ Test cases:
 
 Result: The PNG payload encoder test passed.
 
-Evidence: Pytest screenshot: steganography_pytest_week5.png.
+Evidence: *![Completed Pytest](steganography_pytest_week5.png)
+*Image 1: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
 Purpose: Verify that the zero-width text service can recover the original encrypted message and handle an invalid passphrase safely.
@@ -79,7 +80,13 @@ Test cases:
 
 Result: Three zero-width tests passed: base text round trip, correct-passphrase decryption, and wrong-passphrase rejection.
 
-Evidence: Pytest screenshots: Pytestaftersriptchange.png and Pytesttestzerowidth.png.
+Evidence: Pytest screenshots: ![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
+
+*Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
+
+![zero_width_text.py Pytest](Pytesttestzerowidth.png)
+
+*Image 2: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
 
 #### Audio Steganography Decryption
 Purpose: Verify that the WAV audio workflow recovers the original message and rejects an incorrect passphrase safely.
@@ -114,6 +121,7 @@ Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
 
 ### 5. Individual Contribution Summary
 As Member A, I developed and tested the project’s backend services. I organized the backend files, implemented encryption, image, audio, and zero-width text steganography features, and added decryption support for audio and zero-width text. I also maintained the Pytest suite, fixed service import issues, and verified that all ten backend tests passed. I used GitHub Codespaces, feature branches, commits, and pull requests to add my work to the shared team repository.
+
 
 ##
 ### Member B: Frontend Development & Quality Assurance
