@@ -37,7 +37,8 @@ Purpose: Verify that the image upload for the sandbox was working and running so
 
 Result: all images can be uploaded with a secret hidden message and downloaded with a secret message.
 
-Evidence: ![Completed upload](encodedmessage.png)
+Evidence: 
+![Completed upload](screenshots/encodedmessage.png)
 *Image 1: app.py first image upload.
 
 #### Audio Steganography Frontend
@@ -45,7 +46,8 @@ Purpose: Verify that the audio upload for the sandbox was working and running so
 
 Result: all audio files. can be uploaded with a secret hidden message and downloaded with a secret message.
 
-Evidence: ![Completed upload](audio.png)
+Evidence: 
+![Completed upload](screenshots/audio.png)
 *Image 2: app.py first audio upload.
 
 ### The first zero-width text tests for the sandbox
@@ -53,7 +55,8 @@ Purpose: Verify that the zero-width text page for the sandbox was working and ru
 
 Result: all zero-width text files. can be encrypted 
 
-Evidence: ![zero_width](zero_widthworking.png)
+Evidence: 
+![zero_width](screenshots/zero_widthworking.png)
 *Image 3: app.py first zero-width text encryption.
 
 #####  Zero-Width Text Decryption Frontend
@@ -61,7 +64,8 @@ Purpose: Verify that the zero-width text page for the sandbox was working and ru
 
 Result: all zero-width text files. can be decrypted.
 
-Evidence: ![zero_width](decryption.png)
+Evidence: 
+![zero_width](screenshots/decryption.png)
 *Image 4: app.py first zero-width text decryption.
 
 
