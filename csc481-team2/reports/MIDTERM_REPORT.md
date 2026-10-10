@@ -140,11 +140,11 @@ Result: Three zero-width tests passed: base text round trip, correct-passphrase 
 Evidence: Pytest screenshots: 
 ![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
 
-*Image 6: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 6: Completion of test_zero_width_text.py with no errors or warnings. 100% passed.* 
 
 ![zero_width_text.py Pytest](Pytesttestzerowidth.png)
 
-*Image 7: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 7: Completion of zero_width_text.py with no errors or warnings. 100% passed.*
 
 #### Audio Steganography Decryption
 Purpose: Verify that the WAV audio workflow recovers the original message and rejects an incorrect passphrase safely.
@@ -158,7 +158,7 @@ Result: All three audio tests passed as part of the complete backend suite.
 
 Evidence: Verified in the full backend Pytest run.
 ![Completed Pytest](Pytest_test_audio.png)
-*Image 8: Completion of pytest showing all 3 audio tests 100% passing with no errors or warnings. 
+*Image 8: Completion of pytest showing all 3 audio tests 100% passing with no errors or warnings.*
 
 #### Full Backend Regression Suite
 Purpose: Verify that all backend services and tests work together after import and integration changes.
@@ -171,7 +171,7 @@ Result: All ten automated backend tests passed.
 
 Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
 ![Completed Pytest](Pytest_audio_passed.png)
-*Image 9: Completion of pytest showing all 10 tests passing 100% in 0.84 seconds no warnings/errors
+*Image 9: Completion of pytest showing all 10 tests passing 100% in 0.84 seconds no warnings/errors*
 
 ### 4. Lessons Learned
 
@@ -273,7 +273,7 @@ Evidence:
 *Image 14: Initial Zero-Width Text Steganography frontend interface*
 
 
-##### Zero-Width Text Decryption Frontend
+#### Zero-Width Text Decryption Frontend
 Purpose: Verify that the zero-width decryption interface validates required inputs and displays the decoded message output field properly.
 
 Test Cases:
