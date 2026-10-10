@@ -80,7 +80,8 @@ Test cases:
 
 Result: Three zero-width tests passed: base text round trip, correct-passphrase decryption, and wrong-passphrase rejection.
 
-Evidence: Pytest screenshots: ![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
+Evidence: Pytest screenshots: 
+![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
 
 *Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
 
