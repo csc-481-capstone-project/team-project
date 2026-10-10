@@ -107,7 +107,13 @@ Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
 
 ### 4. Lessons Learned
 
+- Focused unit tests make it easier to isolate a problem before combining a feature with the rest of the application.
+- Correct import paths are essential for communication between backend services; a small import change can prevent an entire test suite from loading.
+- A passing Pytest run is verification evidence, but only source-code or test-file changes need to be committed, pushed, and submitted in a pull request.
+- GitHub Codespaces keeps the test environment close to the shared repository, which simplifies collaboration, commits, pushes, and pull requests.
+
 ### 5. Individual Contribution Summary
+As Member A, I developed and tested the project’s backend services. I organized the backend files, implemented encryption, image, audio, and zero-width text steganography features, and added decryption support for audio and zero-width text. I also maintained the Pytest suite, fixed service import issues, and verified that all ten backend tests passed. I used GitHub Codespaces, feature branches, commits, and pull requests to add my work to the shared team repository.
 
 ##
 ### Member B: Frontend Development & Quality Assurance
@@ -204,4 +210,4 @@ Evidence: *insert screenshots here*
 
 ##
 ### Progress Against the Project Plan
-
+The backend plan called for a reusable service layer for encryption and multiple steganography carriers, supported by automated tests. The completed work meets that direction: the project has working image, audio, and zero-width text workflows; encryption and decryption coverage; and a full backend regression suite that passed after integration fixes. The next backend focus should be to keep the service interfaces stable as the frontend connects to them and to add end-to-end tests for the complete user workflow.
