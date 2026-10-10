@@ -127,7 +127,7 @@ Test cases:
 Result: The PNG payload encoder test passed.
 
 Evidence: ![Completed Pytest](steganography_pytest_week5.png)
-*Image 1: Steganography.py pytest completion with all test passed*
+*Image 5: Steganography.py pytest completion with all test passed*
 
 #### Zero Width Text Decryption
 Purpose: Verify that the zero-width text service can recover the original encrypted message and handle an invalid passphrase safely.
@@ -142,11 +142,11 @@ Result: Three zero-width tests passed: base text round trip, correct-passphrase 
 Evidence: Pytest screenshots: 
 ![test_zero_width_text.py Pytest](Pytestaftersriptchange.png)
 
-*Image 1: Completion of test_zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 6: Completion of test_zero_width_text.py with no errors or warnings. 100% passed.* 
 
 ![zero_width_text.py Pytest](Pytesttestzerowidth.png)
 
-*Image 2: Completion of zero_width_text.py with no errors or warnings. 100% passed. 
+*Image 7: Completion of zero_width_text.py with no errors or warnings. 100% passed.*
 
 #### Audio Steganography Decryption
 Purpose: Verify that the WAV audio workflow recovers the original message and rejects an incorrect passphrase safely.
@@ -160,6 +160,7 @@ Result: All three audio tests passed as part of the complete backend suite.
 
 Evidence: Verified in the full backend Pytest run.
 ![Completed Pytest](Pytest_test_audio.png)
+*Image 8: Completion of pytest showing all 3 audio tests 100% passing with no errors or warnings.*
 
 #### Full Backend Regression Suite
 Purpose: Verify that all backend services and tests work together after import and integration changes.
@@ -172,6 +173,7 @@ Result: All ten automated backend tests passed.
 
 Evidence: Full-suite evidence: 10 passed in 0.84 seconds.
 ![Completed Pytest](Pytest_audio_passed.png)
+*Image 9: Completion of pytest showing all 10 tests passing 100% in 0.84 seconds no warnings/errors*
 
 ### 4. Lessons Learned
 
@@ -237,7 +239,9 @@ Test Cases:
 
 Result: All four automated Pytests passed. Manual browser testing confirmed the interface layout, required field behavior, and validation status feedback.
 
-Evidence: *insert screenshots here*
+Evidence:
+![Validation PyTest](screenshots/Automated_Validation_Week4.png)
+*Image 10: Automated validation tests passed to include frontend interface*
 
 #### Audio Steganography Frontend
 Purpose: Verify that the audio interface correctly handles required inputs and provides validation feedback.
@@ -249,7 +253,9 @@ Test Cases:
 -	Accept valid WAV file, message, and passphrase inputs through frontend validation.
 Result: All four automated Pytests passed. Manual browser testing confirmed the WAV file selection, required field validation, and successful status feedback.
 
-Evidence: *insert screenshots here*
+Evidence:
+![Validation PyTest](screenshots/Automated_Validation_Week5.png)
+*Image 11: Audio Steganography frontend interface with four automated validation tests passing*
 
 #### Image and Audio Integration Testing
 Purpose: Verify that the existing frontend tests remain functional following integration changes.
@@ -258,9 +264,18 @@ Method: Update the automated tests to reflect the current application structure,
 
 Result: All eight automated tests passed, consisting of four image tests and four audio tests.
 
-Evidence: *insert screenshots here*
+Evidence:
+![Audio PyTest](screenshots/Audio_Test_Validation.png)
+*Image 12: Audio Steganography frontend automated testing with all four Pytests passing*
 
-#####  Zero-Width Text Decryption Frontend
+![Image PyTest](screenshots/Image_Test_Validation.png)
+*Image 13: Image Steganography frontend automated testing with all four Pytests passing*
+
+![Zero Width](screenshots/Zero_Width_Skeleton.png)
+*Image 14: Initial Zero-Width Text Steganography frontend interface*
+
+
+#### Zero-Width Text Decryption Frontend
 Purpose: Verify that the zero-width decryption interface validates required inputs and displays the decoded message output field properly.
 
 Test Cases:
@@ -270,8 +285,9 @@ Test Cases:
 
 Result: All three automated Pytests passed. Manual browser testing confirmed implementation of the zero-width interface, required field validation, and successful status feedback.
 
-Evidence: *insert screenshots here*
-
+Evidence:
+![Zero_Width PyTest](screenshots/Zero_Width_Automation_Week7.png)
+*Image 15: Zero-width text decryption frontend with encoded-text input, passphrase field, Extract Message button, and decoded-message output.*
 
 ### 4. Lessons Learned
 
@@ -285,3 +301,4 @@ As Member B, I have contributed to frontend planning, interface development, inp
 ### Progress Against the Project Plan
 The backend plan called for a reusable service layer for encryption and multiple steganography carriers, supported by automated tests. The completed work meets that direction: the project has working image, audio, and zero-width text workflows; encryption and decryption coverage; and a full backend regression suite that passed after integration fixes. The next backend focus should be to keep the service interfaces stable as the frontend connects to them and to add end-to-end tests for the complete user workflow.
 
+The frontend work completed so far supports the project’s planned development of interfaces for image, audio, and zero-width text steganography. Initial frontend design and documentation were completed, followed by development and validation of the image and audio interfaces. The zero-width interface was subsequently expanded to include both embedding and extraction controls. Automated testing has supported these development activities, with successful validation results documented for the completed frontend components.
