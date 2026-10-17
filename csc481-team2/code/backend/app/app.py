@@ -7,8 +7,13 @@ import wave
 from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
 from services.image_lsb import embed as embed_image
-from services.audio_lsb import embed as embed_audio
 from services.crypto import encrypt, decrypt
+
+from services.audio_lsb import (
+    embed as embed_audio,
+    extract as decrypt_message,
+    decrypt as decrypt_audio,
+)
 from services.zero_width_text import (
     embed as embed_zero_width,
     extract as extract_zero_width,
@@ -213,7 +218,41 @@ def encode_audio():
         "output_id": output_id,
         "download_url": f"/api/v1/audio/downloads/{output_id}"
     }), 201
+@app.post("/api/v1/audio/decode")
+def decode_audio():
+    audio_file = request.files.get("audio")
+    passphrase = request.form.get("passphrase", "")
 
+    if not audio_file or audio_file.filename == "":
+        return jsonify({"error": "Select an encoded WAV file."}), 400
+
+    if not isinstance(passphrase, str) or len(passphrase) < 1:
+        return jsonify({
+            "error": "Enter the passphrase used for encoding."
+        }), 400
+
+    temp_path = AUDIO_UPLOAD_FOLDER / f"decode-{uuid4().hex}.wav"
+
+    try:
+        temp_path.write_bytes(audio_file.read())
+
+        encrypted_payload = decrypt_message(temp_path)
+
+        decoded_message = decrypt(
+            encrypted_payload,
+            passphrase
+        ).decode("utf-8")
+
+    except (ValueError, UnicodeDecodeError) as error:
+        return jsonify({"error": str(error)}), 400
+
+    finally:
+        temp_path.unlink(missing_ok=True)
+
+    return jsonify({
+        "message": "Audio decoded successfully.",
+        "decoded_message": decoded_message
+    }), 200
 
 @app.get("/api/v1/audio/downloads/<output_id>")
 def download_encoded_audio(output_id):

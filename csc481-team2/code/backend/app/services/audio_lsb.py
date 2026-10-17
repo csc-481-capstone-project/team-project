@@ -1,7 +1,7 @@
 """16-bit PCM WAV least-significant-bit carrier."""
 
 from __future__ import annotations
-from app.services import crypto
+from services.crypto import decrypt 
 from pathlib import Path
 import wave
 
@@ -59,5 +59,5 @@ def extract(audio_path: str | Path) -> bytes:
 def decrypt_message(audio_path: str | Path, passphrase: str) -> str:
     """Extract and decrypt a message hidden in a WAV file."""
     encrypted_payload = extract(audio_path)
-    plaintext = crypto.decrypt(encrypted_payload, passphrase)
+    plaintext = decrypt(encrypted_payload, passphrase)
     return plaintext.decode("utf-8")
