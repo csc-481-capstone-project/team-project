@@ -76,6 +76,6 @@ PASS. All three automated frontend Pytests passed. The tests confirmed the requi
 
 ## 5. Progress against the plan
 
-The Week 9 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. The audio steganography decryption interface was completed and all three Pytests were successfully executed. The frontend portion was completed and ready for backend integration. The app.py was integrated and is showing success in testing.
+The Week 9 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. The audio steganography decryption interface was completed and all three Pytests were successfully executed. The frontend portion was completed and ready for backend integration. The app.py was integrated and is showing success in testing. All progress is according to plan and all members are working on schedule 
 
 The Week 10 will focus on working towards the decryption of Image.
