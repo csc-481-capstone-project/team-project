@@ -8,11 +8,13 @@ from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
 from services.image_lsb import embed as embed_image
 from services.crypto import encrypt, decrypt
+from services.crypto import encrypt, decrypt
+from services.audio_lsb import extract as extract_audio
 
 from services.audio_lsb import (
     embed as embed_audio,
     extract as decrypt_message,
-    decrypt as decrypt_audio,
+    decrypt as decrypt_audio_message,
 )
 from services.zero_width_text import (
     embed as embed_zero_width,
@@ -221,39 +223,42 @@ def encode_audio():
 @app.post("/api/v1/audio/decode")
 def decode_audio():
     audio_file = request.files.get("audio")
-    passphrase = request.form.get("passphrase", "")
+    passphrase = request.form.get("passphrase", "").strip()
+    input_path = None
 
-    if not audio_file or audio_file.filename == "":
-        return jsonify({"error": "Select an encoded WAV file."}), 400
+    if audio_file is None or audio_file.filename == "":
+        return jsonify({"error": "Please select an encoded WAV file."}), 400
 
-    if not isinstance(passphrase, str) or len(passphrase) < 1:
-        return jsonify({
-            "error": "Enter the passphrase used for encoding."
-        }), 400
+    if not audio_file.filename.lower().endswith(".wav"):
+        return jsonify({"error": "Only WAV files are supported."}), 400
 
-    temp_path = AUDIO_UPLOAD_FOLDER / f"decode-{uuid4().hex}.wav"
+    if not passphrase:
+        return jsonify({"error": "A passphrase is required."}), 400
 
     try:
-        temp_path.write_bytes(audio_file.read())
+        input_path = AUDIO_UPLOAD_FOLDER / f"{uuid4().hex}.wav"
+        audio_file.save(input_path)
+        encrypted_payload = extract_audio(input_path)
 
-        encrypted_payload = decrypt_message(temp_path)
+        print("Extracted payload byte count:", len(encrypted_payload))
+        print("First payload bytes:", encrypted_payload[:5])
 
-        decoded_message = decrypt(
-            encrypted_payload,
-            passphrase
-        ).decode("utf-8")
+        message = decrypt(encrypted_payload, passphrase).decode("utf-8")
 
-    except (ValueError, UnicodeDecodeError) as error:
+        return jsonify({
+            "message": message
+        }), 200
+
+    except ValueError as error:
         return jsonify({"error": str(error)}), 400
 
+    except Exception as error:
+        print(error)
+        return jsonify({"error": "Unable to extract the hidden message."}), 500
+
     finally:
-        temp_path.unlink(missing_ok=True)
-
-    return jsonify({
-        "message": "Audio decoded successfully.",
-        "decoded_message": decoded_message
-    }), 200
-
+        if input_path is not None and input_path.exists():
+            input_path.unlink()
 @app.get("/api/v1/audio/downloads/<output_id>")
 def download_encoded_audio(output_id):
     if not re.fullmatch(r"[a-f0-9]{32}", output_id):

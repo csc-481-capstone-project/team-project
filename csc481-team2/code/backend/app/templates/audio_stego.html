@@ -87,19 +87,24 @@
                 <form id="audioExtractForm">
 
                     <div class="mb-3">
-                        <label for="audioExtractUpload">Select a WAV file:</label>
+                        <label for="extractAudioUpload" class="form-label">
+                            Select a WAV file:
+                        </label>
+
                         <input
                             type="file"
-                            id="audioExtractUpload"
-                            name="audioExtractUpload"
+                            id="extractAudioUpload"
+                            name="audio"
                             accept=".wav,audio/wav"
                             class="form-control"
                             required
-                        >        
+                        >
                     </div>
 
                     <div class="mb-3">
-                        <label for="extractPassphrase">Passphrase:</label>
+                        <label for="extractPassphrase" class="form-label">
+                            Passphrase:
+                        </label>
                         <input
                             type="password"
                             id="extractPassphrase"
@@ -110,7 +115,7 @@
                         >
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Extract Message</button>
+                    <button type="submit" class="btn btn-success">Extract Message</button>
 
                 </form>
 
@@ -132,17 +137,19 @@
                 </div>
 
                 <script>
+                    const extractForm = document.getElementById("audioExtractForm");
+                    const extractStatus = document.getElementById("extractStatus");
                     const audioForm = document.getElementById("audioStegoForm");
                     const audioInput = document.getElementById("audioUpload");
                     const messageInput = document.getElementById("secretMessage");
                     const passphraseInput = document.getElementById("passphrase");
                     const audioStatus = document.getElementById("statusMessage");
                     const audioButton = audioForm.querySelector('button[type="submit"]');
-                    const extractForm = document.getElementById("audioExtractForm");
-                    const extractStatus = document.getElementById("extractStatus");
+
                     
                     audioForm.addEventListener("submit", async (event) => {
                         event.preventDefault();
+                        console.log("extract button pressed");
 
                         const audio = audioInput.files[0];
                         const message = messageInput.value;
@@ -204,12 +211,55 @@
                         }
                     });
 
-                    extractForm.addEventListener("submit", (event) => {
+                    const extractedMessage = document.getElementById("extractedMessage");
+                    const extractAudioInput = document.getElementById("extractAudioUpload");
+                    const extractPassphraseInput = document.getElementById("extractPassphrase");
+                    console.log("Extraction form found:", extractForm);
+
+                    extractForm.addEventListener("submit", async (event) => {
                         event.preventDefault();
 
-                        extractStatus.textContent = "Ready for extraction processing...";
-                    });
+                        console.log("Extract button pressed.");
 
+                        const audio = extractAudioInput.files[0];
+                        const passphrase = extractPassphraseInput.value;
+
+                        console.log("Selected audio:", audio);
+                        console.log("Passphrase entered:", Boolean(passphrase));
+
+                        if (!audio || !passphrase) {
+                            extractStatus.textContent =
+                                "Please select an encoded WAV file and enter its passphrase.";
+                            return;
+                        }
+
+                        const formData = new FormData();
+                        formData.append("audio", audio);
+                        formData.append("passphrase", passphrase);
+
+                        extractStatus.textContent = "Extracting and decrypting message...";
+                        extractedMessage.value = "";
+
+                        try {
+                            const response = await fetch("/api/v1/audio/decode", {
+                                method: "POST",
+                                body: formData
+                            });
+
+                            const result = await response.json();
+                            console.log("Decode response from Flask:", result);
+
+                            if (!response.ok) {
+                                throw new Error(result.error || "Audio extraction failed.");
+                            }
+
+                            extractedMessage.value = result.message;
+                            extractStatus.textContent = "Message extracted successfully.";
+                        } catch (error) {
+                            extractStatus.textContent = error.message;
+                            console.error(error);
+                        }
+                    });
                 </script>
 
             </div>
