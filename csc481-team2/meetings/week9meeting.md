@@ -33,7 +33,7 @@
 |Jamaal spratley| Implemented frontend and backend scripts into the app.py for use.  |
 ## Next scheduled meeting
 
-**Date:** Tuesday , October 19, 2026
+**Date:** Tuesday , October 20, 2026
 **Time:** tbd
 **Planned topics:** Week 10 planning, task allocation, 
 review.
