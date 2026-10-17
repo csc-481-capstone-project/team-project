@@ -51,7 +51,7 @@ PASS. All three automated frontend Pytests passed. The tests confirmed the requi
 
 ![Audio_Decryption PyTest](Audio_Decryption_Automation_Week9.png)
 
-*Image 3: Audio steganography decryption frontend with three automated tests passing.
+*Image 3: Audio steganography decryption frontend with three automated tests passing.*
 
 
 #
