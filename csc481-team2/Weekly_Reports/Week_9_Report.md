@@ -8,12 +8,13 @@
 ## 1. Milestones achieved
 - Completion of script editing for audio to ensure communication with the frontend for decryption. 100% passed with no errors achieved.
 - Developed the audio steganography decryption frontend, including WAV file selection, passphrase input, extraction controls, and a read-only field for displaying decrypted messages.
+- Impemented the front end a backend scripts to the app.py so audio files can now be decryted.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | Implemented zero-width text into the app and ran the first test for encoding and now decoding |
-| Member A (Backend) | Bryan Goodman | Ensured the zero-width steganography communicates with the main branch. Completed Pytest for zero-width steganography and make sure there are no warnings. |
+| Team Leader | Jamaal Spratley | Implemented audio into the app and ran the first test for encoding and now decoding |
+| Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed the audio steganography decryption interface, including status feedback and a read-only message output field. Created and successfully completed three automated Pytest. |
 
 ## 3. Test evidence
@@ -57,23 +58,24 @@ PASS. All three automated frontend Pytests passed. The tests confirmed the requi
 #
 ### 3.3 Jamaal
 
-**Purpose:** Add a decryption path to app.py so the zero-width text can be extracted.
+**Purpose:** Compile the scripts made for audio decryption into the app.py for use.
 
-**Expected result:** The  secret message should be imported and extracted 
+**Expected result:** The secret message should be imported and extracted 
 
-**Result:** The  secret message was extracted correctly 
+**Result:** the audio file was encoded and decoded sucsssfully.
 
-![zero_width encryption](encryption.png)
-![zero_width decryption](decryption.png)
+![audio encryption](audioin.png)
+![audio decryption](audioout.png)
 
 
 ## 4. Lessons learned
 
 - Learning the importance of import paths became the biggest lesson learned. Without the proper pathing python cannot locate the correct service module which is very important for this process.
 - Gained a better understanding of the separation between frontend and backend integration, particularly when preparing an interface for funcionality that will be connected later. Also gained experience troubleshooting file paths and identifying errors during testing.
+- Structing in a html is very important if one thing is in the wrong place or spelled incorrectly it won’t work when called to later as well as learned where scripts can be added to code to trouble shoot to see where the errors occur.
 
 ## 5. Progress against the plan
 
-The Week 9 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. The audio steganography decryption interface was completed and all three Pytests were successfully executed. The frontend portion was completed and ready for backend integration.
+The Week 9 the plan required pytest for the test_audio_lsb.py and audio_lsb.py scripts. Both pytest passed 100% with no errors to report, ensuring communication with the frontend. The audio steganography decryption interface was completed and all three Pytests were successfully executed. The frontend portion was completed and ready for backend integration. The app.py was integrated and is showing success in testing.
 
 The Week 10 will focus on working towards the decryption of Image.

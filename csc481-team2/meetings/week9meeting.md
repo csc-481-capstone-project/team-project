@@ -28,12 +28,12 @@
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman | Created  midterm report|
-|Kendra Pelzer | Created midterm report |
-|Jamaal spratley| Created midterm report |
+|Brayn Goodman | Completed backend scripts for audio decryption.|
+|Kendra Pelzer | Completed frontend scripts for audio decryption.|
+|Jamaal spratley| Implemented frontend and backend scripts into the app.py for use.  |
 ## Next scheduled meeting
 
-**Date:** Tuesday , October 17, 2026
+**Date:** Tuesday , October 19, 2026
 **Time:** tbd
 **Planned topics:** Week 10 planning, task allocation, 
 review.
