@@ -6,6 +6,8 @@
 #
 **Reporting period:** Week 10
 ## 1. Milestones achieved
+- Completion of the image steganography decryption process. The backend can now extract an encrypted message from a PNG image, decrypt it with the correct passphrase, and safely reject an incorrect passphrase.
+- 
 - 
 
 ## 2. Subtasks completed
@@ -19,11 +21,11 @@
 
 ### 3.1 Bryan
 
-**Purpose:** 
+**Purpose:** Verify image steganography can extract encrypted message from PNG image and decrypt correctly with proper passphrase. 
 
-**Expected Result:** 
+**Expected Result:** Pytest completion with no errors or expected warnings. 
 
-**Result:**  
+**Result:**  Pytest completed with no warnings and 100% passed. 
 
 
 **Completed Pytest**
@@ -68,10 +70,12 @@
 
 ## 4. Lessons learned
 
+- I learned that testing both the correct and incorrect passphrase paths are important. Features are not secure unless it is able to have the authorized message recovered safely while rejecting unauthorized access. 
+- 
 - 
 
 ## 5. Progress against the plan
 
-The Week 10 the plan required 
+The Week 10 the plan required completing and testing image steganography decryption, including correct and incorrect passphrase handling. 
 
 The Week 11 will focus on working towards
