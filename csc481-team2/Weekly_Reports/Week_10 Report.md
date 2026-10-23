@@ -30,7 +30,7 @@
 
 **Completed Pytest**
 
-![Pytest test_image_lsb.py](WK10pytest testimage.png
+![Pytest test_image_lsb.py](WK10pytesttestimage.png
 )
 
 *Image 1: Pytest of test_image_lsb.py showing completion
