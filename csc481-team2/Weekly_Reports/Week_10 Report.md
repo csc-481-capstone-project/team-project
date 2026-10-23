@@ -30,13 +30,14 @@
 
 **Completed Pytest**
 
-![Test_audio_lsb.py Pytest](Pytest_test_audio.png)
+![Pytest test_image_lsb.py](WK10pytest testimage.png
+)
 
-*Image 1: 
+*Image 1: Pytest of test_image_lsb.py showing completion
 
-![Audio_lsb.py Pytest](Pytest_audio_passed.png)
+![Full Pytest All tests Passed](WK10pytestallpassed.png)
 
-*Image 2: 
+*Image 2: Full pytest, all test passed 100% with no warnings. 
 
 #
 ### 3.2 Frontend Audio Decryption - Kendra
