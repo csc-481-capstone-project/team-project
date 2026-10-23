@@ -6,7 +6,7 @@ It should be used only for the documented educational experiment workflow.
 from __future__ import annotations
 
 from pathlib import Path
-from services.crypto import decrypt
+from app.services.crypto import decrypt
 
 ZERO = "\u200b"  # zero-width space
 ONE = "\u200c"   # zero-width non-joiner
