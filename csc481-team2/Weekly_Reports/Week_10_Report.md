@@ -8,12 +8,12 @@
 ## 1. Milestones achieved
 - Completion of the image steganography decryption process. The backend can now extract an encrypted message from a PNG image, decrypt it with the correct passphrase, and safely reject an incorrect passphrase.
 - Developed the image steganography decryption frontend, including PNG image upload, passphrase input, extraction controls, and read-only output.
-- the full implementation of image steganography into the app.py sandbox.
+- The full implementation of image steganography into the app.py sandbox.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | full Implementation of image into the app and ran the first test|
+| Team Leader | Jamaal Spratley | Full Implementation of image into the app and ran the first test|
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed the image steganography decryption interface with PNG upload, passphrase input, extraction button, status feedback, and read-only message field. Created and successfully completed three automated Pytests to verify input validation and output field configuration. |
 
@@ -58,7 +58,7 @@ PASS. All three automated frontend Pytests passed successfully. The tests confir
 #
 ### 3.3 Jamaal
 
-**Purpose:**  implement and test image encode and decode.  
+**Purpose:**  Implement and test image encode and decode.  
 
 **Expected result:**  Message was successfully encoded downloaded and later decoded.
 
@@ -77,6 +77,6 @@ PASS. All three automated frontend Pytests passed successfully. The tests confir
 
 ## 5. Progress against the plan
 
-The Week 10 the plan required completing and testing image steganography decryption, including correct and incorrect passphrase handling. The frontend decryption interface was completed, and three automated frontend Pytests were successfully executed with no failures.
+The Week 10 the plan required completing and testing image steganography decryption, including correct and incorrect passphrase handling. The frontend decryption interface was completed, and three automated frontend Pytests were successfully executed with no failures. The app.py image encode and decode is fully implemented and first tests are successful. The progress this week is on schedule, and all members are working on their goal.
 
 The Week 11 will focus on working towards  finalizing sandbox as pertains to our rubric 

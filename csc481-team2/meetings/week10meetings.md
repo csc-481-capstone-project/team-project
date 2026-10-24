@@ -20,7 +20,7 @@
 
 ## Saturday summary and merge meeting
 
-**Date:** Saturday, October 17, 2026
+**Date:** Saturday, October 24, 2026
 **Time:** 2:00 PM - 4:00 PM
 **Location/platform:** Microsoft Teams
 
@@ -28,12 +28,12 @@
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman | Completed backend scripts for audio decryption.|
-|Kendra Pelzer | Completed frontend scripts for audio decryption.|
+|Brayn Goodman | Completed backend scripts for image decryption.|
+|Kendra Pelzer | Completed frontend scripts for image decryption.|
 |Jamaal spratley| Implemented frontend and backend scripts into the app.py for use. |
 ## Next scheduled meeting
 
-**Date:** Tuesday , October 20, 2026
+**Date:** Tuesday , October 27, 2026
 **Time:** tbd
 **Planned topics:** Week 11 planning, task allocation, 
 review.
