@@ -5,6 +5,7 @@ bits store the encrypted payload itself.  Only lossless PNG output is supported.
 """
 
 from __future__ import annotations
+from app.services import crypto
 
 from pathlib import Path
 from PIL import Image
@@ -83,3 +84,9 @@ def extract(image_path: str | Path) -> bytes:
     if payload_length > capacity(image_path):
         raise ValueError("Embedded payload length is invalid.")
     return read_bytes(LENGTH_BYTES * 8, payload_length)
+
+def decrypt_message(image_path: str | Path, passphrase: str):
+    """Extract and decrypt a message hidden in a PNG image."""
+    encrypted_payload = extract(image_path)
+    plaintext = crypto.decrypt(encrypted_payload, passphrase)
+    return plaintext.decode("utf-8")

@@ -1,7 +1,7 @@
 """16-bit PCM WAV least-significant-bit carrier."""
 
 from __future__ import annotations
-from services.crypto import decrypt 
+from app.services.crypto import decrypt
 from pathlib import Path
 import wave
 
