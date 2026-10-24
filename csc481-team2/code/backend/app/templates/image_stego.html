@@ -224,6 +224,43 @@
 
                     extractForm.addEventListener("submit",(event) => {
                         event.preventDefault();
+                        extractForm.addEventListener("submit", async (event) => {
+                            event.preventDefault();
+
+                            const image = encodedImageInput.files[0];
+                            const passphrase = extractPassphraseInput.value;
+
+                            if (!image || !passphrase) {
+                                extractStatusMessage.textContent =
+                                    "Select an encoded PNG image and enter its passphrase.";
+                                return;
+                            }
+
+                            const formData = new FormData();
+                            formData.append("image", image);
+                            formData.append("passphrase", passphrase);
+
+                            extractStatusMessage.textContent = "Extracting and decrypting message...";
+                            extractedMessage.value = "";
+
+                            try {
+                                const response = await fetch("/api/v1/decode", {
+                                    method: "POST",
+                                    body: formData
+                                });
+
+                                const result = await response.json();
+
+                                if (!response.ok) {
+                                    throw new Error(result.error || "Image extraction failed.");
+                                }
+
+                                extractedMessage.value = result.message;
+                                extractStatusMessage.textContent = "Message extracted successfully.";
+                            } catch (error) {
+                                extractStatusMessage.textContent = error.message;
+                            }
+                        });
 
                         extractStatusMessage.textContent = "Extracting message...";
                     });

@@ -8,8 +8,10 @@ from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
 from services.image_lsb import embed as embed_image
 from services.crypto import encrypt, decrypt
-from services.crypto import encrypt, decrypt
-from services.audio_lsb import extract as extract_audio
+from services.image_lsb import (
+    embed as embed_image,
+    extract as extract_image,
+)
 
 from services.audio_lsb import (
     embed as embed_audio,
@@ -95,7 +97,8 @@ def encode_png():
     data = request.get_json(silent=True) or {}
 
     upload_id = data.get("upload_id", "")
-    secret_message = data.get("message", "")
+    secret_message = data.get("message", "") 
+    passphrase = data.get("passphrase", "")
 
     # A valid upload ID is the 32-character hexadecimal value created by uuid4().
     if not re.fullmatch(r"[a-f0-9]{32}", upload_id):
@@ -116,7 +119,7 @@ def encode_png():
     output_path = IMAGE_OUTPUT_FOLDER / f"{output_id}.png"
 
     try:
-        encrypted_payload = encrypt(secret_message.encode("utf-8"), secret_message)
+        encrypted_payload = encrypt(secret_message.encode("utf-8"), passphrase)
         embed_image(input_path, encrypted_payload, output_path)
     except ValueError as error:
         return jsonify({"error": str(error)}), 400
@@ -126,11 +129,51 @@ def encode_png():
         "output_id": output_id,
         "download_url": f"/api/v1/downloads/{output_id}"
     }), 201
+@app.post("/api/v1/decode")
+def decode_image():
+    image_file = request.files.get("image")
+    passphrase = request.form.get("passphrase", "")
+    input_path = None
+
+    if image_file is None or image_file.filename == "":
+        return jsonify({"error": "Please select an encoded PNG image."}), 400
+
+    if not image_file.filename.lower().endswith(".png"):
+        return jsonify({"error": "Only PNG images are supported."}), 400
+
+    if not passphrase:
+        return jsonify({"error": "A passphrase is required."}), 400
+
+    try:
+        input_path = IMAGE_UPLOAD_FOLDER / f"{uuid4().hex}.png"
+        image_file.save(input_path)
+
+        with Image.open(input_path) as image:
+            if image.format != "PNG":
+                raise ValueError("Only valid PNG images are supported.")
+
+        encrypted_payload = extract_image(input_path)
+        message = decrypt(encrypted_payload, passphrase).decode("utf-8")
+
+        return jsonify({"message": message}), 200
+
+    except ValueError as error:
+        return jsonify({"error": str(error)}), 400
+
+    except UnicodeDecodeError:
+        return jsonify({"error": "The recovered message is not valid text."}), 400
+
+    except Exception as error:
+        print(error)
+        return jsonify({"error": "Unable to extract the hidden message."}), 500
+
+    finally:
+        if input_path is not None and input_path.exists():
+            input_path.unlink()
 @app.get("/api/v1/downloads/<output_id>")
-def download_encoded_image(output_id):
-    # Only allow the random 32-character output IDs created by uuid4().
+def download_image(output_id):
     if not re.fullmatch(r"[a-f0-9]{32}", output_id):
-        return jsonify({"error": "Invalid output ID."}), 400
+        return jsonify({"error": "Invalid image output ID."}), 400
 
     output_path = IMAGE_OUTPUT_FOLDER / f"{output_id}.png"
 

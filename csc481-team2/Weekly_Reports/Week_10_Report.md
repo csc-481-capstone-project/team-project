@@ -8,12 +8,12 @@
 ## 1. Milestones achieved
 - Completion of the image steganography decryption process. The backend can now extract an encrypted message from a PNG image, decrypt it with the correct passphrase, and safely reject an incorrect passphrase.
 - Developed the image steganography decryption frontend, including PNG image upload, passphrase input, extraction controls, and read-only output.
-- 
+- the full implementation of image steganography into the app.py sandbox.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | Implemented audio into the app and ran the first test for encoding and now decoding |
+| Team Leader | Jamaal Spratley | full Implementation of image into the app and ran the first test|
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed the image steganography decryption interface with PNG upload, passphrase input, extraction button, status feedback, and read-only message field. Created and successfully completed three automated Pytests to verify input validation and output field configuration. |
 
@@ -58,24 +58,25 @@ PASS. All three automated frontend Pytests passed successfully. The tests confir
 #
 ### 3.3 Jamaal
 
-**Purpose:** 
+**Purpose:**  implement and test image encode and decode.  
 
-**Expected result:** 
+**Expected result:**  Message was successfully encoded downloaded and later decoded.
 
 **Result:** 
 
-![audio encryption](audioin.png)
-![audio decryption](audioout.png)
-
+![audio encryption](imagein.png)
+*Image 4: Image steganography encryption and download working
+![audio decryption](imageout.png)
+*Image 5: Image steganography decryption working.
 
 ## 4. Lessons learned
 
 - I learned that testing both the correct and incorrect passphrase paths are important. Features are not secure unless it is able to have the authorized message recovered safely while rejecting unauthorized access. 
 - Gained a better understanding of how HTML element IDs and JavaScript event listeners work together. Also gained experience troubleshooting automated test failures caused by mismatched element IDs and incorrect file paths.
-- 
+- I learned that errors in the code can alter what the passphrase is saved as in the file when it is encoded making decoding impossible as it’s looking for something for data that the passphrase is not saved as.
 
 ## 5. Progress against the plan
 
 The Week 10 the plan required completing and testing image steganography decryption, including correct and incorrect passphrase handling. The frontend decryption interface was completed, and three automated frontend Pytests were successfully executed with no failures.
 
-The Week 11 will focus on working towards
+The Week 11 will focus on working towards  finalizing sandbox as pertains to our rubric 
