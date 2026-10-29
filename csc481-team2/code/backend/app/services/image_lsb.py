@@ -5,7 +5,7 @@ bits store the encrypted payload itself.  Only lossless PNG output is supported.
 """
 
 from __future__ import annotations
-from services.crypto import decrypt as crypto_decrypt
+from app.services.crypto import decrypt as crypto_decrypt
 
 from pathlib import Path
 from PIL import Image
