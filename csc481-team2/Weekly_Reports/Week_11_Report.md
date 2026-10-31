@@ -39,7 +39,7 @@
 *Image 2: Completion of Full pytest to ensure complete communication with other services. 
 
 #
-### 3.2 Frontend Audio Decryption - Kendra
+### 3.2 Frontend Statistical Detection - Kendra
 
 **Frontend Tests:**
 Verify that the new statistical detection interfaces for image, audio, and zero-width text steganography display the required elements correctly.
