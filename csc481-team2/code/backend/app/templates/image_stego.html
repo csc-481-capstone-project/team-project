@@ -54,7 +54,7 @@
                         <label for="secretMessage">Secret Message:</label>
                     <textarea
                         minlength="1"
-                        maxlength="500"
+                        maxlength="1000"
                         id="secretMessage"
                         name="secretMessage"
                         rows="5"
@@ -209,7 +209,8 @@
                     const detectionImageInput = document.getElementById("detectionImageUpload");
                     const imageDetectionStatus = document.getElementById("imageDetectionStatus");
                     const imageDetectionResults = document.getElementById("imageDetectionResults");
-                    const imageDetectionSummary = document.getElementById("imageDetectionSummary");
+                    const imageDetectionSummary = document.getElementById("detectionSummary");
+                    const analyzeImageButton = document.getElementById("analyzeImageButton");
 
                     form.addEventListener("submit", async (event) => {
                         event.preventDefault();
@@ -317,14 +318,68 @@
                         event.preventDefault();
 
                         const image = detectionImageInput.files[0];
+
                         imageDetectionResults.hidden = true;
 
                         if (!image) {
-                            imageDetectionStatus.textContent = "Please select a PNG image to analyze.";
+                            imageDetectionStatus.textContent =
+                                "Please select a PNG image to analyze.";
                             return;
                         }
-                        imageDetectionStatus.textContent =
-                            "Image selected. Analyzing...";
+
+                        analyzeImageButton.disabled = true;
+                        imageDetectionStatus.textContent = "Uploading image for analysis...";
+
+                        try {
+                            const formData = new FormData();
+                            formData.append("image", image);
+
+                            const uploadResponse = await fetch("/api/v1/uploads", {
+                                method: "POST",
+                                body: formData
+                            });
+
+                            const uploadResult = await uploadResponse.json();
+
+                            if (!uploadResponse.ok) {
+                                throw new Error(uploadResult.error || "Image upload failed.");
+                            }
+
+                            imageDetectionStatus.textContent = "Running statistical detection...";
+
+                            const analyzeResponse = await fetch("/api/v1/analyze", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({
+                                    upload_id: uploadResult.upload_id
+                                })
+                            });
+
+                            const analyzeResult = await analyzeResponse.json();
+
+                            if (!analyzeResponse.ok) {
+                                throw new Error(analyzeResult.error || "Image analysis failed.");
+                            }
+
+                            const stats = analyzeResult.analysis;
+
+                            imageDetectionSummary.textContent =
+                                `Bits analyzed: ${stats.total_bits_analyzed}\n` +
+                                `LSB ones: ${stats.lsb_ones}\n` +
+                                `LSB one ratio: ${stats.one_ratio}\n` +
+                                `Balance score: ${stats.balance_score}\n` +
+                                `Educational suspicion indicator: ${stats.suspicion}\n\n` +
+                                stats.notice;
+
+                            imageDetectionResults.hidden = false;
+                            imageDetectionStatus.textContent = "Statistical detection completed.";
+                        } catch (error) {
+                            imageDetectionStatus.textContent = error.message;
+                        } finally {
+                            analyzeImageButton.disabled = false;
+                        }
                     });
 
                 </script>

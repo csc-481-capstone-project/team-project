@@ -3,11 +3,14 @@ from pathlib import Path
 from uuid import uuid4
 import re
 import wave
-
+from math import log2
+from wsgiref import headers
+from wsgiref import headers
 from flask import Flask, jsonify, render_template, request, send_file
 from PIL import Image, UnidentifiedImageError
 from services.image_lsb import embed as embed_image
 from services.crypto import encrypt, decrypt
+from services.detection import analyze_image_lsb
 from services.image_lsb import (
     embed as embed_image,
     extract as extract_image,
@@ -22,6 +25,48 @@ from services.zero_width_text import (
     embed as embed_zero_width,
     extract as extract_zero_width,
 )
+def analyze_image_lsb(image_path: str | Path) -> dict[str, float | int | str]:
+    """Return simple educational LSB-balance statistics for a PNG image."""
+
+    with Image.open(image_path) as source:
+        if source.format != "PNG":
+            raise ValueError("Only PNG images are supported.")
+
+        # Allows RGB, RGBA, palette, and grayscale PNG files.
+        image = source.convert("RGB")
+
+    ones = 0
+    total_bits = 0
+
+    for pixel in image.getdata():
+        for channel in pixel:
+            ones += channel & 1
+            total_bits += 1
+
+    if total_bits == 0:
+        raise ValueError("The image contains no analyzable color data.")
+
+    one_ratio = ones / total_bits
+    balance_score = 1.0 - abs(one_ratio - 0.5) * 2
+
+    if balance_score >= 0.98:
+        suspicion = "high"
+    elif balance_score >= 0.90:
+        suspicion = "medium"
+    else:
+        suspicion = "low"
+
+    return {
+        "total_bits_analyzed": total_bits,
+        "lsb_ones": ones,
+        "one_ratio": round(one_ratio, 4),
+        "balance_score": round(balance_score, 4),
+        "suspicion": suspicion,
+        "notice": (
+            "This is an educational statistical indicator only. "
+            "It cannot prove that hidden data exists in the image."
+        ),
+    }
 
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 500 MB.
@@ -91,6 +136,29 @@ def upload_png():
         "message": "Image uploaded successfully.",
         "upload_id": upload_id
     }), 201
+@app.post("/api/v1/analyze")
+def analyze_png():
+    data = request.get_json(silent=True) or {}
+    upload_id = data.get("upload_id", "")
+
+    if not re.fullmatch(r"[a-f0-9]{32}", upload_id):
+        return jsonify({"error": "Invalid upload ID."}), 400
+
+    input_path = IMAGE_UPLOAD_FOLDER / f"{upload_id}.png"
+
+    if not input_path.exists():
+        return jsonify({"error": "Uploaded image was not found."}), 404
+
+    try:
+        statistics = analyze_image_lsb(input_path)
+
+        return jsonify({
+            "message": "Image analysis completed.",
+            "analysis": statistics
+        }), 200
+
+    except ValueError as error:
+        return jsonify({"error": str(error)}), 400
 
 @app.post("/api/v1/encode")
 def encode_png():
@@ -107,8 +175,8 @@ def encode_png():
     if not isinstance(secret_message, str) or len(secret_message) < 1:
         return jsonify({"error": "secret_message must be at least 1 character."}), 400
 
-    if len(secret_message) > 100:
-        return jsonify({"error": "secret_message must be 100 characters or fewer."}), 400
+    if len(secret_message) > 1000:
+        return jsonify({"error": "secret_message must be 1000 characters or fewer."}), 400
 
     input_path = IMAGE_UPLOAD_FOLDER / f"{upload_id}.png"
 
