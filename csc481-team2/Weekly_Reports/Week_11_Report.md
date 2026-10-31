@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 11
 ## 1. Milestones achieved
-- Implemented an image LSB Statistical Detection Module that analyzes the balance of least-significant-bit values in PNG images, returning with low, medium, or high suspicion level.
+- Initiated the statistical detection module to support image, audio, and zero-width text steganography.
 - Developed statistical detection frontend interfaces for image, audio, and zero-width text steganography. Modifications include input fields, analysis button, status messages, and result display sections.
 - Iplementation of image statistical Detection 
 
@@ -21,20 +21,20 @@
 
 ### 3.1 Bryan
 
-**Purpose:** Create and implement statistical detection module for the backend services. 
+**Purpose:** Create and implement statistical detection module to support image, audio, and zero-width text steganography. 
 
 **Expected Result:** Creation of script that has no errors when the pytest is implemented. 
 
-**Result:** Completion of two pytest. One for the testing of the module and the other is full pytest to ensure everything is communicating. 
+**Result:** Completion of two pytest. One for the testing of the module and the other is full pytest to ensure everything is communicating with no errors. 
 
 
 **Completed Pytest**
 
-![Statisical Detection Test_detection.py](statisticaldetectionpytest.png)
+![Statisical Detection Test_detection.py](Testservicespytest(full).png)
 
 *Image 1: test_dection.py pytest*
 
-![Full Pytest All Passed after testing](FullStatisticalDetectionPytest.png)
+![Full Pytest All Passed after testing](CompletePytest.png)
 
 *Image 2: Completion of Full pytest to ensure complete communication with other services. 
 
@@ -70,7 +70,7 @@
 
 ## 4. Lessons learned
 
-- I learned that a statistical detection result is a helpful indicator, but it does not prove that hidden data is within the image. Testing the module with different LSB patterns helps ensure that the detection values act accordingly.
+- I learned that each carrier stores hidden data differently, so detection has to be adaptable for images, audio files, and zero-width text instead of having one approach for each file type. 
 - 
 - I learned that statistical detection is not always accurate since smaller messages change the image's pixel data less
 
