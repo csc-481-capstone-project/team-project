@@ -7,7 +7,7 @@
 **Reporting period:** Week 11
 ## 1. Milestones achieved
 - Implemented an image LSB Statistical Detection Module that analyzes the balance of least-significant-bit values in PNG images, returning with low, medium, or high suspicion level.
-- 
+- Developed statistical detection frontend interfaces for image, audio, and zero-width text steganography. Modifications include input fields, analysis button, status messages, and result display sections.
 - Iplementation of image statistical Detection 
 
 ## 2. Subtasks completed
@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | Team Leader | Jamaal Spratley | Full implementation of image statistical detection for app.py|
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
-| Member B (Frontend/QA) | Kendra Pelzer | Developed the image steganography decryption interface with PNG upload, passphrase input, extraction button, status feedback, and read-only message field. Created and successfully completed three automated Pytests to verify input validation and output field configuration. |
+| Member B (Frontend/QA) | Kendra Pelzer | Developed statistical detection frontend sections for image, audio, and zero-width text steganography. Updated the zero-width page layout and created automated frontend tests to verify the new elements. |
 
 ## 3. Test evidence
 
