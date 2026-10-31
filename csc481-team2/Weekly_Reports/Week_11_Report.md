@@ -8,12 +8,12 @@
 ## 1. Milestones achieved
 - Initiated the statistical detection module to support image, audio, and zero-width text steganography.
 - Developed statistical detection frontend interfaces for image, audio, and zero-width text steganography. Modifications include input fields, analysis button, status messages, and result display sections.
-- Iplementation of image statistical Detection 
+- Iplementation of statistical Detection for image, audio and zero-width.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | Full implementation of image statistical detection for app.py|
+| Team Leader | Jamaal Spratley | Full implementation of statistical detection for app.py|
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed statistical detection frontend sections for image, audio, and zero-width text steganography. Updated the zero-width page layout and created automated frontend tests to verify the new elements. |
 
@@ -58,14 +58,16 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 ### 3.3 Jamaal
 
 **Purpose:** Create and implement statistical detection module for the app.py.
-**Expected result:** the app.py accepting any image and determining if the images have a hidden message already embedded in it.
+**Expected result:** the app.py accepting any png,wave or zero-width file and determining if they have a hidden message already embedded in it.
 
 **Result:**  The statistical detection is working and running.
 
-![Statistical detection in](statdet.png)
+![Statistical detection audio](stataudio.png)
 *Image 4:
-![statistical detection out](statdettest.png)
+![statistical detection image](statdettest.png)
 *Image 5:
+![statistical detection zero-width](statzero.png)
+*Image 6:
 
 ## 4. Lessons learned
 
@@ -75,7 +77,7 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 
 ## 5. Progress against the plan
 
-The Week 11 the plan required the creation of the statistical detection module for backend services, ensure that complete communication occurred with a completed full pytest, and full implementation of the module with the other services. Front interfaces were developed for image, audio, and zero-width text detection, including the necessary input fields, analysis button, and result display areas.
+The Week 11 the plan required the creation of the statistical detection module for backend services, ensure that complete communication occurred with a completed full pytest, and full implementation of the module with the other services. Front interfaces were developed for image, audio, and zero-width text detection, including the necessary input fields, analysis button, and result display areas. Finally, all pieces were compiled together in the app for future use. All progress was according to play, and all members are working together to complete the sandbox.
 
 
 The Week 12 plan will be to implement the PDF export. 
