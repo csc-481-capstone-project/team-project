@@ -236,6 +236,8 @@
             });
 
             const result = await response.json();
+            
+            
 
             if (!response.ok) {
                 throw new Error(result.error || "Text encoding failed.");
@@ -269,42 +271,48 @@
         const zeroWidthDetectionResults = document.getElementById("zeroWidthDetectionResults");
         const zeroWidthDetectionSummary = document.getElementById("zeroWidthDetectionSummary");
 
+
         decodeForm.addEventListener("submit", async (event) => {
             event.preventDefault();
+
+            console.log("Decode button pressed.");
 
             try {
                 const response = await fetch("/api/v1/zero-width/decode", {
                     method: "POST",
                     headers: {
-                    "Content-Type": "application/json"
+                        "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
-                    encoded_text: stegoText.value,
-                    passphrase: decodePassphrase.value
+                        encoded_text: stegoText.value,
+                        passphrase: decodePassphrase.value
                     })
                 });
 
                 const result = await response.json();
+                console.log("Zero-width decode response:", result);
 
                 if (!response.ok) {
-                throw new Error(result.error || "Extraction failed.");
-            }
+                    throw new Error(result.error || "Extraction failed.");
+                }
 
-            decodedMessage.value = result.decoded_message;
+                decodedMessage.value = result.message;
 
-            statusMessage.textContent = "Message extracted successfully.";
-            statusMessage.className = "alert alert-success mt-3";
-
+                statusMessage.textContent = "Message extracted successfully.";
+                statusMessage.className = "alert alert-success mt-3";
             } catch (error) {
-            statusMessage.textContent = error.message;
-            statusMessage.className = "alert alert-danger mt-3";
+                statusMessage.textContent = error.message;
+                statusMessage.className = "alert alert-danger mt-3";
+                console.error(error);
             }
         });
+
+        const analyzeTextButton = document.getElementById("analyzeTextButton");
 
         zeroWidthDetectionForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            const text = zeroWidthDetectionInput.value.trim();
+            const text = zeroWidthDetectionInput.value;
 
             zeroWidthDetectionResults.hidden = true;
 
@@ -313,9 +321,41 @@
                     "Please enter text to analyze.";
                 return;
             }
+            try {
+                const response = await fetch("/api/v1/zero-width/analyze", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        stego_text: text
+                    })
+                });
 
-            zeroWidthDetectionStatus.textContent =
-                "Text selected. Analyzing...";
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || "Text analysis failed.");
+                }
+
+                const stats = result.analysis;
+
+                zeroWidthDetectionSummary.textContent =
+                    `Zero-width bits found: ${stats.total_bits_analyzed}\n` +
+                    `One-bit ratio: ${stats.one_ratio}\n` +
+                    `Balance score: ${stats.balance_score}\n` +
+                    `Educational suspicion indicator: ${stats.suspicion}\n\n` +
+                    stats.notice;
+
+                zeroWidthDetectionSummary.style.whiteSpace = "pre-line";
+                zeroWidthDetectionResults.hidden = false;
+                zeroWidthDetectionStatus.textContent =
+                    "Zero-width text detection completed.";
+            } catch (error) {
+                zeroWidthDetectionStatus.textContent = error.message;
+            } finally {
+                analyzeTextButton.disabled = false;
+            }
         });
     </script>
 </body>

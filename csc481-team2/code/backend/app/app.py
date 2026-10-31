@@ -1,3 +1,4 @@
+from email.mime import message
 from io import BytesIO
 from pathlib import Path
 from uuid import uuid4
@@ -25,48 +26,12 @@ from services.zero_width_text import (
     embed as embed_zero_width,
     extract as extract_zero_width,
 )
-def analyze_image_lsb(image_path: str | Path) -> dict[str, float | int | str]:
-    """Return simple educational LSB-balance statistics for a PNG image."""
+from services.detection import (
+    analyze_image_lsb,
+    analyze_audio_lsb,
+    analyze_zero_width_text,
+)
 
-    with Image.open(image_path) as source:
-        if source.format != "PNG":
-            raise ValueError("Only PNG images are supported.")
-
-        # Allows RGB, RGBA, palette, and grayscale PNG files.
-        image = source.convert("RGB")
-
-    ones = 0
-    total_bits = 0
-
-    for pixel in image.getdata():
-        for channel in pixel:
-            ones += channel & 1
-            total_bits += 1
-
-    if total_bits == 0:
-        raise ValueError("The image contains no analyzable color data.")
-
-    one_ratio = ones / total_bits
-    balance_score = 1.0 - abs(one_ratio - 0.5) * 2
-
-    if balance_score >= 0.98:
-        suspicion = "high"
-    elif balance_score >= 0.90:
-        suspicion = "medium"
-    else:
-        suspicion = "low"
-
-    return {
-        "total_bits_analyzed": total_bits,
-        "lsb_ones": ones,
-        "one_ratio": round(one_ratio, 4),
-        "balance_score": round(balance_score, 4),
-        "suspicion": suspicion,
-        "notice": (
-            "This is an educational statistical indicator only. "
-            "It cannot prove that hidden data exists in the image."
-        ),
-    }
 
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 500 MB.
@@ -149,8 +114,25 @@ def analyze_png():
     if not input_path.exists():
         return jsonify({"error": "Uploaded image was not found."}), 404
 
+    analysis_path = None
+
     try:
-        statistics = analyze_image_lsb(input_path)
+        analysis_path = (
+            IMAGE_UPLOAD_FOLDER / f"{uuid4().hex}_analysis.png"
+        )
+
+        with Image.open(input_path) as source:
+            if source.format != "PNG":
+                raise ValueError("Only PNG images are supported.")
+
+            source.convert("RGBA").save(analysis_path, format="PNG")
+
+        statistics = analyze_image_lsb(analysis_path)
+
+        statistics["notice"] = (
+            "This is an educational statistical indicator only. "
+            "It cannot prove that hidden data exists."
+        )
 
         return jsonify({
             "message": "Image analysis completed.",
@@ -160,6 +142,9 @@ def analyze_png():
     except ValueError as error:
         return jsonify({"error": str(error)}), 400
 
+    finally:
+        if analysis_path is not None and analysis_path.exists():
+            analysis_path.unlink()
 @app.post("/api/v1/encode")
 def encode_png():
     data = request.get_json(silent=True) or {}
@@ -286,7 +271,38 @@ def upload_audio():
         "message": "Audio uploaded successfully.",
         "audio_id": audio_id
     }), 201
+@app.post("/api/v1/audio/analyze")
+def analyze_audio():
+    audio_file = request.files.get("audio")
+    input_path = None
 
+    if audio_file is None or audio_file.filename == "":
+        return jsonify({"error": "Please select a WAV file."}), 400
+
+    if not audio_file.filename.lower().endswith(".wav"):
+        return jsonify({"error": "Only WAV files are supported."}), 400
+
+    try:
+        input_path = AUDIO_UPLOAD_FOLDER / f"{uuid4().hex}.wav"
+        audio_file.save(input_path)
+
+        statistics = analyze_audio_lsb(input_path)
+        statistics["notice"] = (
+            "This is an educational statistical indicator only. "
+            "It cannot prove that hidden data exists."
+        )
+
+        return jsonify({
+            "message": "Audio analysis completed.",
+            "analysis": statistics
+        }), 200
+
+    except ValueError as error:
+        return jsonify({"error": str(error)}), 400
+
+    finally:
+        if input_path is not None and input_path.exists():
+            input_path.unlink()
 
 @app.post("/api/v1/audio/encode")
 def encode_audio():
@@ -394,6 +410,11 @@ def encode_zero_width():
     secret_message = data.get("message", "")
     passphrase = data.get("passphrase", "")
 
+    encrypted_payload = encrypt(
+        secret_message.encode("utf-8"),
+        passphrase
+    )
+
     if not isinstance(cover_text, str) or not cover_text.strip():
         return jsonify({"error": "Enter cover text."}), 400
 
@@ -437,37 +458,50 @@ def encode_zero_width():
         "encoded_text": encoded_text,
         "download_url": f"/api/v1/zero-width/downloads/{output_id}"
     }), 201
+@app.post("/api/v1/zero-width/analyze")
+def analyze_zero_width():
+    data = request.get_json(silent=True) or {}
+    stego_text = data.get("stego_text", "")
+
+    if not isinstance(stego_text, str) or not stego_text:
+        return jsonify({"error": "Please enter or paste text to analyze."}), 400
+
+    statistics = analyze_zero_width_text(stego_text)
+    statistics["notice"] = (
+        "This is an educational indicator only. "
+        "Some programs remove zero-width characters."
+    )
+
+    return jsonify({
+        "message": "Zero-width text analysis completed.",
+        "analysis": statistics
+    }), 200
 @app.post("/api/v1/zero-width/decode")
 def decode_zero_width():
     data = request.get_json(silent=True) or {}
 
-    encoded_text = data.get("encoded_text", "")
+    stego_text = data.get("encoded_text", "")
     passphrase = data.get("passphrase", "")
 
-    if not isinstance(encoded_text, str) or not encoded_text:
-        return jsonify({"error": "Paste encoded text to decode."}), 400
+    if not isinstance(stego_text, str) or not stego_text:
+        return jsonify({"error": "Paste encoded text to extract."}), 400
 
-    if not isinstance(passphrase, str) or len(passphrase) < 4:
-        return jsonify({
-            "error": "Enter the same passphrase used for encoding."
-        }), 400
+    if not isinstance(passphrase, str) or not passphrase:
+        return jsonify({"error": "Enter the passphrase used for encoding."}), 400
 
     try:
-        encrypted_payload = extract_zero_width(encoded_text)
+        encrypted_payload = extract_zero_width(stego_text)
+        message = decrypt(encrypted_payload, passphrase).decode("utf-8")
 
-        original_message = decrypt(
-            encrypted_payload,
-            passphrase
-        ).decode("utf-8")
+        return jsonify({
+            "message": message
+        }), 200
 
-    except (ValueError, UnicodeDecodeError) as error:
+    except ValueError as error:
         return jsonify({"error": str(error)}), 400
 
-    return jsonify({
-        "message": "Text decoded successfully.",
-        "decoded_message": original_message
-    }), 200
-
+    except UnicodeDecodeError:
+        return jsonify({"error": "The recovered message is not valid text."}), 400
 @app.errorhandler(413)
 def file_too_large(error):
     return jsonify({"error": "files must be 500 MB or smaller."}), 413

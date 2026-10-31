@@ -21,15 +21,15 @@
 ## Saturday summary and merge meeting
 
 **Date:** Saturday, October 31 , 2026
-**Time:** 2:00 PM - 4:00 PM
+**Time:** 11:00 PM - 12:30 PM
 **Location/platform:** Microsoft Teams
 
 ### Completed work and contributions
 
 | Team member | Completed work |
 |---|---|
-|Brayn Goodman | Completed backend scripts for image decryption.|
-|Kendra Pelzer | Completed frontend scripts for image decryption.|
+|Brayn Goodman | Completed backend scripts for statistical detection|
+|Kendra Pelzer | Completed frontend scripts for  statistical detection|
 |Jamaal spratley| Implemented frontend and backend scripts into the app.py for use. |
 ## Next scheduled meeting
 

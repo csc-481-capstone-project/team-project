@@ -316,14 +316,50 @@
                         event.preventDefault();
 
                         const audio = detectionAudioInput.files[0];
+                        const analyzeButton = document.getElementById("analyzeAudioButton");
+
                         audioDetectionResults.hidden = true;
 
                         if (!audio) {
                             audioDetectionStatus.textContent = "Please select a WAV file to analyze.";
                             return;
                         }
-                        audioDetectionStatus.textContent =
-                        "Audio selected. Analyzing...";
+
+                        analyzeButton.disabled = true;
+                        audioDetectionStatus.textContent = "Uploading and analyzing audio...";
+
+                        try {
+                            const formData = new FormData();
+                            formData.append("audio", audio);
+
+                            const response = await fetch("/api/v1/audio/analyze", {
+                                method: "POST",
+                                body: formData
+                            });
+
+                            const result = await response.json();
+
+                            if (!response.ok) {
+                                throw new Error(result.error || "Audio analysis failed.");
+                            }
+
+                            const stats = result.analysis;
+
+                            audioDetectionSummary.textContent =
+                                `Bits analyzed: ${stats.total_bits_analyzed}\n` +
+                                `LSB ones: ${stats.lsb_ones}\n` +
+                                `LSB one ratio: ${stats.one_ratio}\n` +
+                                `Balance score: ${stats.balance_score}\n` +
+                                `Educational suspicion indicator: ${stats.suspicion}\n\n` +
+                                stats.notice;
+
+                            audioDetectionResults.hidden = false;
+                            audioDetectionStatus.textContent = "Audio statistical detection completed.";
+                        } catch (error) {
+                            audioDetectionStatus.textContent = error.message;
+                        } finally {
+                            analyzeButton.disabled = false;
+                        }
                     });
 
                 </script>
