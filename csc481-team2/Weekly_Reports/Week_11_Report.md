@@ -8,24 +8,24 @@
 ## 1. Milestones achieved
 - Initiated the statistical detection module to support image, audio, and zero-width text steganography.
 - Developed statistical detection frontend interfaces for image, audio, and zero-width text steganography. Modifications include input fields, analysis button, status messages, and result display sections.
-- Iplementation of statistical Detection for image, audio and zero-width.
+- Implementation of statistical Detection for image, audio and zero-width.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
 | Team Leader | Jamaal Spratley | Full implementation of statistical detection for app.py|
-| Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and make sure there are no warnings. |
+| Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and made sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed statistical detection frontend sections for image, audio, and zero-width text steganography. Updated the zero-width page layout and created automated frontend tests to verify the new elements. |
 
 ## 3. Test evidence
 
 ### 3.1 Bryan
 
-**Purpose:** Create and implement statistical detection module to support image, audio, and zero-width text steganography. 
+**Purpose:** Create and implement a statistical detection module to support image, audio, and zero-width text steganography. 
 
 **Expected Result:** Creation of script that has no errors when the pytest is implemented. 
 
-**Result:** Completion of two pytest. One for the testing of the module and the other is full pytest to ensure everything is communicating with no errors. 
+**Result:** Completion of two pytest. One for testing of the module and the other is full pytest to ensure everything is communicating with no errors. 
 
 
 **Completed Pytest**
@@ -57,8 +57,8 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 #
 ### 3.3 Jamaal
 
-**Purpose:** Create and implement statistical detection module for the app.py.
-**Expected result:** the app.py accepting any png,wave or zero-width file and determining if they have a hidden message already embedded in it.
+**Purpose:** Create and implement a statistical detection module for the app.py.
+**Expected result:** the app.py accepts any png,wave or zero-width file and determines if it has a hidden message already embedded in it.
 
 **Result:**  The statistical detection is working and running.
 
