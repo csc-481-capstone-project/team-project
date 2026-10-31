@@ -145,6 +145,54 @@
                     aria-live="polite">
                 </div>
 
+                <hr class="my-4">
+                <h2 class="mb-3"> Statistical Detection</h2>
+                <p class="text-muted">
+                    Analyze an image for statistical patterns that may indicate the presence of potential hidden information.
+                </p>
+
+                <form id="imageDetectionForm">
+                    <div class="mb-3">
+                        <label for="detectionImageUpload" class="form-label">
+                            Upload an image to analyze:
+                        </label>
+                        <input
+                            type="file"
+                            id="detectionImageUpload"
+                            name="detectionImageUpload"
+                            accept=".png, image/png"
+                            class="form-control"
+                            required
+                        >
+                    </div>
+
+                    <button 
+                        type="submit"
+                        id="analyzeImageButton"
+                        class="btn btn-info">
+                        Analyze Image
+                    </button>
+                </form>
+
+                <div
+                    id="imageDetectionStatus"
+                    class="mt-3"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+                <div
+                    id="imageDetectionResults"
+                    class="mt-4"
+                    hidden>
+                    <h3 class="h5 mb-3">Analysis Results</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="detectionSummary" class="mb-2"></p>
+                        </div>
+                    </div>
+                </div>
+
                 <script>
                     const form = document.getElementById("imageStegoForm");
                     const imageInput = document.getElementById("imageUpload");
@@ -157,6 +205,11 @@
                     const extractPassphraseInput = document.getElementById("extractPassphrase");
                     const extractedMessage = document.getElementById("extractedMessage");
                     const extractStatusMessage = document.getElementById("extractStatusMessage");
+                    const imageDetectionForm = document.getElementById("imageDetectionForm");
+                    const detectionImageInput = document.getElementById("detectionImageUpload");
+                    const imageDetectionStatus = document.getElementById("imageDetectionStatus");
+                    const imageDetectionResults = document.getElementById("imageDetectionResults");
+                    const imageDetectionSummary = document.getElementById("imageDetectionSummary");
 
                     form.addEventListener("submit", async (event) => {
                         event.preventDefault();
@@ -222,48 +275,58 @@
                         }
                     });
 
-                    extractForm.addEventListener("submit",(event) => {
+                    extractForm.addEventListener("submit", async (event) => {
                         event.preventDefault();
-                        extractForm.addEventListener("submit", async (event) => {
-                            event.preventDefault();
 
-                            const image = encodedImageInput.files[0];
-                            const passphrase = extractPassphraseInput.value;
+                        const image = encodedImageInput.files[0];
+                        const passphrase = extractPassphraseInput.value;
 
-                            if (!image || !passphrase) {
-                                extractStatusMessage.textContent =
-                                    "Select an encoded PNG image and enter its passphrase.";
-                                return;
+                        if (!image || !passphrase) {
+                            extractStatusMessage.textContent =
+                                "Select an encoded PNG image and enter its passphrase.";
+                            return;
+                        }
+
+                        const formData = new FormData();
+                        formData.append("image", image);
+                        formData.append("passphrase", passphrase);
+
+                        extractStatusMessage.textContent = "Extracting and decrypting message...";
+                        extractedMessage.value = "";
+
+                        try {
+                            const response = await fetch("/api/v1/decode", {
+                                method: "POST",
+                                body: formData
+                            });
+
+                            const result = await response.json();
+
+                            if (!response.ok) {
+                                throw new Error(result.error || "Image extraction failed.");
                             }
 
-                            const formData = new FormData();
-                            formData.append("image", image);
-                            formData.append("passphrase", passphrase);
-
-                            extractStatusMessage.textContent = "Extracting and decrypting message...";
-                            extractedMessage.value = "";
-
-                            try {
-                                const response = await fetch("/api/v1/decode", {
-                                    method: "POST",
-                                    body: formData
-                                });
-
-                                const result = await response.json();
-
-                                if (!response.ok) {
-                                    throw new Error(result.error || "Image extraction failed.");
-                                }
-
-                                extractedMessage.value = result.message;
-                                extractStatusMessage.textContent = "Message extracted successfully.";
-                            } catch (error) {
-                                extractStatusMessage.textContent = error.message;
-                            }
-                        });
-
-                        extractStatusMessage.textContent = "Extracting message...";
+                            extractedMessage.value = result.message;
+                            extractStatusMessage.textContent = "Message extracted successfully.";
+                        } catch (error) {
+                            extractStatusMessage.textContent = error.message;
+                        }
                     });
+
+                    imageDetectionForm.addEventListener("submit", async (event) => {
+                        event.preventDefault();
+
+                        const image = detectionImageInput.files[0];
+                        imageDetectionResults.hidden = true;
+
+                        if (!image) {
+                            imageDetectionStatus.textContent = "Please select a PNG image to analyze.";
+                            return;
+                        }
+                        imageDetectionStatus.textContent =
+                            "Image selected. Analyzing...";
+                    });
+
                 </script>
             </div>
         </div>

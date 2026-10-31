@@ -136,6 +136,53 @@
                     aria-live="polite">
                 </div>
 
+                <hr class="my-4">
+                <h2 class="mb-3">Statistical Detection</h2>
+                <p class="text-muted">
+                    Analyze an audio file for statistical patterns that may indicate the presence of potential hidden information.
+                </p>
+
+                <form id="audioDetectionForm">
+                    <div class="mb-3">
+                        <label for="detectionAudioUpload" class="form-label">
+                            Upload an audio file to analyze:
+                        </label>
+                        <input
+                            type="file"
+                            id="detectionAudioUpload"
+                            name="detectionAudioUpload"
+                            accept=".wav, audio/wav"
+                            class="form-control"
+                            required
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        id="analyzeAudioButton"
+                        class="btn btn-info">
+                        Analyze Audio
+                    </button>
+                </form>
+
+                <div id="audioDetectionStatus"
+                    class="mt-3"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
+                <div 
+                    id="audioDetectionResults"
+                    class="mt-4"
+                    hidden>
+                    <h3 class="h5 mb-3">Analysis Results</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <p id="audioDetectionSummary" class="mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+
                 <script>
                     const extractForm = document.getElementById("audioExtractForm");
                     const extractStatus = document.getElementById("extractStatus");
@@ -145,6 +192,11 @@
                     const passphraseInput = document.getElementById("passphrase");
                     const audioStatus = document.getElementById("statusMessage");
                     const audioButton = audioForm.querySelector('button[type="submit"]');
+                    const audioDetectionForm = document.getElementById("audioDetectionForm");
+                    const detectionAudioInput = document.getElementById("detectionAudioUpload");
+                    const audioDetectionStatus = document.getElementById("audioDetectionStatus");
+                    const audioDetectionResults = document.getElementById("audioDetectionResults");
+                    const audioDetectionSummary = document.getElementById("audioDetectionSummary");
 
                     
                     audioForm.addEventListener("submit", async (event) => {
@@ -260,8 +312,21 @@
                             console.error(error);
                         }
                     });
-                </script>
+                    audioDetectionForm.addEventListener("submit", async (event) => {
+                        event.preventDefault();
 
+                        const audio = detectionAudioInput.files[0];
+                        audioDetectionResults.hidden = true;
+
+                        if (!audio) {
+                            audioDetectionStatus.textContent = "Please select a WAV file to analyze.";
+                            return;
+                        }
+                        audioDetectionStatus.textContent =
+                        "Audio selected. Analyzing...";
+                    });
+
+                </script>
             </div>
         </div>
     </div>
