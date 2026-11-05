@@ -71,13 +71,13 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 
 ## 4. Lessons learned
 
-- 
+- I learned that automated PDF generation makes documentation of the results easier. It also consistently shares them with other users. 
 - 
 - 
 
 ## 5. Progress against the plan
 
-The Week 12 the plan required 
+The Week 12 the plan required initial PDF export implementation and testing for steganography services and experiments. 
 
 
 The Week 13 plan will be to  
