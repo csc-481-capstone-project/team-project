@@ -6,9 +6,9 @@
 #
 **Reporting period:** Week 11
 ## 1. Milestones achieved
-- Initiated the statistical detection module to support image, audio, and zero-width text steganography.
-- Developed statistical detection frontend interfaces for image, audio, and zero-width text steganography. Modifications include input fields, analysis button, status messages, and result display sections.
-- Implementation of statistical Detection for image, audio and zero-width.
+- 
+- 
+- 
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
@@ -21,22 +21,22 @@
 
 ### 3.1 Bryan
 
-**Purpose:** Create and implement a statistical detection module to support image, audio, and zero-width text steganography. 
+**Purpose:** 
 
-**Expected Result:** Creation of script that has no errors when the pytest is implemented. 
+**Expected Result:** 
 
-**Result:** Completion of two pytest. One for testing of the module and the other is full pytest to ensure everything is communicating with no errors. 
+**Result:** 
 
 
 **Completed Pytest**
 
 ![Statisical Detection Test_detection.py](Testservicespytest(full).png)
 
-*Image 1: test_dection.py pytest*
+*Image 1: *
 
 ![Full Pytest All Passed after testing](CompletePytest.png)
 
-*Image 2: Completion of Full pytest to ensure complete communication with other services. 
+*Image 2:*
 
 #
 ### 3.2 Frontend Statistical Detection - Kendra
@@ -71,13 +71,13 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 
 ## 4. Lessons learned
 
-- I learned that each carrier stores hidden data differently, so detection has to be adaptable for images, audio files, and zero-width text instead of having one approach for each file type. 
-- I learned more about organizing HTML elements to improve the layout and usability of the frontend interfaces. I also gained experience troubleshooting automated Pytests by correcting file paths and local server URLs.
-- I learned that statistical detection is not always accurate since smaller messages change the image's pixel data less
+- 
+- 
+- 
 
 ## 5. Progress against the plan
 
-The Week 11 the plan required the creation of the statistical detection module for backend services, ensure that complete communication occurred with a completed full pytest, and full implementation of the module with the other services. Front interfaces were developed for image, audio, and zero-width text detection, including the necessary input fields, analysis button, and result display areas. Finally, all pieces were compiled together in the app for future use. All progress was according to play, and all members are working together to complete the sandbox.
+The Week 12 the plan required 
 
 
-The Week 12 plan will be to implement the PDF export. 
+The Week 13 plan will be to  
