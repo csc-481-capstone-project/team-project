@@ -1,10 +1,10 @@
-# Team 2 Week 11 Progress Report
+# Team 2 Week 12 Progress Report
 
 ## Comprehensive Web-Based Steganography Sandbox 
 
 **Team:** Bryan Goodman, Kendra Pelzer, Jamaal Spratley
 #
-**Reporting period:** Week 11
+**Reporting period:** Week 12
 ## 1. Milestones achieved
 - 
 - 
