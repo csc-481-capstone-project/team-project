@@ -23,9 +23,9 @@
 
 **Purpose:** Create automatic PDF summary of each steganography experiment
 
-**Expected Result:** Implementation and completion of pytest with no errors or warnings. 
+**Expected Result:** Implementation and 100% completion of pytest with no errors or warnings. 
 
-**Result:** Test and full pytest 100% completed with no errors.
+**Result:** Full pytest completion. 100% completed with no errors or warnings. 
 
 
 **Completed Pytest**
