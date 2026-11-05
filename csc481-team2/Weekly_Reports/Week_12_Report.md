@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 12
 ## 1. Milestones achieved
-- 
+- Implemented and tested PDF report export feature that generates experiment summary details and outcome information. 
 - 
 - 
 
@@ -21,22 +21,22 @@
 
 ### 3.1 Bryan
 
-**Purpose:** 
+**Purpose:** Create automatic PDF summary of each steganography experiment
 
-**Expected Result:** 
+**Expected Result:** Implementation and completion of pytest with no errors or warnings. 
 
-**Result:** 
+**Result:** Test and full pytest 100% completed with no errors.
 
 
 **Completed Pytest**
 
-![Statisical Detection Test_detection.py](Testservicespytest(full).png)
+![PDF Export Test Generator.py](PDFTestgeneratorPytest.png)
 
-*Image 1: *
+*Image 1: PDF Test Generator Pytest*
 
-![Full Pytest All Passed after testing](CompletePytest.png)
+![PDF Export Full Pytest](PDF_fullpytest.png)
 
-*Image 2:*
+*Image 2: PDF Export Full Pytest with all services*
 
 #
 ### 3.2 Frontend Statistical Detection - Kendra
