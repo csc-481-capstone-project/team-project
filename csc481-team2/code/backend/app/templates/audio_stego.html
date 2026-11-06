@@ -77,6 +77,16 @@
                     aria-live="polite">
                 </div>
 
+                <div id="audioPDFReport" class="mt-3" hidden>
+                    <a
+                        id="audioPDFDownload"
+                        class="btn btn-outline-primary"
+                        href="#"
+                        download>
+                        Download PDF Report
+                    </a>
+                </div>
+
                 <hr class="my-4">
                 <h2 class="mb-3">Extract Hidden Message</h2>
 
@@ -191,6 +201,8 @@
                     const messageInput = document.getElementById("secretMessage");
                     const passphraseInput = document.getElementById("passphrase");
                     const audioStatus = document.getElementById("statusMessage");
+                    const audioPDFReport = document.getElementById("audioPDFReport");
+                    const audioPDFDownload = document.getElementById("audioPDFDownload");
                     const audioButton = audioForm.querySelector('button[type="submit"]');
                     const audioDetectionForm = document.getElementById("audioDetectionForm");
                     const detectionAudioInput = document.getElementById("detectionAudioUpload");
@@ -201,6 +213,8 @@
                     
                     audioForm.addEventListener("submit", async (event) => {
                         event.preventDefault();
+                        audioPDFReport.hidden = true;
+                        audioPDFDownload.removeAttribute("href");
                         console.log("extract button pressed");
 
                         const audio = audioInput.files[0];
@@ -247,7 +261,13 @@
 
                     if (!encodeResponse.ok) {
                         throw new Error(encodeResult.error || "Audio encoding failed.");
-                        }
+                    }
+
+                    if (encodeResult.report_url) {
+                        audioPDFDownload.href = encodeResult.report_url;
+                        audioPDFReport.hidden = false;
+                    }
+
                         audioStatus.innerHTML = `
                             <strong>Message embedded successfully in audio.</strong><br>
                             <a class="btn btn-success btn-sm mt-2" href="${encodeResult.download_url}">
