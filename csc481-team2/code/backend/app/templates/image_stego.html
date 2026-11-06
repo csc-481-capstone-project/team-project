@@ -88,6 +88,16 @@
                     aria-live="polite">
                 </div>
 
+                <div id="imagePDFReport" class="mt-3" hidden>
+                    <a
+                        id="imagePDFDownload"
+                        class="btn btn-outline-primary"
+                        href="#"
+                        download>
+                        Download PDF Report
+                    </a>
+                </div>
+
                 <hr class="my-4">
                 <h2 class="mb-3">Extract Hidden Message</h2>
                 <p class="text-muted">Upload an encoded image to extract the hidden message.</p>
@@ -200,6 +210,8 @@
                     const passphraseInput = document.getElementById("passphrase");
                     const embedButton = document.getElementById("embedButton");
                     const statusMessage = document.getElementById("statusMessage");
+                    const imagePDFReport = document.getElementById("imagePDFReport");
+                    const imagePDFDownload = document.getElementById("imagePDFDownload");
                     const extractForm = document.getElementById("imageExtractForm");
                     const encodedImageInput = document.getElementById("encodedImageUpload");
                     const extractPassphraseInput = document.getElementById("extractPassphrase");
@@ -214,6 +226,9 @@
 
                     form.addEventListener("submit", async (event) => {
                         event.preventDefault();
+
+                        imagePDFReport.hidden = true;
+                        imagePDFDownload.removeAttribute("href");
 
                         const image = imageInput.files[0];
                         const message = messageInput.value;
@@ -260,6 +275,11 @@
 
                         if (!encodeResponse.ok) {
                             throw new Error(encodeResult.error || "Message embedding failed.");
+                        }
+
+                        if (encodeResult.report_url) {
+                            imagePDFDownload.href = encodeResult.report_url;
+                            imagePDFReport.hidden = false;
                         }
 
                         statusMessage.innerHTML = `

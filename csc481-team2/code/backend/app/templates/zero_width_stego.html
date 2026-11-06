@@ -105,6 +105,23 @@
                     </button>
                 </div>
 
+                <div id="zeroWidthPDFReport" class="mt-3" hidden>
+                    <a
+                        id="zeroWidthPDFDownload"
+                        class="btn btn-outline-primary"
+                        href="#"
+                        download>
+                        Download PDF Report
+                    </a>
+                </div>
+
+                <div
+                    id="statusMessage"
+                    class="mt-3"
+                    role="status"
+                    aria-live="polite">
+                </div>
+
                 <hr class="my-4">
 
                 <h2 class="mb-3">Extract Hidden Message</h2>
@@ -155,7 +172,7 @@
                 </div>
 
                 <div
-                    id="statusMessage"
+                    id="decodeStatusMessage"
                     class="mt-3"
                     role="status"
                     aria-live="polite">
@@ -218,9 +235,15 @@
         const statusMessage = document.getElementById("statusMessage");
         const encodedText = document.getElementById("encodedText");
         const copyButton = document.getElementById("copyButton");
+        const zeroWidthPDFReport = document.getElementById("zeroWidthPDFReport");
+        const zeroWidthPDFDownload = document.getElementById("zeroWidthPDFDownload");
 
         zeroWidthForm.addEventListener("submit", async (event) => {
             event.preventDefault();
+            zeroWidthPDFReport.hidden = true;
+            zeroWidthPDFDownload.removeAttribute("href");
+            encodedText.value = "";
+            copyButton.disabled = true;
 
             try {
             const response = await fetch("/api/v1/zero-width/encode", {
@@ -242,7 +265,10 @@
             if (!response.ok) {
                 throw new Error(result.error || "Text encoding failed.");
             }
-
+            if (result.report_url) {
+                zeroWidthPDFDownload.href = result.report_url;
+                zeroWidthPDFReport.hidden = false;
+            }
             encodedText.value = result.encoded_text;
             copyButton.disabled = false;
             statusMessage.textContent =
@@ -270,6 +296,7 @@
         const zeroWidthDetectionStatus = document.getElementById("zeroWidthDetectionStatus");
         const zeroWidthDetectionResults = document.getElementById("zeroWidthDetectionResults");
         const zeroWidthDetectionSummary = document.getElementById("zeroWidthDetectionSummary");
+        const decodeStatusMessage = document.getElementById("decodeStatusMessage");
 
 
         decodeForm.addEventListener("submit", async (event) => {
@@ -298,11 +325,11 @@
 
                 decodedMessage.value = result.message;
 
-                statusMessage.textContent = "Message extracted successfully.";
-                statusMessage.className = "alert alert-success mt-3";
+                decodeStatusMessage.textContent = "Message extracted successfully.";
+                decodeStatusMessage.className = "alert alert-success mt-3";
             } catch (error) {
-                statusMessage.textContent = error.message;
-                statusMessage.className = "alert alert-danger mt-3";
+                decodeStatusMessage.textContent = error.message;
+                decodeStatusMessage.className = "alert alert-danger mt-3";
                 console.error(error);
             }
         });
