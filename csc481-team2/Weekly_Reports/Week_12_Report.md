@@ -63,11 +63,11 @@ PASS. All three automated frontend Playwright tests passed successfully. Tests c
 **Result:**  The PDF rep is working and running.
 
 ![ PDF audio](audiopdf.png)
-*Image 4:
+*Image 4: PDF export for audio
 ![PDF image](imagepdf.png)
-*Image 5:
+*Image 5: PDF export for image
 ![PDF zero-width](textpdf.png)
-*Image 6:
+*Image 6: PDF export for zero-width
 
 ## 4. Lessons learned
 
