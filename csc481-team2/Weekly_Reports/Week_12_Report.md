@@ -7,7 +7,7 @@
 **Reporting period:** Week 12
 ## 1. Milestones achieved
 - Implemented and tested PDF report export feature that generates experiment summary details and outcome information. 
-- 
+- Developed PDF report download interfaces for image, audio, and zero-width text steganography. Implemented frontend functionality to display PDF download buttons when a valid report URL is returned by the backend.
 - Implemented PDF report export for text, audio, and image in the app.py for future use.
 
 ## 2. Subtasks completed
@@ -15,7 +15,7 @@
 | --- | --- | --- |
 | Team Leader | Jamaal Spratley | Full implementation of PDF report export for app.py |
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and made sure there are no warnings. |
-| Member B (Frontend/QA) | Kendra Pelzer | Developed statistical detection frontend sections for image, audio, and zero-width text steganography. Updated the zero-width page layout and created automated frontend tests to verify the new elements. |
+| Member B (Frontend/QA) | Kendra Pelzer | Developed PDF download interfaces for image, audio, and zero-width text steganography. Added JavaScript to manage PDF button visibility based on backend responses. Improved the zero-width interface by separating embedding and extraction status messages and resetting outdated results. Created and executed three automated PyTests. |
 
 ## 3. Test evidence
 
@@ -39,19 +39,19 @@
 *Image 2: PDF Export Full Pytest with all services*
 
 #
-### 3.2 Frontend Statistical Detection - Kendra
+### 3.2 Frontend PDF Report Interfaces - Kendra
 
 **Frontend Tests:**
-Verify that the new statistical detection interfaces for image, audio, and zero-width text steganography display the required elements correctly.
+Verify that the image, audio, and zero-width text steganography interfaces contain the required PDF download elements and that the buttons remain hidden until a report is available.
 
 **Expected result:**
-All three interfaces should display their respective detection forms and input fields, with the results sections initially hidden until analysis via backend is available.
+All three interfaces should contain the PDF download elements, with the download sections initially hidden until a valid report URL is provided by the backend.
 
 **Result:**
-PASS. All three automated frontend Pytests passed. The tests confirmed that the detection forms, input fields, and status elements were present and the results sections were hidden.
+PASS. All three automated frontend Playwright tests passed successfully. Tests confirmed that each interface contained exactly one PDF download link and that the PDF download sections were initially hidden.
 
-![Statistical_Detection PyTest](Statistical_Detection_Week11.png)
-*Image 3: All three statistical detection frontend tests passed successfully*
+![PDF_Integration PyTest](PDF_Automation_Week12.png)
+*Image 3: All three PDF report frontend visibility tests passed successfully.*
 
 
 #
@@ -72,12 +72,12 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 ## 4. Lessons learned
 
 - I learned that automated PDF generation makes documentation of the results easier. It also consistently shares them with other users. 
-- 
+- I learned how to prepare frontend interfaces for PDF report integration by using JavaScript to manage download links based on backend responses. I also gained a better understanding of managing interface states, including hiding unavailable download options and clearing outdated results when new experiments begin.
 - I learned that PDF generation requires report lab to work.
 
 ## 5. Progress against the plan
 
-The Week 12 the plan required initial PDF export implementation and testing for steganography services and experiments. 
+The Week 12 the plan required initial PDF export implementation and testing for steganography services and experiments. Frontend interfaces were updated for image, audio, and zero-width text steganography to support PDF report downloads when a valid report URL is returned by the backend. Additional improvements were made to the zero-width text interface to manage status messages and reset previous results. 
 
 
 The Week 13 plan will be to  
