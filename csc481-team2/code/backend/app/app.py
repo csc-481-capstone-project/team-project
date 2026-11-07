@@ -19,7 +19,7 @@ from services.image_lsb import (
 
 from services.audio_lsb import (
     embed as embed_audio,
-    extract as decrypt_message,
+    extract as extract_audio,
     decrypt as decrypt_audio_message,
 )
 from services.zero_width_text import (
@@ -31,8 +31,9 @@ from services.detection import (
     analyze_audio_lsb,
     analyze_zero_width_text,
 )
+from services.report_generator import create_experiment_report
 
-
+BASE_DIR = Path(__file__).resolve().parent
 app = Flask(__name__, template_folder="templates")
 # Reject files larger than 500 MB.
 app.config["MAX_CONTENT_LENGTH"] = 500 * 1024 * 1024
@@ -44,7 +45,8 @@ AUDIO_UPLOAD_FOLDER = Path(app.root_path) / "private_audio_uploads"
 AUDIO_UPLOAD_FOLDER.mkdir(exist_ok=True)
 ZERO_WIDTH_UPLOAD_FOLDER = Path(app.root_path) / "private_zero_width_uploads"
 ZERO_WIDTH_UPLOAD_FOLDER.mkdir(exist_ok=True)
-
+REPORT_FOLDER = BASE_DIR / "private_reports"
+REPORT_FOLDER.mkdir(parents=True, exist_ok=True)
 IMAGE_OUTPUT_FOLDER = Path(app.root_path) / "private_outputs"
 IMAGE_OUTPUT_FOLDER.mkdir(exist_ok=True)
 AUDIO_OUTPUT_FOLDER = Path(app.root_path) / "private_audio_outputs"
@@ -174,13 +176,29 @@ def encode_png():
     try:
         encrypted_payload = encrypt(secret_message.encode("utf-8"), passphrase)
         embed_image(input_path, encrypted_payload, output_path)
+
+        detection_result = analyze_image_lsb(output_path)
+
+        report_id = uuid4().hex
+        report_path = REPORT_FOLDER / f"{report_id}.pdf"
+
+        create_experiment_report(
+            output_path=report_path,
+            carrier_type="PNG Image",
+            operation="Embed Encrypted Message",
+            result="Success",
+            detection_result=detection_result,
+        )
+
     except ValueError as error:
-        return jsonify({"error": str(error)}), 400
+        if not isinstance(passphrase, str) or not passphrase:
+            return jsonify({"error": "A passphrase is required."}), 400
 
     return jsonify({
         "message": "Message encoded successfully.",
         "output_id": output_id,
-        "download_url": f"/api/v1/downloads/{output_id}"
+        "download_url": f"/api/v1/downloads/{output_id}",
+        "report_url": f"/api/v1/reports/{report_id}"
     }), 201
 @app.post("/api/v1/decode")
 def decode_image():
@@ -332,20 +350,31 @@ def encode_audio():
     output_path = AUDIO_OUTPUT_FOLDER / f"{output_id}.wav"
 
     try:
-        encrypted_payload = encrypt(
-            secret_message.encode("utf-8"),
-            passphrase
-        )
-
+        encrypted_payload = encrypt(secret_message.encode("utf-8"), passphrase)
         embed_audio(input_path, encrypted_payload, output_path)
 
-    except ValueError as error:
-        return jsonify({"error": str(error)}), 400
+        detection_result = analyze_audio_lsb(output_path)
+
+        report_id = uuid4().hex
+        report_path = REPORT_FOLDER / f"{report_id}.pdf"
+
+        create_experiment_report(
+            output_path=report_path,
+            carrier_type="Wav Audio",
+            operation="Embed Encrypted Message",
+            result="Success",
+            detection_result=detection_result,
+        )
+
+    except ValueError:
+        if not isinstance(passphrase, str) or not passphrase:
+            return jsonify({"error": "A passphrase is required."}), 400
 
     return jsonify({
         "message": "Message embedded successfully in audio.",
         "output_id": output_id,
-        "download_url": f"/api/v1/audio/downloads/{output_id}"
+        "download_url": f"/api/v1/audio/downloads/{output_id}",
+        "report_url":f'/api/v1/reports/{report_id}'
     }), 201
 @app.post("/api/v1/audio/decode")
 def decode_audio():
@@ -410,11 +439,6 @@ def encode_zero_width():
     secret_message = data.get("message", "")
     passphrase = data.get("passphrase", "")
 
-    encrypted_payload = encrypt(
-        secret_message.encode("utf-8"),
-        passphrase
-    )
-
     if not isinstance(cover_text, str) or not cover_text.strip():
         return jsonify({"error": "Enter cover text."}), 400
 
@@ -440,8 +464,6 @@ def encode_zero_width():
             passphrase
         )
 
-        # Matches zero_width_text.py:
-        # embed(cover_text, payload, output_path)
         embed_zero_width(
             cover_text,
             encrypted_payload,
@@ -450,13 +472,27 @@ def encode_zero_width():
 
         encoded_text = output_path.read_text(encoding="utf-8")
 
+        detection_result = analyze_zero_width_text(encoded_text)
+
+        report_id = uuid4().hex
+        report_path = REPORT_FOLDER / f"{report_id}.pdf"
+
+        create_experiment_report(
+            output_path=report_path,
+            carrier_type="Zero-Width Text",
+            operation="Embed Encrypted Message",
+            result="Success",
+            detection_result=detection_result,
+        )
+
     except ValueError as error:
         return jsonify({"error": str(error)}), 400
 
     return jsonify({
         "message": "Message embedded successfully.",
         "encoded_text": encoded_text,
-        "download_url": f"/api/v1/zero-width/downloads/{output_id}"
+        "download_url": f"/api/v1/zero-width/downloads/{output_id}",
+        "report_url": f"/api/v1/reports/{report_id}"
     }), 201
 @app.post("/api/v1/zero-width/analyze")
 def analyze_zero_width():
@@ -505,7 +541,22 @@ def decode_zero_width():
 @app.errorhandler(413)
 def file_too_large(error):
     return jsonify({"error": "files must be 500 MB or smaller."}), 413
+@app.get("/api/v1/reports/<report_id>")
+def download_report(report_id):
+    if not re.fullmatch(r"[a-f0-9]{32}", report_id):
+        return jsonify({"error": "Invalid report ID."}), 400
 
+    report_path = REPORT_FOLDER / f"{report_id}.pdf"
+
+    if not report_path.exists():
+        return jsonify({"error": "Report was not found."}), 404
+
+    return send_file(
+        report_path,
+        mimetype="application/pdf",
+        as_attachment=True,
+        download_name="steganography_technical_report.pdf"
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

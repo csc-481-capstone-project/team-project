@@ -8,12 +8,12 @@
 ## 1. Milestones achieved
 - Implemented and tested PDF report export feature that generates experiment summary details and outcome information. 
 - 
-- 
+- Implemented PDF report export for text, audio, and image in the app.py for future use.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | Full implementation of statistical detection for app.py|
+| Team Leader | Jamaal Spratley | Full implementation of PDF report export for app.py |
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and made sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Developed statistical detection frontend sections for image, audio, and zero-width text steganography. Updated the zero-width page layout and created automated frontend tests to verify the new elements. |
 
@@ -57,23 +57,23 @@ PASS. All three automated frontend Pytests passed. The tests confirmed that the 
 #
 ### 3.3 Jamaal
 
-**Purpose:** Create and implement a statistical detection module for the app.py.
-**Expected result:** the app.py accepts any png,wave or zero-width file and determines if it has a hidden message already embedded in it.
+**Purpose:** Create and implement PDF export report for the app.py.
+**Expected result:** the app.py make a PDF report for every use.
 
-**Result:**  The statistical detection is working and running.
+**Result:**  The PDF rep is working and running.
 
-![Statistical detection audio](stataudio.png)
+![ PDF audio](audiopdf.png)
 *Image 4:
-![statistical detection image](statdettest.png)
+![PDF image](imagepdf.png)
 *Image 5:
-![statistical detection zero-width](statzero.png)
+![PDF zero-width](textpdf.png)
 *Image 6:
 
 ## 4. Lessons learned
 
 - I learned that automated PDF generation makes documentation of the results easier. It also consistently shares them with other users. 
 - 
-- 
+- I learned that PDF generation requires report lab to work.
 
 ## 5. Progress against the plan
 
