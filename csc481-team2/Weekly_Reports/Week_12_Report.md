@@ -77,7 +77,7 @@ PASS. All three automated frontend Playwright tests passed successfully. Tests c
 
 ## 5. Progress against the plan
 
-The Week 12 the plan required initial PDF export implementation and testing for steganography services and experiments. Frontend interfaces were updated for image, audio, and zero-width text steganography to support PDF report downloads when a valid report URL is returned by the backend. Additional improvements were made to the zero-width text interface to manage status messages and reset previous results. 
+The Week 12 the plan required initial PDF export implementation and testing for steganography services and experiments. Frontend interfaces were updated for image, audio, and zero-width text steganography to support PDF report downloads when a valid report URL is returned by the backend. Additional improvements were made to the zero-width text interface to manage status messages and reset previous results. finally added all them to app.py for use in the sandbox. all progress is acording to plan working and running and all members are working to keep updates on schedule.
 
 
 The Week 13 plan will be to  
