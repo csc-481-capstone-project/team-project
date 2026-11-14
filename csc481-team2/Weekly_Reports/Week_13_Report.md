@@ -8,12 +8,12 @@
 ## 1. Milestones achieved
 - 
 - Improved frontend usability across the image, audio, and zero-width steganography interfaces with clarifying input labels. Consolidated existing frontend tests into a single quality assurance test suite.
-- 
+- The final tests for sandbox were completed.
 
 ## 2. Subtasks completed
 | Subtask | Owner | Completed work |
 | --- | --- | --- |
-| Team Leader | Jamaal Spratley | Full implementation of PDF report export for app.py |
+| Team Leader | Jamaal Spratley | final tests for the app.py |
 | Member A (Backend) | Bryan Goodman | Ensured the audio steganography communicates with the main branch. Completed Pytest for audio steganography and made sure there are no warnings. |
 | Member B (Frontend/QA) | Kendra Pelzer | Updated input labels across the image, audio, and zero-width steganography interfaces to improve usability. Consolidated seven existing frontend test files into one quality assurance suite. Executed the Pytests with all 23 tests passing. |
 
@@ -57,27 +57,29 @@ PASS. All 23 automated tests passed successfully with no failures.
 #
 ### 3.3 Jamaal
 
-**Purpose:** 
-**Expected result:** 
+**Purpose:** Execute final test on the sandbox to ensure full functionality.
+**Expected result:** All is working and running.
 
-**Result:** 
+**Result:** All tests passed.
 
-![ PDF audio](audiopdf.png)
+![Final audio](finalaudio.png)
 *Image 4:
-![PDF image](imagepdf.png)
+![Final image](finalimage.png)
 *Image 5:
-![PDF zero-width](textpdf.png)
+![Final zero-width](finaltext.png)
 *Image 6:
+![Final PDF](finalpdf.png)
+*Image 7:
 
 ## 4. Lessons learned
 
 -  
 - Learned the importance of organizing automated tests into a consolidated quality assurance suite to improve maintainability. Reinforced troubleshooting skills by resolving file naming and local server connection issues encountered during test execution.
-- 
+- Learned the importance of organization in html files along with the importances of correct import file names when working with PY files.
 
 ## 5. Progress against the plan
 
-The Week 13 plan required updating input labels across all three steganography interfaces and consolidation of existing frontend tests into a single automated QA suite.
+The Week 13 plan required updating input labels across all three steganography interfaces and consolidation of existing frontend tests into a single automated QA suite. Lastly the app.py was put through the final rounds of testings. All progress was on schedule, and all members are working to keep up the progress.
 
 
 The Week 14 plan will be to work towards completing the final code and presentation slides. 
