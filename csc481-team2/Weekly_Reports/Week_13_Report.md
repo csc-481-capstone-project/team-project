@@ -30,7 +30,7 @@
 
 **Completed Pytest**
 
-![Final Pytest](Fullpytest2.png)
+![Final Pytest](FullPytest2.png)
 
 *Image 1: Full pytest completion with everything in the sandbox. No warnings messages or errors. 100% completed. *
 
