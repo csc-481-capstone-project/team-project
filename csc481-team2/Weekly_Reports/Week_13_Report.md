@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 13
 ## 1. Milestones achieved
-- 
+- Final pytest completed to make sure everything is still in operating order within the sandbox.
 - Improved frontend usability across the image, audio, and zero-width steganography interfaces with clarifying input labels. Consolidated existing frontend tests into a single quality assurance test suite.
 - The final tests for sandbox were completed.
 
@@ -22,21 +22,21 @@
 ### 3.1 Bryan
 
 **Purpose:** 
+Do a pytest to make sure everything still works correctly in the Sandbox.
 
 **Expected Result:** 
+Full pytest completion with no warnings or error messages.
 
 **Result:** 
+Completed pytest with no warnings and 100% complete. 
 
 
 **Completed Pytest**
 
-![PDF Export Test Generator.py](PDFTestgeneratorPytest.png)
+![Final Pytest](FullPytest2.png)
 
-*Image 1: *
+*Image 1: Full pytest completion with everything in the sandbox. No warnings messages or errors. 100% completed.*
 
-![PDF Export Full Pytest](PDF_fullpytest.png)
-
-*Image 2: *
 
 #
 ### 3.2 Frontend Usability Updates & Testing - Kendra
@@ -51,35 +51,37 @@ Verified form validation, read-only output fields, statistical detection interfa
 PASS. All 23 automated tests passed successfully with no failures.
 
 ![Quality_Assurance](Quality_Assurance.png)
-*Image 3: Frontend Quality Assurance Test Results*
+*Image 2: Frontend Quality Assurance Test Results*
 
 
 #
 ### 3.3 Jamaal
 
-**Purpose:** Execute final test on the sandbox to ensure full functionality.
-**Expected result:** All is working and running.
-
-**Result:** All tests passed.
+**Purpose:** 
+Execute final test on the sandbox to ensure full functionality.
+**Expected result:** 
+All is working and running.
+**Result:** 
+All tests passed.
 
 ![Final audio](finalaudio.png)
-*Image 4:
+*Image 3:
 ![Final image](finalimage.png)
-*Image 5:
+*Image 4:
 ![Final zero-width](finaltext.png)
-*Image 6:
+*Image 5:
 ![Final PDF](finalpdf.png)
-*Image 7:
+*Image 6:
 
 ## 4. Lessons learned
 
--  
+- I learned that the backend is very important when it comes to the foundation of ensuring everything works. With the pytest completed it shows that the sandbox is fully operational and that everything communications properly. 
 - Learned the importance of organizing automated tests into a consolidated quality assurance suite to improve maintainability. Reinforced troubleshooting skills by resolving file naming and local server connection issues encountered during test execution.
 - Learned the importance of organization in html files along with the importances of correct import file names when working with PY files.
 
 ## 5. Progress against the plan
 
-The Week 13 plan required updating input labels across all three steganography interfaces and consolidation of existing frontend tests into a single automated QA suite. Lastly the app.py was put through the final rounds of testings. All progress was on schedule, and all members are working to keep up the progress.
+The Week 13 plan required updating input labels across all three steganography interfaces and consolidation of existing frontend tests into a single automated QA suite. A complete pytest was completed to ensure everything works within the sandbox. Lastly the app.py was put through the final rounds of testings. All progress was on schedule, and all members are working to keep up the progress.
 
 
 The Week 14 plan will be to work towards completing the final code and presentation slides. 
