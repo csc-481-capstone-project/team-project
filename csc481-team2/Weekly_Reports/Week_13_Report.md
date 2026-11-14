@@ -6,7 +6,7 @@
 #
 **Reporting period:** Week 13
 ## 1. Milestones achieved
-- Final pytest completed to make sure everything is still in operating order
+- Final pytest completed to make sure everything is still in operating order within the sandbox.
 - Improved frontend usability across the image, audio, and zero-width steganography interfaces with clarifying input labels. Consolidated existing frontend tests into a single quality assurance test suite.
 - The final tests for sandbox were completed.
 
