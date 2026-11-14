@@ -21,18 +21,21 @@
 
 ### 3.1 Bryan
 
-**Purpose:** Do a pytest to make sure everything still works correctly in the Sandbox.
+**Purpose:** 
+Do a pytest to make sure everything still works correctly in the Sandbox.
 
-**Expected Result:** Full pytest completion with no warnings or error messages.
+**Expected Result:** 
+Full pytest completion with no warnings or error messages.
 
-**Result:** Completed pytest with no warnings and 100% complete. 
+**Result:** 
+Completed pytest with no warnings and 100% complete. 
 
 
 **Completed Pytest**
 
 ![Final Pytest](FullPytest2.png)
 
-*Image 1: Full pytest completion with everything in the sandbox. No warnings messages or errors. 100% completed. *
+*Image 1: Full pytest completion with everything in the sandbox. No warnings messages or errors. 100% completed.*
 
 
 #
@@ -54,10 +57,12 @@ PASS. All 23 automated tests passed successfully with no failures.
 #
 ### 3.3 Jamaal
 
-**Purpose:** Execute final test on the sandbox to ensure full functionality.
-**Expected result:** All is working and running.
-
-**Result:** All tests passed.
+**Purpose:** 
+Execute final test on the sandbox to ensure full functionality.
+**Expected result:** 
+All is working and running.
+**Result:** 
+All tests passed.
 
 ![Final audio](finalaudio.png)
 *Image 3:
@@ -70,7 +75,7 @@ PASS. All 23 automated tests passed successfully with no failures.
 
 ## 4. Lessons learned
 
--  I learned that the backend is very important when it comes to the foundation of ensuring everything works. With the pytest completed it shows that the sandbox is fully operational and that everything communications properly. 
+- I learned that the backend is very important when it comes to the foundation of ensuring everything works. With the pytest completed it shows that the sandbox is fully operational and that everything communications properly. 
 - Learned the importance of organizing automated tests into a consolidated quality assurance suite to improve maintainability. Reinforced troubleshooting skills by resolving file naming and local server connection issues encountered during test execution.
 - Learned the importance of organization in html files along with the importances of correct import file names when working with PY files.
 
